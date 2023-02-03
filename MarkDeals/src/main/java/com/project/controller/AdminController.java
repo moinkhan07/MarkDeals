@@ -20,14 +20,12 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
-	
 	@PostMapping("/admins")
-	public ResponseEntity<Admin> registerAdmin( @RequestBody Admin admin) throws AdminException{
-		admin.setAdminPassword(passwordEncoder.encode(admin.getAdminPassword()));
+	public ResponseEntity<Admin> registerAdmin(@RequestBody Admin admin) throws AdminException{
 		Admin registerAdmin = adminService.registerUser(admin);
 		return new ResponseEntity<>(registerAdmin,HttpStatus.CREATED);
 	}
+	
+	
 	
 }

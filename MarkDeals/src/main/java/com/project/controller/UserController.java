@@ -24,13 +24,8 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
-	
 	@PostMapping("/users")
 	public ResponseEntity<Users> saveUsersHandler(@RequestBody Users users) throws UserException{
-		
-		users.setPassword(passwordEncoder.encode(users.getPassword()));
 		
 		Users registeredUser= userService.registerUser(users);
 		
