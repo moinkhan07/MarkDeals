@@ -10,4 +10,6 @@ public class AdminException extends Exception{
 		// TODO Auto-generated constructor stub
 		super(message);
 	}
+	
+
 }

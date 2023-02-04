@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,9 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.exception.UserException;
 import com.project.model.Users;
+import com.project.model.UsersLogin;
 import com.project.service.UserService;
-
-import jakarta.validation.Valid;
 
 @RestController
 public class UserController {
@@ -54,6 +52,13 @@ public class UserController {
 		return new ResponseEntity<>(users,HttpStatus.ACCEPTED);
 		
 	} 
+	
+	
+	@GetMapping("/userlogin")
+	public ResponseEntity<String> userLogin(@RequestBody UsersLogin usersLogin) throws UserException {
+		String result = userService.userLogin(usersLogin);
+		return new ResponseEntity<>(result,HttpStatus.OK);
+	}
 	
 
 }

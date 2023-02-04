@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+}
+
+#dashboardmain{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+}
+#sidebar{
+    width: 22%;
+    height: 100vh;
+    border-right: 1px solid rgb(255, 255, 255);
+    padding-top: 20px;
+    background-color: rgb(136,61,26);
+}
+#sidebar>img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px dotted rgb(255, 255, 255);
+    display: block;
+    margin: auto;
+    margin-bottom: 20px
+}
+#logoline{
+    width: 90%;
+    margin: auto;
+}
+#mainboard{
+    width: 78%;
+    height: 100vh;
+    /* border: 5px dotted rgb(0, 0, 0); */
+}
+#navbar{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(136,61,26);
+    border-bottom: 1px solid rgb(252, 252, 252);
+}
+#bottom{
+    width: 98%;
+    height: 90.5vh;
+    margin-left: 2%;
+}
+#listofoptions{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#listofoptions>li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid white;
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#listofoptions>li:hover{
+    background-color: white;
+    color: rgb(136,61,26);
+}
