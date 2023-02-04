@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.exception.UserException;
 import com.project.model.Users;
+import com.project.model.UsersLogin;
 import com.project.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService{
@@ -38,6 +39,15 @@ public class UserServiceImpl implements UserService{
 			throw new UserException("No user found");
 		}
 		return users;
+	}
+
+	@Override
+	public String userLogin(UsersLogin usersLogin) throws UserException {
+		Users existingUsers = userRepository.findByUserEmail(usersLogin.getUserEmail());
+		if (existingUsers.getPassword().equals(usersLogin.getPassword())) {
+			return "User succesfully login";
+		}
+		throw new UserException("User details is wrong!");
 	}
 
 }

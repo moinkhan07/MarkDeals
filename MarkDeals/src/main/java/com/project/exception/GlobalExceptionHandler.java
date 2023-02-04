@@ -23,6 +23,7 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<MyErrorDetails>(myErr,HttpStatus.BAD_REQUEST);
 	}
 	
+
 	@ExceptionHandler(UserException.class)  
 	public ResponseEntity<MyErrorDetails> userExceptionHandler(UserException userException,WebRequest req){
         
