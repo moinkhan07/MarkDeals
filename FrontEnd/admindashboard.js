@@ -90,3 +90,35 @@ const addProduct = async () => {
   let data = await res.json();
   console.log(data);
 };
+
+let getProduct = async()=>{
+  let res = await fetch("http://localhost:8888/products");
+  let data = await res.json();
+  appendData(data);
+  // console.log(data);
+}
+getProduct();
+let appendData = (data)=>{
+  let products = document.getElementById("showProduct");
+  products.innerHTML = null;
+  data.forEach((el)=>{
+    let tr = document.createElement("tr");
+    let pid = document.createElement("td");
+    pid.innerText = el.productId;
+    let pimg = document.createElement("td");
+    let img = document.createElement("img");
+    img.src = el.imageUrl;
+    pimg.append(img);
+    let pname = document.createElement("td");
+    pname.innerText = el.name;
+    let pprice = document.createElement("td");
+    pprice.innerText = el.price;
+    let pcategory = document.createElement("td");
+    pcategory.innerText = el.category;
+    let pquantity = document.createElement("td");
+    pquantity.innerText = el.quantity;
+    tr.append(pid,pimg,pname,pprice,pcategory,pquantity);
+    products.append(tr);
+  })
+  
+}
