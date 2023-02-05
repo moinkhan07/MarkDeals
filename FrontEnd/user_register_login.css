@@ -38,7 +38,9 @@ body{
     border: none;
     margin-top: 5px;
     background-color: transparent;
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid rgb(255, 255, 255); */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: white;
 }
 #userRegister>button{
     width: 120px;
@@ -60,6 +62,7 @@ body{
 }
 ::placeholder{
     color: black;
+    color: white;
 }
 #userLogin{
     width: 40%;
@@ -84,7 +87,9 @@ body{
     border: none;
     margin-top: 5px;
     background-color: transparent;
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid white; */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: white;
 }
 #userLogin>button{
     width: 120px;
