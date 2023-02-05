@@ -310,5 +310,37 @@
 #addProduct_>button:hover{
   background-color: white;
   color: rgb(136,61,26);
-  border: 2px solid rgb(136,61,26);;
+  border: 2px solid rgb(136,61,26);
+}
+
+/*-------  */
+.table_section{
+    height: 494px;
+    overflow: auto;
+}
+table{
+    width: 100%;
+    margin-top: 10px;
+    table-layout: fixed;
+}
+thead th{
+    background-color: rgb(136,61,26);
+    color: white;
+    font-size: 18px;
+    font-weight: lighter;
+    height: 30px;
+    border-radius: 10px;
+    top: 0;
+    position: sticky;
+}
+th,td{
+    text-align: center;
+    border-bottom: 1px solid rgb(151, 151, 151);
+    padding: 10px 0;
+    font-size: 18px;
+}
+td>img{
+    width: 45px;
+    height: 45px;
+    border-radius: 2px;
 }
