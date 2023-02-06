@@ -5,12 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MarkDeals - Product Page</title>
+    <link rel="stylesheet" href="./product.css">
 </head>
 <body>
 
     <nav id="navbar">
-        
+        <div id="logo">
+            <img src="./logo.png" alt="MarkDeals_Logo">
+        </div>
+        <div id="searchbar">
+            <input type="text" id="search" placeholder="Search Product Here">
+        </div>
+        <div id="profile">
+            <div class="dropdown_main_">
+                <div class="select_">
+                  <div class="selected_">M</div>
+                  <div class="caret_"></div>
+                </div>
+                <ul class="menu_2_">
+                  <li onclick="profile()" >Profile</li>
+                  <li id="logout" onclick="logout()">Logout</li>
+                </ul>
+              </div>
+        </div>
     </nav>
 
 </body>
 </html>
+<script src="./product.js"></script>

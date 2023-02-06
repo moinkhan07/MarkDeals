@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+}
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+#logo{
+    width: 50px;
+    height: 50px;
+}
+#logo>img{
+    width: 50px;
+    height: 50px;
+}
+#search{
+    width: 80%;
+    height: 40px;
+}
+#search>input{
+    width: 100%;
+    height: 40px;
+}
+/* -----------------Profile--------------- */
+.dropdown_main_ {
+    position: relative;
+  }
+  .dropdown_main_ * {
+    box-sizing: border-box;
+    width: 150px;
+  }
+  .select_ {
+    color: black;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* padding: 15px 0; */
+    cursor: pointer;
+  }
+  .selected_{
+    color: rgb(136,61,26);
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50%; */
+    /* border: 1px solid white; */
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 25px;
+    background-color: white;
+    /* margin-left: 50px; */
+  }
+  .caret_ {
+    width: 0;
+    height: 0;
+    /* border-left: 6px solid transparent; */
+    /* border-right: 6px solid transparent; */
+    /* border-top: 7px solid rgb(0, 0, 0); */
+    /* transition: 0.3s; */
+  }
+  .caret_-rotate {
+    transform: rotate(180deg);
+  }
+  .menu_2_ {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    position: absolute;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    left: 7%;
+    width: 200px;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+    margin-top: 5px;
+  }
+  .menu_2_ li {
+    width: 100%;
+    padding: 0.7em 0;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    text-align: center;
+    cursor: pointer;
+  }
+  .menu_2_ li:hover {
+    background-color: rgb(246, 246, 246);
+  }
+  #logout{
+    background-color: rgb(136,61,26);
+    color: rgb(255, 255, 255);
+  }
+  .menu_2_-open {
+    display: block;
+    opacity: 1;
+  }
+/* -------------------------------------------------------- */

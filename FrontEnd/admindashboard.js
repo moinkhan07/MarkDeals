@@ -89,6 +89,7 @@ const addProduct = async () => {
   });
   let data = await res.json();
   console.log(data);
+  window.location.reload();
 };
 
 let getProduct = async()=>{
