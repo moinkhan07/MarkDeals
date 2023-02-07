@@ -35,7 +35,7 @@ public class Users {
 	private String userEmail;
 	
 	@NotNull(message = "Password should not be null")
-//	@Size(min = 8,max = 20,message = "Password length should be between 8 to 20")
+	@Size(min = 8,max = 20,message = "Password length should be between 8 to 20")
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
 	

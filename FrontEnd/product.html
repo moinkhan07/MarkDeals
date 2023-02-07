@@ -8,27 +8,39 @@
     <link rel="stylesheet" href="./product.css">
 </head>
 <body>
+           <nav id="navbar">
+            <div id="logo">
+                <img src="./logo.png" alt="">
+            </div>
+            <div id="searchbar">
+                <input type="text" placeholder="Search Product" id="search">
+            </div>
+            <div id="cart">
+                <img src="./cart.png" alt="">
+            </div>
+            <div id="profile">
+                <div class="dropdown_main_">
+                    <div class="select_">
+                      <!-- <span class="selected_">M</span> -->
+                      <div class="selected_">M</div>
+                      <div class="caret_"></div>
+                    </div>
+                    <ul class="menu_2_">
+                      <li onclick="profile()" >Profile</li>
+                      <li id="logout" onclick="logout()">Logout</li>
+                    </ul>
+                  </div>
+            </div>
+           </nav>
+           <div id="mainBody">
+            <div id="sidebar">
 
-    <nav id="navbar">
-        <div id="logo">
-            <img src="./logo.png" alt="MarkDeals_Logo">
-        </div>
-        <div id="searchbar">
-            <input type="text" id="search" placeholder="Search Product Here">
-        </div>
-        <div id="profile">
-            <div class="dropdown_main_">
-                <div class="select_">
-                  <div class="selected_">M</div>
-                  <div class="caret_"></div>
-                </div>
-                <ul class="menu_2_">
-                  <li onclick="profile()" >Profile</li>
-                  <li id="logout" onclick="logout()">Logout</li>
-                </ul>
-              </div>
-        </div>
-    </nav>
+            </div>
+            <div id="productdiv">
+                
+            </div>
+           </div>
+           
 
 </body>
 </html>
