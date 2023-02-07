@@ -1,5 +1,7 @@
 package com.project.model;
 
+import org.springframework.validation.annotation.Validated;
+
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -11,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
+@Validated
 public class Address {
 		
 	@NotNull(message = "City should not be null")
