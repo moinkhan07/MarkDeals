@@ -58,10 +58,10 @@ public class UserController {
 	} 
 	
 	
-	@GetMapping("/userlogin")
-	public ResponseEntity<String> userLogin(@RequestBody UsersLogin usersLogin) throws UserException {
-		String result = userService.userLogin(usersLogin);
-		return new ResponseEntity<>(result,HttpStatus.OK);
+	@GetMapping("/userlogin/{email}/{pass}")
+	public ResponseEntity<Users> userLogin(@PathVariable("email") String email, @PathVariable("pass") String password) throws UserException {
+		Users result = userService.userLogin(email,password);
+		return new ResponseEntity<Users>(result,HttpStatus.OK);
 	}
 	
 

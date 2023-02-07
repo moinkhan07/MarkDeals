@@ -42,12 +42,13 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public String userLogin(UsersLogin usersLogin) throws UserException {
-		Users existingUsers = userRepository.findByUserEmail(usersLogin.getUserEmail());
-		if (existingUsers.getPassword().equals(usersLogin.getPassword())) {
-			return "User succesfully login";
+	public Users userLogin(String email,String password) throws UserException {
+		Users existingUsers = userRepository.findByUserEmail(email);
+		if (existingUsers.getPassword().equals(password)) {
+			return existingUsers;
 		}
-		throw new UserException("User details is wrong!");
+		throw new UserException("Wrong Credential");
+		
 	}
 
 }
