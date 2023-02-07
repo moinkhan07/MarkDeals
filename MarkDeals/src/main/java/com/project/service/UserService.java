@@ -14,6 +14,6 @@ public interface UserService {
 	
 	public List<Users> getAllUserDetails() throws UserException;
 	
-	public String userLogin(UsersLogin usersLogin) throws UserException;
+	public Users userLogin(String email,String password) throws UserException;
 
 }

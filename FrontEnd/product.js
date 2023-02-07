@@ -33,12 +33,10 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
         pprice.innerText = "₹ " + el.price;
         let pcategory = document.createElement("p");
         pcategory.innerText = el.category;
-        let pquantity = document.createElement("p");
-        pquantity.innerText = el.quantity;
         let addtocart = document.createElement("button")
         addtocart.innerText = "Add To Cart"
-        div.append(pimg,pname,pprice,pcategory,pquantity,addtocart);
+        div.append(pimg,pname,pprice,pcategory,addtocart);
         products.append(div);
       })
       
-    }
+  }
