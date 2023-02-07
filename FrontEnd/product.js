@@ -12,3 +12,33 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     });
 });
     // ===============================================
+
+    let getProduct = async()=>{
+      let res = await fetch("http://localhost:8888/products");
+      let data = await res.json();
+      appendData(data);
+      console.log(data);
+    }
+    getProduct();
+    let appendData = (data)=>{
+      let products = document.getElementById("productdiv");
+      products.innerHTML = null;
+      data.forEach((el)=>{
+        let div = document.createElement("div");
+        let pimg = document.createElement("img");
+        pimg.src = el.imageUrl;
+        let pname = document.createElement("p");
+        pname.innerText = el.name;
+        let pprice = document.createElement("p");
+        pprice.innerText = "₹ " + el.price;
+        let pcategory = document.createElement("p");
+        pcategory.innerText = el.category;
+        let pquantity = document.createElement("p");
+        pquantity.innerText = el.quantity;
+        let addtocart = document.createElement("button")
+        addtocart.innerText = "Add To Cart"
+        div.append(pimg,pname,pprice,pcategory,pquantity,addtocart);
+        products.append(div);
+      })
+      
+    }
