@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.exception.AdminException;
+import com.project.exception.UserException;
 import com.project.model.Admin;
 import com.project.model.AdminLoginDto;
+import com.project.model.Users;
 import com.project.repository.AdminRepository;
 
 @Service
@@ -25,15 +27,13 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public String loginAdmin(AdminLoginDto adminLoginDto) throws AdminException {
-		Admin existingAdmin = adminRepository.findByEmail(adminLoginDto.getEmail());
-		if (existingAdmin == null) {
-			throw new AdminException("Admin does not exist with email " + adminLoginDto.getEmail());
-		}else if (existingAdmin.getEmail().equals(adminLoginDto.getEmail()) && existingAdmin.getPassword().equals(adminLoginDto.getPassword())) {
-			return "Admin successfully login";
-		}else {
-			return "Please enter correct details!";
+	public Admin loginAdmin(String email,String password) throws AdminException {
+		Admin existingAdmin = adminRepository.findByEmail(email);
+        
+		if (existingAdmin.getPassword().equals(password)) {
+			return existingAdmin;
 		}
+		throw new AdminException("Wrong Credential"); 
 	}
 
 }
