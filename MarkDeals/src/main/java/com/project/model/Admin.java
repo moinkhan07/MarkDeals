@@ -1,5 +1,7 @@
 package com.project.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -21,6 +23,7 @@ public class Admin {
 	@Column(unique = true)
 	private String email;
 	
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
 	
 	@Embedded

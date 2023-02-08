@@ -3,7 +3,9 @@ package com.project.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +16,7 @@ import com.project.model.AdminLoginDto;
 import com.project.service.AdminService;
 
 @RestController
+@CrossOrigin
 public class AdminController {
 	
 	@Autowired
@@ -25,10 +28,10 @@ public class AdminController {
 		return new ResponseEntity<String>(result,HttpStatus.CREATED);
 	}
 
-	@GetMapping("/admins")
-	public ResponseEntity<String> loginAdmin(@RequestBody AdminLoginDto adminLoginDto) throws AdminException{
-		String result = adminService.loginAdmin(adminLoginDto);
-		return new ResponseEntity<String>(result,HttpStatus.OK);
+	@GetMapping("/admins/{email}/{pass}")
+	public ResponseEntity<Admin> loginAdmin(@PathVariable("email") String email,@PathVariable("pass") String pass) throws AdminException{
+		Admin result = adminService.loginAdmin(email,pass);
+		return new ResponseEntity<>(result,HttpStatus.OK);
  	}
 	
 	

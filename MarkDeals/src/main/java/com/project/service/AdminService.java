@@ -8,6 +8,6 @@ public interface AdminService {
 	
 	public String addAdmin(Admin admin) throws AdminException;
 	
-	public String loginAdmin(AdminLoginDto adminLoginDto) throws AdminException;
+	public Admin loginAdmin(String adminEmail,String password) throws AdminException;
 
 }
