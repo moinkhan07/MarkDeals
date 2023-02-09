@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkDeals - Shopping Cart</title>
+    <link rel="stylesheet" href="./cart.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="./logo.png" alt="">
+        </div>
+        <div id="searchbar">
+            <input type="text" placeholder="Search Product" id="search">
+        </div>
+        <div id="cart">
+            <img src="./cart.png" alt="">
+        </div>
+        <div id="profile">
+            <div class="dropdown_main_">
+                <div class="select_">
+                  <!-- <span class="selected_">M</span> -->
+                  <div class="selected_">M</div>
+                  <div class="caret_"></div>
+                </div>
+                <ul class="menu_2_">
+                  <li onclick="profile()" >Profile</li>
+                  <li id="logout" onclick="logout()">Logout</li>
+                </ul>
+              </div>
+        </div>
+       </nav>
+       <h1>Shopping Cart</h1>
+       <div id="cartmain">
+        <div id="productviewdiv">
+            <div id="perproductdiv">
+                <div id="productimage">
+                    <img src="https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c2hpcnR8ZW58MHx8MHx8&w=1000&q=80" alt="">
+                </div>
+                <div id="productdetails">
+                    <p class="title">Fashionable Shirt</p>
+                    <p class="category">Category : Casual</p>
+                    <p class="rating">Rating : 4.5</p>
+                    <button class="removebtn">Remove</button>
+                </div>
+                <div id="productprice">
+                    <div id="price">
+                        <label for="">Quantity</label>
+                        <input type="number" name="quantity" id="quantity">
+                        <p class="pPrice"><s>₹1200</s> ₹1080</p>
+                        <p class="discount">You Save 10%</p>
+                    </div>
+                </div>
+            </div>
+            <div id="perproductdiv">
+                <div id="productimage">
+                    <img src="https://www.fuaark.com/image/cache/catalog/tshirt/Greatest%20Oversized%20Tshirts/Fuaark-Greatest-Oversized-Tshirt-Blue-1-448x672.jpg" alt="">
+                </div>
+                <div id="productdetails">
+                    <p class="title">Fashionable T-shirt</p>
+                    <p class="category">Category : Casual</p>
+                    <p class="rating">Rating : 4.2</p>
+                    <button class="removebtn">Remove</button>
+                </div>
+                <div id="productprice">
+                    <div id="price">
+                        <label for="">Quantity</label>
+                        <input type="number" name="quantity" id="quantity">
+                        <p class="pPrice"><s>₹720</s> ₹800</p>
+                        <p class="discount">You Save 10%</p>
+                    </div>
+                </div>
+            </div>
+            <div id="perproductdiv">
+                <div id="productimage">
+                    <img src="https://www.fuaark.com/image/cache/catalog/tshirt/Greatest%20Oversized%20Tshirts/Fuaark-Greatest-Oversized-Tshirt-Blue-1-448x672.jpg" alt="">
+                </div>
+                <div id="productdetails">
+                    <p class="title">Fashionable T-shirt</p>
+                    <p class="category">Category : Casual</p>
+                    <p class="rating">Rating : 4.2</p>
+                    <button class="removebtn">Remove</button>
+                </div>
+                <div id="productprice">
+                    <div id="price">
+                        <label for="">Quantity</label>
+                        <input type="number" name="quantity" id="quantity">
+                        <p class="pPrice"><s>₹720</s> ₹800</p>
+                        <p class="discount">You Save 10%</p>
+                    </div>
+                </div>
+            </div>
+            <div id="perproductdiv">
+                <div id="productimage">
+                    <img src="https://www.fuaark.com/image/cache/catalog/tshirt/Greatest%20Oversized%20Tshirts/Fuaark-Greatest-Oversized-Tshirt-Blue-1-448x672.jpg" alt="">
+                </div>
+                <div id="productdetails">
+                    <p class="title">Fashionable T-shirt</p>
+                    <p class="category">Category : Casual</p>
+                    <p class="rating">Rating : 4.2</p>
+                    <button class="removebtn">Remove</button>
+                </div>
+                <div id="productprice">
+                    <div id="price">
+                        <label for="">Quantity</label>
+                        <input type="number" name="quantity" id="quantity">
+                        <p class="pPrice"><s>₹720</s> ₹800</p>
+                        <p class="discount">You Save 10%</p>
+                    </div>
+                </div>
+            </div>
+            <div id="perproductdiv">
+                <div id="productimage">
+                    <img src="https://www.fuaark.com/image/cache/catalog/tshirt/Greatest%20Oversized%20Tshirts/Fuaark-Greatest-Oversized-Tshirt-Blue-1-448x672.jpg" alt="">
+                </div>
+                <div id="productdetails">
+                    <p class="title">Fashionable T-shirt</p>
+                    <p class="category">Category : Casual</p>
+                    <p class="rating">Rating : 4.2</p>
+                    <button class="removebtn">Remove</button>
+                </div>
+                <div id="productprice">
+                    <div id="price">
+                        <label for="">Quantity</label>
+                        <input type="number" name="quantity" id="quantity">
+                        <p class="pPrice"><s>₹720</s> ₹800</p>
+                        <p class="discount">You Save 10%</p>
+                    </div>
+                </div>
+            </div>
+            <div id="perproductdiv">
+                <div id="productimage">
+                    <img src="https://www.fuaark.com/image/cache/catalog/tshirt/Greatest%20Oversized%20Tshirts/Fuaark-Greatest-Oversized-Tshirt-Blue-1-448x672.jpg" alt="">
+                </div>
+                <div id="productdetails">
+                    <p class="title">Fashionable T-shirt</p>
+                    <p class="category">Category : Casual</p>
+                    <p class="rating">Rating : 4.2</p>
+                    <button class="removebtn">Remove</button>
+                </div>
+                <div id="productprice">
+                    <div id="price">
+                        <label for="">Quantity</label>
+                        <input type="number" name="quantity" id="quantity">
+                        <p class="pPrice"><s>₹800</s> ₹720</p>
+                        <p class="discount">You Save 10%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="totalamountdiv">
+            <div id="totalamountitle">Order Summary</div>
+            <hr class="line_">
+            <div class="subtotal">
+                <p class="sub">Subtotal:</p>
+                <p>₹10000.00</p>
+            </div>
+            <div class="subtotal">
+                <p class="sub">Shipping Charges:</p>
+                <p>₹120.00</p>
+            </div>
+            <div class="subtotal">
+                <p class="sub">Tax:</p>
+                <p>₹380.00</p>
+            </div>
+            <hr class="line_2">
+            <div id="total">
+                <p id="tot">Total</p>
+                <p id="final">₹10500.00</p>
+            </div>
+            <button id="checkoutbtn">Checkout</button>
+            <p id="secure"><img src="./lock.png" alt=""> Secure Checkout</p>
+        </div>
+       </div>
+
+</body>
+</html>
+<script src="./cart.js"></script>
