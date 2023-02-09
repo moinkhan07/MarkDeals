@@ -1,5 +1,12 @@
 package com.project.repository;
 
-public interface CartRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.project.model.Cart;
+@Repository
+public interface CartRepository extends JpaRepository<Cart, Integer>{
+	
+	public Cart findByUsers(Integer uId);
 
 }
