@@ -1,0 +1,217 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins",sans-serif;
+  box-sizing: border-box;
+}
+#navbar{
+  width: 100%;
+  height: 80px;
+  background-color: rgb(136,61,26);
+  top: 0;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  border-bottom: 1px solid white;
+}
+#logo{
+  width: 6%;
+  height: 70px;
+  margin-left: 20px;
+}
+#logo>img{
+  width: 100%;
+  border: 2px dotted white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+#searchbar{
+  width: 60%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+}
+#search{
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 17px;
+}
+#cart{
+  width: 5%;
+  height: 60px;
+  /* border: 1px solid white; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+#cart>img{
+  width: 80%;
+  cursor: pointer;
+}
+#cart>img:hover{
+  width: 84%;
+}
+#profile{
+  width: 10%;
+  height: 60px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown_main_ {
+  position: relative;
+  margin: auto;
+}
+.dropdown_main_ * {
+  box-sizing: border-box;
+}
+.select_ {
+  color: black;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* padding: 15px 0; */
+  cursor: pointer;
+}
+.selected_{
+  color: rgb(136,61,26);
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  /* border-radius: 50%; */
+  /* border: 1px solid white; */
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 25px;
+  background-color: white;
+  /* margin-left: 50px; */
+}
+.caret_ {
+  width: 0;
+  height: 0;
+  /* border-left: 6px solid transparent; */
+  /* border-right: 6px solid transparent; */
+  /* border-top: 7px solid rgb(0, 0, 0); */
+  /* transition: 0.3s; */
+}
+.caret_-rotate {
+  transform: rotate(180deg);
+}
+.menu_2_ {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  position: absolute;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  left: 50%;
+  width: 200px;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+  margin-top: 5px;
+}
+.menu_2_ li {
+  width: 100%;
+  padding: 0.7em 0;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  text-align: center;
+  cursor: pointer;
+  color:rgb(136,61,26);
+}
+.menu_2_ li:hover {
+  background-color: rgb(230, 230, 230);
+}
+#logout{
+  background-color: rgb(136,61,26);
+  color: rgb(255, 255, 255);
+}
+.menu_2_-open {
+  display: block;
+  opacity: 1;
+}
+
+/* =========================================== Navbar End ======================================*/
+#mainBody{
+  width: 100%;
+  /* height: 87vh; */
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+#sidebar{
+  width: 18%;
+  height: 88vh;
+  background-color:  rgb(136,61,26);;
+  top: 10;
+  position:fixed;
+  border-right: 1px solid white;
+}
+#productdiv{
+  width: 100%;
+  height: auto;
+  margin-left: 18.5%;
+  padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: auto;
+}
+#productdiv>div{
+  width: 95%;
+  height: auto;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: white;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: center;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+#productdiv>div>img{
+  width: 100%;
+  height: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#productdiv>div>p{
+  font-size: 18px;
+  padding-top: 5px;
+  color:rgb(136,61,26);
+}
+#productdiv>div>button{
+  width: 130px;
+  height: 35px;
+  margin-top: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  color: white;
+  background-color:rgb(136,61,26);
+}
+#productdiv>div>button:hover{
+  color:rgb(136,61,26);
+  background-color: white;
+  border: 3px dotted rgb(136,61,26);
+  font-size: 19px;
+}
