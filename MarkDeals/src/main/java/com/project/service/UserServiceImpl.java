@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.exception.UserException;
+import com.project.model.Cart;
 import com.project.model.Users;
 import com.project.model.UsersLogin;
 import com.project.repository.UserRepository;
@@ -17,6 +18,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public Users registerUser(Users user) throws UserException {
+		user.setCart(new Cart());
 		return userRepository.save(user);
 	}
 
@@ -42,9 +44,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Users userLogin(String email,String password) throws UserException {
-		Users existingUsers = userRepository.findByUserEmail(email);
-		if (existingUsers.getPassword().equals(password)) {
+	public Users userLogin(UsersLogin usersLogin) throws UserException {
+		Users existingUsers = userRepository.findByUserEmail(usersLogin.getUserEmail());
+		if (existingUsers.getPassword().equals(usersLogin.getPassword())) {
 			return existingUsers;
 		}
 		throw new UserException("Wrong Credential");

@@ -7,7 +7,7 @@ import com.project.model.Users;
 
 public interface CartService {
 	
-	public Cart addProductToCart(Product product, Users users)throws CartException;
+	public Cart addProductToCart(Integer pid, Users users)throws CartException;
 		
 
 }
