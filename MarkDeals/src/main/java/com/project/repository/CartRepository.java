@@ -7,6 +7,7 @@ import com.project.model.Cart;
 @Repository
 public interface CartRepository extends JpaRepository<Cart, Integer>{
 	
-	public Cart findByUsers(Integer uId);
+	public Cart findByCartId(Integer cartId);
+	
 
 }

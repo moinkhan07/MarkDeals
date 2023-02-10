@@ -35,8 +35,26 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
         pcategory.innerText = el.category;
         let addtocart = document.createElement("button")
         addtocart.innerText = "Add To Cart"
+        addtocart.onclick = ()=>{
+          addProductToCart(el);
+        }
         div.append(pimg,pname,pprice,pcategory,addtocart);
         products.append(div);
       })
       
+  }
+
+  const addProductToCart = async (productData)=>{
+    let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
+    console.log(productData);
+    console.log(userDataFromLs);
+    let res = await fetch(`http://localhost:8888/addtocart/${productData.productId}`, {
+        method: "POST",
+        body: JSON.stringify(userDataFromLs),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      let data = await res.json();
+      console.log(data);
   }

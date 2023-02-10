@@ -1,4 +1,5 @@
 package com.project.model;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -24,9 +25,7 @@ public class Cart {
 	private Integer cartId;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Product> product;
+	private List<Product> product = new ArrayList<>();
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private Users users;
-
+	private Double totalAmount;
 }

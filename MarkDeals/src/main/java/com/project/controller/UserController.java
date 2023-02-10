@@ -17,6 +17,8 @@ import com.project.model.Users;
 import com.project.model.UsersLogin;
 import com.project.service.UserService;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 
 @RestController
@@ -29,8 +31,7 @@ public class UserController {
 	@PostMapping("/users")
 	public ResponseEntity<Users> saveUsersHandler(@Valid @RequestBody Users users) throws UserException{
 		
-		Users registeredUser= userService.registerUser(users);
-		
+		Users registeredUser= userService.registerUser(users);		
 		return new ResponseEntity<>(registeredUser,HttpStatus.ACCEPTED);
 		
 	}
@@ -58,10 +59,11 @@ public class UserController {
 	} 
 	
 	
-	@GetMapping("/userlogin/{email}/{pass}")
-	public ResponseEntity<Users> userLogin(@PathVariable("email") String email, @PathVariable("pass") String password) throws UserException {
-		Users result = userService.userLogin(email,password);
+	@PostMapping("/userlogin")
+	public ResponseEntity<Users> userLogin(@RequestBody UsersLogin usersLogin) throws UserException {
+		Users result = userService.userLogin(usersLogin);
 		return new ResponseEntity<Users>(result,HttpStatus.OK);
+		
 	}
 	
 

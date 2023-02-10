@@ -22,15 +22,25 @@ const registeruser = async () => {
       },
     });
     let data = await res.json();
+    let d = localStorage.setItem("userData", JSON.stringify(data));
     console.log(data);
+    console.log(d);
   };
   
 const loginuser = async ()=>{
-  let email = document.getElementById("loginemail").value;
-  let pass = document.getElementById("loginpass").value;
-  let res = await fetch(`http://localhost:8888/userlogin/${email}/${pass}`);
-  let data = await res.json();
-  console.log(data);
+  let userlogindata ={
+  userEmail :document.getElementById("loginemail").value,
+  password : document.getElementById("loginpass").value,
+  }
+  let res = await fetch("http://localhost:8888/userlogin", {
+      method: "POST",
+      body: JSON.stringify(userlogindata),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await res.json();
+    console.log(data);
   if(data.message !== "Wrong Credential"){
     alert("Successfully login!");
     window.location.href="./product.html";

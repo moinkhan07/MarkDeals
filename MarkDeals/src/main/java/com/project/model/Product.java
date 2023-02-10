@@ -1,5 +1,12 @@
 package com.project.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.core.JsonToken;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
+import com.fasterxml.jackson.databind.jsonschema.JsonSerializableSchema;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,18 +25,25 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer productId;
+	
 	@NotNull(message = "Image url should not be null")
 	private String imageUrl;
+	
 	@NotNull(message = "Product name should not be null")
 	private String name;
+	
 	@NotNull(message = "Product price should not be null")
 	private Integer price;
+	
 	@NotNull(message = "Product category should not be null")
 	private String category;
+	
 	@NotNull(message = "Product rating should not be null")
 	private String rating;
+	
 	@NotNull(message = "Product quantity should not be null")
 	private Integer quantity;
+	
 	@NotNull(message = "Product description should not be null")
 	private String description;
 
