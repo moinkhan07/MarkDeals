@@ -33,8 +33,8 @@ public class CartController {
 	
 	
 	@GetMapping("/cartproducts/{uId}")
-	public ResponseEntity<List<Product>> getAllProducts(@PathVariable("uId") Integer uId) throws CartException{
-		List<Product> listOfProductsInTheCartByUserId = cartService.viewAllProductByCartId(uId);
+	public ResponseEntity<List<Product>> getAllProducts(@PathVariable("uId") String userEmail) throws CartException{
+		List<Product> listOfProductsInTheCartByUserId = cartService.viewAllProductByCartId(userEmail);
 		return new ResponseEntity<List<Product>>(listOfProductsInTheCartByUserId,HttpStatus.OK);
 	}
 

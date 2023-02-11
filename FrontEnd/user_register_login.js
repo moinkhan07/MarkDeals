@@ -22,9 +22,8 @@ const registeruser = async () => {
       },
     });
     let data = await res.json();
-    let d = localStorage.setItem("userData", JSON.stringify(data));
     console.log(data);
-    console.log(d);
+    // console.log(d);
   };
   
 const loginuser = async ()=>{
@@ -43,6 +42,7 @@ const loginuser = async ()=>{
     console.log(data);
   if(data.message !== "Wrong Credential"){
     alert("Successfully login!");
+    localStorage.setItem("userData", JSON.stringify(data));
     window.location.href="./product.html";
   }else{
     alert("Wrong Credential!");
