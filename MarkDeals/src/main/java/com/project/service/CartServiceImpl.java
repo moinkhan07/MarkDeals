@@ -1,5 +1,6 @@
 package com.project.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import com.project.model.Product;
 import com.project.model.Users;
 import com.project.repository.CartRepository;
 import com.project.repository.ProductRepository;
+import com.project.repository.UserRepository;
 
 @Service
 public class CartServiceImpl implements CartService{
@@ -20,6 +22,9 @@ public class CartServiceImpl implements CartService{
 	
 	@Autowired
 	private ProductRepository productRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	@Override
 	public Cart addProductToCart(Integer pid, Users users) throws CartException {
@@ -28,6 +33,19 @@ public class CartServiceImpl implements CartService{
 	     Product product = optProduct.get();
 		 cart.getProduct().add(product);
 		 return cartRepository.save(cart);
+	}
+
+	@Override
+	public List<Product> viewAllProductByCartId(Integer userId) throws CartException {
+		Optional<Users> optUser = userRepository.findById(userId);
+		if (optUser.isPresent()) {
+		Users currentUser = optUser.get();
+		Cart cart = cartRepository.findByCartId(currentUser.getCart().getCartId());
+		List<Product> listOfProductsInCart = cart.getProduct();
+		return listOfProductsInCart;
+		}else {
+			throw new CartException("No Such Cart exist!");
+		}
 	}
 
 	

@@ -169,7 +169,7 @@
     padding-bottom: 30px;
     /* border: 2px dotted black; */
   }
-  #perproductdiv{
+  .perproductdiv{
     width: 80%;
     height: 200px;
     /* border: 2px solid brown; */
@@ -182,33 +182,33 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  #productimage{
+  .productimage{
     width: 18%;
     height: 100%;
     /* border: 1px solid darkred; */
     display: flex;
     justify-content: flex-end;
   }
-  #productimage>img{
+  .productimage>img{
     width: 100%;
     height: 100%;
     border-radius: 10px;
   }
-  #productdetails{
+  .productdetails{
     width: 40%;
     height: 100%;
   }
-  #productdetails>.title{
+  .productdetails>.title{
     font-size: 22px; 
   }
-  #productdetails>.category{
+  .productdetails>.category{
     padding-top: 15px;
     padding-bottom: 8px;
   }
-  #productdetails>.rating{
+  .productdetails>.rating{
     padding-bottom: 30px;
   }
-  #productdetails>.removebtn{
+  .productdetails>.removebtn{
     width: 80px;
     height: 30px;
     font-size: 16px;
@@ -219,40 +219,44 @@
     border: none;
     border-radius: 10px;
   }
-  #productdetails>.removebtn:hover{
+  .productdetails>.removebtn:hover{
     background-color: white;
     color: rgb(136,61,26);
     border: 1px solid rgb(136,61,26);
   }
-  #productprice{
+  .productprice{
     width: 30%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
   }
-  #price{
+  .price{
     width: 55%;
     height: 100%;
   }
-  #price>label{
+  .price>label{
     font-size: 14px;
     display: block;
     margin-top: 10px;
     text-align: center;
   }
-  #quantity{
+  .quantity{
     width: 70%;
     height: 30px;
     outline: none;
     display: block;
     margin: auto;
   }
-  #price>.pPrice{
-    padding-top: 25px;
-    text-align: center;
-    font-size:18px;
+  .pricingdiv{
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 25px;
+    font-size: 18px;
   }
-  #price>.discount{
+  .price>.discount{
     color: rgb(251, 59, 59);
     font-size: 12px;
     text-align: center;
