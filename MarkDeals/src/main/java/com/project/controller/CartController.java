@@ -1,9 +1,12 @@
 package com.project.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +29,13 @@ public class CartController {
 	public ResponseEntity<Cart> addProductToCart(@PathVariable("pid") Integer pid,@RequestBody Users users) throws CartException{
 		Cart addedProduct = cartService.addProductToCart(pid, users);
 		return new ResponseEntity<Cart>(addedProduct,HttpStatus.CREATED);
+	}
+	
+	
+	@GetMapping("/cartproducts/{uId}")
+	public ResponseEntity<List<Product>> getAllProducts(@PathVariable("uId") Integer uId) throws CartException{
+		List<Product> listOfProductsInTheCartByUserId = cartService.viewAllProductByCartId(uId);
+		return new ResponseEntity<List<Product>>(listOfProductsInTheCartByUserId,HttpStatus.OK);
 	}
 
 }
