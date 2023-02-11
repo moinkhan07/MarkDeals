@@ -58,3 +58,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
       let data = await res.json();
       console.log(data);
   }
+
+  let cartPage=()=>{
+    window.location.href="./cart.html";
+  }

@@ -15,7 +15,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
 
     let uId = JSON.parse(localStorage.getItem("userData"));
     let getCartData = async()=>{
-      let res = await fetch(`http://localhost:8888/cartproducts/${uId.userId}`);
+      let res = await fetch(`http://localhost:8888/cartproducts/${uId.userEmail}`);
       let data = await res.json();
       appendData(data);
       console.log(data);
@@ -99,7 +99,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     subtotaltitle.innerText = "Subtotal:"
     subtotaltitle.setAttribute("class","sub");
     let subAmt = document.createElement("p");
-    subAmt.innerText ="₹"+subtotalamount + ".00";
+    subAmt.innerText ="₹"+subtotalamount ;
     subTotal1.append(subtotaltitle,subAmt);
 
 
@@ -109,7 +109,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     subtotaltitleship.innerText = "Shipping Charges:"
     subtotaltitleship.setAttribute("class","sub");
     let subamtwithshipcharges = document.createElement("p");
-    subamtwithshipcharges.innerText ="₹"+ 120 +".00";
+    subamtwithshipcharges.innerText ="₹"+ 120;
     subTotal2.append(subtotaltitleship,subamtwithshipcharges);
 
 
@@ -119,7 +119,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     subtotaltitletax.innerText = "1% GST On Subtotal:"
     subtotaltitletax.setAttribute("class","sub");
     let subamtwithtax = document.createElement("p");
-    subamtwithtax.innerText ="₹"+(subtotalamount * 1 / 100) +".00";
+    subamtwithtax.innerText ="₹"+(subtotalamount * 1 / 100);
     subTotal3.append(subtotaltitletax,subamtwithtax);
 
     let line2 = document.createElement("hr");
@@ -131,7 +131,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     totalptag.innerText = "Total:";
     totalptag.setAttribute("id","tot");
     let finalamount = document.createElement("p");
-    finalamount.innerText = "₹"+(subtotalamount + 120 + (subtotalamount * 1 / 100)) +".00";
+    finalamount.innerText = "₹"+(subtotalamount + 120 + (subtotalamount * 1 / 100));
     finalamount.setAttribute("id","final");
     finalamtdiv.append(totalptag,finalamount);
 
