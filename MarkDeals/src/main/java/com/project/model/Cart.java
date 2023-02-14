@@ -29,7 +29,7 @@ public class Cart {
 	private Users user;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "userId")
+//	@JoinColumn(name = "userId")
 	private List<Product> product = new ArrayList<>();
 	
 	private Double totalAmount;
