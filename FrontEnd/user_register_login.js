@@ -14,7 +14,7 @@ const registeruser = async () => {
       
     };
   
-    let res = await fetch("http://localhost:8888/users", {
+    let res = await fetch("https://happy-war-production.up.railway.app/users", {
       method: "POST",
       body: JSON.stringify(userdata),
       headers: {
@@ -31,7 +31,7 @@ const loginuser = async ()=>{
   userEmail :document.getElementById("loginemail").value,
   password : document.getElementById("loginpass").value,
   }
-  let res = await fetch("http://localhost:8888/userlogin", {
+  let res = await fetch("https://happy-war-production.up.railway.app/userlogin", {
       method: "POST",
       body: JSON.stringify(userlogindata),
       headers: {
