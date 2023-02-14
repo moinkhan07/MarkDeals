@@ -13,9 +13,10 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
 });
     // ===============================================
 
-    let uId = JSON.parse(localStorage.getItem("userData"));
+    let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
+    console.log(userDataFromLs)
     let getCartData = async()=>{
-      let res = await fetch(`https://markdeals.up.railway.app/cartproducts/${uId.userEmail}`);
+      let res = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userId}`);
       let data = await res.json();
       // appendData(data.product);
       console.log(data);
