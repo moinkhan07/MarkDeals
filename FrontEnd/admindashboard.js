@@ -10,20 +10,6 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
       caret_2.classList.toggle("caret_-rotate");
       menu_2.classList.toggle("menu_2_-open");
     });
-    // options_2.forEach((op) => {
-    //     op.addEventListener("click", () => {
-    //     selected_2.innerText = op.innerText;
-
-    //     select_2.classList.remove("select_-clicked");
-        
-    //     caret_2.classList.remove("caret_-rotate");
-    //     menu_2.classList.remove("menu_2_-open");
-    //     options_2.forEach((op) => {
-    //       op.classList.remove("active");
-    //     });
-    //     op.classList.add("active");
-    //   });
-    // });
   });
 
 //   ------------------------ Body part --------------------
@@ -80,7 +66,7 @@ const addProduct = async () => {
     description: document.getElementById("description").value,
   };
 
-  let res = await fetch("http://localhost:8888/products", {
+  let res = await fetch("https://markdeals.up.railway.app/products", {
     method: "POST",
     body: JSON.stringify(add_item_data),
     headers: {
@@ -93,7 +79,7 @@ const addProduct = async () => {
 };
 
 let getProduct = async()=>{
-  let res = await fetch("http://localhost:8888/products");
+  let res = await fetch("https://markdeals.up.railway.app/products");
   let data = await res.json();
   appendData(data);
   // console.log(data);
