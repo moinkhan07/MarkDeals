@@ -32,3 +32,21 @@ let cod = ()=>{
         alert("Checkbox not checked!");
     }
 }
+
+const cartdetails = async ()=>{
+    let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
+    let paymentData={
+        users : userDataFromLs,
+        paymentType : "Card",
+    }
+    console.log(userDataFromLs);
+    let res = await fetch("https://markdeals.up.railway.app/savepayment", {
+        method: "POST",
+        body: JSON.stringify(paymentData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      let data = await res.json();
+      console.log(data);
+  }
