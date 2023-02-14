@@ -39,7 +39,6 @@ public class CartServiceImpl implements CartService{
 	public List<Product> viewAllProductByCartId(String userEmail) throws CartException {
 		Users optUser = userRepository.findByUserEmail(userEmail);
 		if (optUser != null) {
-//		Users currentUser = optUser.get();
 		Cart cart = cartRepository.findByCartId(optUser.getCart().getCartId());
 		List<Product> listOfProductsInCart = cart.getProduct();
 		return listOfProductsInCart;
