@@ -1,6 +1,5 @@
 package com.project.model;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +18,7 @@ public class Payment {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer paymentId;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Users users;
 
 	private String paymentType;
