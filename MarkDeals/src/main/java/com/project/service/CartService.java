@@ -11,7 +11,7 @@ public interface CartService {
 	
 	public Cart addProductToCart(Integer pid, Users users)throws CartException;
 	
-	public List<Product> viewAllProductByCartId(String userEmail) throws CartException;
+	public List<Product> viewAllProductByCartId(Integer uId) throws CartException;
 		
 
 }

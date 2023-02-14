@@ -36,10 +36,11 @@ public class CartServiceImpl implements CartService{
 	}
 
 	@Override
-	public List<Product> viewAllProductByCartId(String userEmail) throws CartException {
-		Users optUser = userRepository.findByUserEmail(userEmail);
-		if (optUser != null) {
-		Cart cart = cartRepository.findByCartId(optUser.getCart().getCartId());
+	public List<Product> viewAllProductByCartId(Integer uId) throws CartException {
+		Optional<Users> optUser = userRepository.findById(uId);
+		if (optUser.isPresent()) {
+			Users users = optUser.get();
+		Cart cart = cartRepository.findByCartId(users.getCart().getCartId());
 		List<Product> listOfProductsInCart = cart.getProduct();
 		return listOfProductsInCart;
 		}else {
