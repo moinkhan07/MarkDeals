@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +25,7 @@ public class Cart {
 	private Integer cartId;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@Column(name = "userId")
 	private List<Product> product = new ArrayList<>();
 	
 	private Double totalAmount;
