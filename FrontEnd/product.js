@@ -14,7 +14,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     // ===============================================
 
     let getProduct = async()=>{
-      let res = await fetch("http://localhost:8888/products");
+      let res = await fetch("https://markdeals.up.railway.app/products");
       let data = await res.json();
       appendData(data);
       console.log(data);
@@ -48,7 +48,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
     console.log(productData);
     console.log(userDataFromLs);
-    let res = await fetch(`http://localhost:8888/addtocart/${productData.productId}`, {
+    let res = await fetch(`https://markdeals.up.railway.app/addtocart/${productData.productId}`, {
         method: "POST",
         body: JSON.stringify(userDataFromLs),
         headers: {
