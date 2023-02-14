@@ -14,7 +14,7 @@ const registeruser = async () => {
       
     };
   
-    let res = await fetch("https://happy-war-production.up.railway.app/users", {
+    let res = await fetch("https://markdeals.up.railway.app/users", {
       method: "POST",
       body: JSON.stringify(userdata),
       headers: {
@@ -23,7 +23,6 @@ const registeruser = async () => {
     });
     let data = await res.json();
     console.log(data);
-    // console.log(d);
   };
   
 const loginuser = async ()=>{
@@ -31,7 +30,7 @@ const loginuser = async ()=>{
   userEmail :document.getElementById("loginemail").value,
   password : document.getElementById("loginpass").value,
   }
-  let res = await fetch("https://happy-war-production.up.railway.app/userlogin", {
+  let res = await fetch("https://markdeals.up.railway.app/userlogin", {
       method: "POST",
       body: JSON.stringify(userlogindata),
       headers: {

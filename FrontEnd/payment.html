@@ -21,24 +21,53 @@
         <hr>
         <div class="tabs__body">
             <div class="tabs_content is_active table_section">
-              <div class="body_section">
-                <h2>Confirm Purchase</h2>
-                <input type="text"   id="ownername" placeholder="Name as per card">
-                <input type="number" id="cardnumber" placeholder="Card Number">
-                <input type="text"  id="month_year" placeholder="MM/YY" >
-                <input type="password" id="cvvnumber" placeholder="CVV">
-                <button>Pay</button>
-              </div>
+                <div class="outer">
+                    <div class="body_section">
+                        <div class="title_logo">
+                            <div class="title">
+                                <p>Card Details</p>
+                            </div>
+                            <div class="logo">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WghiloPxxLe7x-RZha9ib3b-YW7l_eWZFw&usqp=CAU" alt="">
+                            </div>
+                        </div>
+                        <label for="">Your Card Number<span>*</span></label>
+                        <input type="text" id="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+                        <label for="" id="expirydate">Expiry Date<span>*</span></label>
+                        <input type="number" id="month" placeholder="Month">
+                        <input type="number" id="year" placeholder="Year">
+                    </div>
+                     <div id="cvv_div">
+                        <label id="cvv_label" for="">CVV<span>*</span></label>
+                        <input type="password" id="cvv" placeholder="XXX">
+                     </div>
+                </div>
+                <button class="paynowbtn">Pay Now</button>
             </div>
             <div class="tabs_content">
-                <div class="body_section"></div>
+                <div class="upi_section">
+                    <p>Enter Your VPA (UPI Id)</p>
+                    <input type="text" placeholder="UPI ID" id="upi_id">
+                    <div id="amount_div">
+                        <p>Amount: </p>
+                        <p>₹5000</p>
+                    </div>
+                    <button class="paynowbtn">Pay Now</button>
+                </div>
             </div>
             <div class="tabs_content">
-                <div class="body_section"></div>
-               
+                <div class="barcode_section">
+                    <img src="./scan.png" alt="barcode">
+                </div>
+                <input type="password" placeholder="OTP" id="otp">
+                <button class="paynowbtn" onclick="barcode()">Pay Now</button>
             </div>
             <div class="tabs_content">
-                <div class="body_section"></div>
+                <div class="cod_section">
+                    <input type="checkbox" id="cod">
+                    <p>Cash On Delivery/Pay On Delivery</p>
+                </div>
+                <button class="paynowbtn" onclick="cod()">Order Place</button>
             </div>
         </div>
 </body>
