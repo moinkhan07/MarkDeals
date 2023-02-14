@@ -2,6 +2,8 @@ package com.project.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -26,10 +28,11 @@ public class Cart {
 	private Integer cartId;
 	
 	@OneToOne
+	@JsonIgnore
 	private Users user;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//	@JoinColumn(name = "userId")
+	@JoinColumn(name = "userId")
 	private List<Product> product = new ArrayList<>();
 	
 	private Double totalAmount;
