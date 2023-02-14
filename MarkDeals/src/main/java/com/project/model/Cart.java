@@ -26,13 +26,8 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cartId;
-	
-	@OneToOne
-	@JsonIgnore
-	private Users user;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "userId")
+
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Product> product = new ArrayList<>();
 	
 	private Double totalAmount;
