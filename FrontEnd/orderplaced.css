@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(136,61,26);
+}
+#order_success{
+    width: 45%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    margin: auto;
+    margin-top: 80px;
+    border-radius: 20px;
+    padding: 50px 0;
+}
+#order_success>img{
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+#order_success>h1{
+    text-align: center;
+    padding-bottom: 20px;
+    color: rgb(59, 59, 59);
+}
+#order_success>h2{
+    text-align: center;   
+    color: rgb(59, 59, 59);
+}
+#continue_shopping{
+    display: block;
+    width: 250px;
+    height: 50px;
+    border-radius: 15px;
+    outline: none;
+    margin: auto;
+    margin-top: 50px;
+    border: none;
+    color: white;
+    background-color:  rgb(136,61,26);
+    cursor: pointer;
+    font-size: 20px;
+}
+#continue_shopping:hover{
+    background-color: white;
+    color: rgb(136,61,26);
+    border: 2px solid rgb(136,61,26);
+}

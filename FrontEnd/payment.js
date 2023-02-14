@@ -13,3 +13,22 @@ t.forEach((tab,index)=>{
         t[index].classList.add("is_active");
     });
 });
+
+let barcode =()=>{
+    let passcode = "789789";
+    let input = document.getElementById("otp");
+    if(passcode == input.value){
+        alert("Payment Successfully!");
+    }else{
+        alert("Enter correct OTP!");
+    }
+}
+
+let cod = ()=>{
+    let checkbox = document.getElementById("cod").checked;
+    if(checkbox){
+        alert("Order Placed!")
+    }else{
+        alert("Checkbox not checked!");
+    }
+}
