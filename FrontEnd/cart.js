@@ -145,3 +145,8 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     totalamountdiv.append(totalamounttitle,line,subTotal1,subTotal2,subTotal3,line2,finalamtdiv,checkoutbtn);
 
   }
+
+
+let checkout = ()=>{
+    window.location.href = "./payment.html";
+}
