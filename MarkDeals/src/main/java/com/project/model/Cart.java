@@ -31,7 +31,7 @@ public class Cart {
 	@JsonIgnore
 	private Users user;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "userId")
 	private List<Product> product = new ArrayList<>();
 	
