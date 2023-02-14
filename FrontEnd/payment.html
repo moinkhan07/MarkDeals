@@ -9,7 +9,38 @@
     <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
 </head>
 <body>
-    <h1>Payment Page</h1>
+    <div id="header"><h1>Payment Page</h1></div>
+    <div class="tabs__content">
+        <!-- <h2 class="tabs__title">Products</h2> -->
+        <div class="operationofpayments">
+            <li class="tabs_toggle is_active">Debit/Credit Card</li>
+            <li class="tabs_toggle">UPI</li>
+            <li class="tabs_toggle">Scanner</li>
+            <li class="tabs_toggle">COD</li>
+        </div>
+        <hr>
+        <div class="tabs__body">
+            <div class="tabs_content is_active table_section">
+              <div class="body_section">
+                <h2>Confirm Purchase</h2>
+                <input type="text"   id="ownername" placeholder="Name as per card">
+                <input type="number" id="cardnumber" placeholder="Card Number">
+                <input type="text"  id="month_year" placeholder="MM/YY" >
+                <input type="password" id="cvvnumber" placeholder="CVV">
+                <button>Pay</button>
+              </div>
+            </div>
+            <div class="tabs_content">
+                <div class="body_section"></div>
+            </div>
+            <div class="tabs_content">
+                <div class="body_section"></div>
+               
+            </div>
+            <div class="tabs_content">
+                <div class="body_section"></div>
+            </div>
+        </div>
 </body>
 </html>
 <script src="./payment.js"></script>

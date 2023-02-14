@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: rgb(244, 244, 244);
+  }
+#header{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(136,61,26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    position: sticky;
+}
+#header>h1{
+    color: white;
+}
+.operationofpayments{
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+}
+.operationofpayments>li{
+    width: 20%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.tabs_toggle.is_active{
+    box-shadow: rgba(57, 20, 20, 0.35) 0px -50px 36px -28px inset;
+}
+.tabs_content{
+    display: none;
+}
+.tabs_content.is_active{
+    display: block;
+}
+/* =======================================Body section starts here========================== */
+.body_section{
+    width: 30%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: auto;
+    margin-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    background-color: white;
+}
+.body_section>h2{
+    text-align: center;
+}
+input{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+#month_year{
+    width: 20%;
+    text-align: center;
+}
+#cvvnumber{
+    width: 20%;
+    text-align: center;
+}
