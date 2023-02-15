@@ -50,6 +50,6 @@ public class Users {
 	@Valid
 	private Address address;
 	
-	@OneToOne(cascade = CascadeType.ALL,mappedBy = "users")
+	@OneToOne(cascade = CascadeType.ALL)
 	private Cart cart;
 }
