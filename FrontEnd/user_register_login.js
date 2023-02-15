@@ -14,7 +14,7 @@ const registeruser = async () => {
       
     };
   
-    let res = await fetch("http://localhost:8888/users", {
+    let res = await fetch("https://markdeals.up.railway.app/users", {
       method: "POST",
       body: JSON.stringify(userdata),
       headers: {
@@ -26,13 +26,22 @@ const registeruser = async () => {
   };
   
 const loginuser = async ()=>{
-  let email = document.getElementById("loginemail").value;
-  let pass = document.getElementById("loginpass").value;
-  let res = await fetch(`http://localhost:8888/userlogin/${email}/${pass}`);
-  let data = await res.json();
-  console.log(data);
+  let userlogindata ={
+  userEmail :document.getElementById("loginemail").value,
+  password : document.getElementById("loginpass").value,
+  }
+  let res = await fetch("https://markdeals.up.railway.app/userlogin", {
+      method: "POST",
+      body: JSON.stringify(userlogindata),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await res.json();
+    console.log(data);
   if(data.message !== "Wrong Credential"){
     alert("Successfully login!");
+    localStorage.setItem("userData", JSON.stringify(data));
     window.location.href="./product.html";
   }else{
     alert("Wrong Credential!");
