@@ -28,6 +28,5 @@ public class Cart {
 	private Users user;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "userId")
 	private List<Product> product = new ArrayList<>();
 }
