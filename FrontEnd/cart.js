@@ -18,8 +18,8 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     let getCartData = async()=>{
       let res = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userId}`);
       let data = await res.json();
-      // appendData(data.product);
-      console.log(data[0]);
+      appendData(data);
+      console.log(data);
     }
     getCartData();
     let appendData = (data)=>{
