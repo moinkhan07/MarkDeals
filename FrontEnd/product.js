@@ -91,4 +91,3 @@ let dropdown = document.querySelectorAll(".dropdown_main");
     window.location.href="./cart.html";
   }
 
-  
