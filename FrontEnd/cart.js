@@ -16,7 +16,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
     console.log(userDataFromLs.userId)
     let getCartData = async()=>{
-      let res = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userId}`);
+      let res = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userEmail}`);
       let data = await res.json();
       appendData(data);
       console.log(data);

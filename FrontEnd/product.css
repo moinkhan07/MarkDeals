@@ -150,6 +150,75 @@
 }
 
 /* =========================================== Navbar End ======================================*/
+.dropdown_main {
+  position: relative;
+}
+.dropdown_main{
+  width: 200px;
+  margin-left: 20px;
+}
+.select {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+}
+.select-clicked {
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.selected{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.caret-rotate {
+  transform: rotate(180deg);
+}
+.menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  position: relative;
+  left: 50%;
+  width: 230px;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+.menu li {
+  padding: 0.7em 0;
+  padding-left: 10px;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.menu li:hover {
+  background-color: rgb(240, 240, 240);
+  color: black;
+}
+.menu-open {
+  display: block;
+  opacity: 1;
+}
+
+
+/* ==========================================Side bar end======================================= */
+
 #mainBody{
   width: 100%;
   /* height: 87vh; */
@@ -164,6 +233,7 @@
   top: 10;
   position:fixed;
   border-right: 1px solid white;
+  padding-top: 40px;
 }
 #productdiv{
   width: 100%;

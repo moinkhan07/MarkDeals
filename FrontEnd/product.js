@@ -11,6 +11,34 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
       menu_2.classList.toggle("menu_2_-open");
     });
 });
+// =============================Sidebar sorting and filtering ========================
+let dropdown = document.querySelectorAll(".dropdown_main");
+  dropdown.forEach((dropdown) => {
+    let select = dropdown.querySelector(".select");
+    let caret = dropdown.querySelector(".caret");
+    let menu = dropdown.querySelector(".menu");
+    let options_ = dropdown.querySelectorAll(".menu li");
+    let selected = dropdown.querySelector(".selected");
+    select.addEventListener("click",()=> {
+      select.classList.toggle("select-clicked");
+      caret.classList.toggle("caret-rotate");
+      menu.classList.toggle("menu-open");
+    });
+    options_.forEach((opt) => {
+        opt.addEventListener("click", () => {
+        selected.innerText = opt.innerText;
+
+        select.classList.remove("select-clicked");
+        
+        caret.classList.remove("caret-rotate");
+        menu.classList.remove("menu-open");
+        options_.forEach((opt) => {
+          opt.classList.remove("active");
+        });
+        opt.classList.add("active");
+      });
+    });
+  });
     // ===============================================
 
     let getProduct = async()=>{
@@ -62,3 +90,5 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
   let cartPage=()=>{
     window.location.href="./cart.html";
   }
+
+  
