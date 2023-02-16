@@ -11,7 +11,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
       menu_2.classList.toggle("menu_2_-open");
     });
 });
-// =============================Sidebar sorting and filtering ========================
+
 let dropdown = document.querySelectorAll(".dropdown_main");
   dropdown.forEach((dropdown) => {
     let select = dropdown.querySelector(".select");
@@ -39,15 +39,17 @@ let dropdown = document.querySelectorAll(".dropdown_main");
       });
     });
   });
-    // ===============================================
 
+    // ===============================================
+let data;
     let getProduct = async()=>{
       let res = await fetch("https://markdeals.up.railway.app/products");
-      let data = await res.json();
+      data = await res.json();
       appendData(data);
       console.log(data);
     }
     getProduct();
+
     let appendData = (data)=>{
       let products = document.getElementById("productdiv");
       products.innerHTML = null;
@@ -91,3 +93,66 @@ let dropdown = document.querySelectorAll(".dropdown_main");
     window.location.href="./cart.html";
   }
 
+// ==========================Sorting=================
+
+let lowtohigh=()=>{
+  data.sort((a,b)=>{
+    return  a.price - b.price;
+  })
+  appendData(data);
+}
+let hightolow=()=>{
+  data.sort((a,b)=>{
+    return  b.price - a.price;
+  })
+  appendData(data);
+}
+
+// ======================Filtering===========================
+
+let allproducts =()=>{
+  appendData(data);
+}
+
+let pants = ()=>{
+  let filtered_pant = data.filter(function(elem){
+      return elem.category == "Pant";
+  })
+  appendData(filtered_pant)
+}
+let shirts = ()=>{
+  let filtered_shirts = data.filter(function(elem){
+      return elem.category == "Shirt";
+  })
+  appendData(filtered_shirts)
+}
+let tshirts = ()=>{
+  let filtered_tshirts = data.filter(function(elem){
+      return elem.category == "Tshirt";
+  })
+  appendData(filtered_tshirts)
+}
+let laptop = ()=>{
+  let filtered_laptop = data.filter(function(elem){
+      return elem.category == "Laptop";
+  })
+  appendData(filtered_laptop)
+}
+let mobile = ()=>{
+  let filtered_mobiles = data.filter(function(elem){
+      return elem.category == "Mobile";
+  })
+  appendData(filtered_mobiles)
+}
+let grocery = ()=>{
+  let filtered_grocery = data.filter(function(elem){
+      return elem.category == "Grocery";
+  })
+  appendData(filtered_grocery)
+}
+let homekitchen = ()=>{
+  let filtered_homeandkitchen = data.filter(function(elem){
+      return elem.category == "Home-Kitchen";
+  })
+  appendData(filtered_homeandkitchen)
+}
