@@ -60,8 +60,8 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public Product viewProductByProductName(String productName) throws ProductException {
-		Product existingProduct = productRepository.findByName(productName);
+	public List<Product> viewProductByProductName(String productName) throws ProductException {
+		List<Product> existingProduct = productRepository.findByProductName(productName);
 		if (existingProduct == null) {
 			throw new ProductException("Product does not exist with product name " + productName);
 		}

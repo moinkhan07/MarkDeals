@@ -10,6 +10,9 @@ import com.project.model.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer>{
 	
+	@Query("from Product where name like '%:name%'")
+	public List<Product> findByProductName(String name);
+	
 	public Product findByName(String name);
 	
 	@Query("from Product")
