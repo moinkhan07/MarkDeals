@@ -59,7 +59,7 @@ public class ProductController {
 	@GetMapping("/productbyname/{pName}")
 	public ResponseEntity<List<Product>> viewProductByProductName(@PathVariable("pName") String productName) throws ProductException{
 		List<Product> productByName = productService.viewProductByProductName(productName);
-		return new ResponseEntity<List<Product>>(HttpStatus.OK);
+		return new ResponseEntity<List<Product>>(productByName, HttpStatus.OK);
 	}
 	
 	@GetMapping("/sortinascending")
