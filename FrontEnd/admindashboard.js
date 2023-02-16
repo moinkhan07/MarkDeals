@@ -47,14 +47,6 @@ t.forEach((tab,index)=>{
     });
 });
 
-// imageUrl
-// name
-// price 
-// category
-// rating
-// quantity
-// description
-
 const addProduct = async () => {
   let add_item_data = {
     imageUrl: document.getElementById("url").value,

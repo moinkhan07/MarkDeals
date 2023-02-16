@@ -139,15 +139,22 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     let checkoutbtn = document.createElement("button");
     checkoutbtn.setAttribute("id","checkoutbtn");
     checkoutbtn.innerText = "Checkout"
-
-
-
-
-    totalamountdiv.append(totalamounttitle,line,subTotal1,subTotal2,subTotal3,line2,finalamtdiv,checkoutbtn);
+    let bal = subtotalamount + 120 + (subtotalamount * 1 / 100);
+    checkoutbtn.onclick = ()=>{
+      checkout(bal);
+    }
+    let securetext = document.createElement("p");
+    let securelogo = document.createElement("img");
+    securelogo.src = "./lock.png";
+    securetext.innerHTML = "Secure Checkout";
+    securetext.setAttribute("id","secure");
+    securetext.append(securelogo);
+ 
+    totalamountdiv.append(totalamounttitle,line,subTotal1,subTotal2,subTotal3,line2,finalamtdiv,checkoutbtn,securetext);
 
   }
-
-
-let checkout = ()=>{
+  
+let checkout = (checkoutAmount)=>{
+  localStorage.setItem("checkoutAmt",checkoutAmount);
     window.location.href = "./payment.html";
 }

@@ -11,7 +11,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
       menu_2.classList.toggle("menu_2_-open");
     });
 });
-// =============================Sidebar sorting and filtering ========================
+
 let dropdown = document.querySelectorAll(".dropdown_main");
   dropdown.forEach((dropdown) => {
     let select = dropdown.querySelector(".select");
@@ -39,15 +39,17 @@ let dropdown = document.querySelectorAll(".dropdown_main");
       });
     });
   });
-    // ===============================================
 
+    // ===============================================
+let data;
     let getProduct = async()=>{
       let res = await fetch("https://markdeals.up.railway.app/products");
-      let data = await res.json();
+      data = await res.json();
       appendData(data);
       console.log(data);
     }
     getProduct();
+
     let appendData = (data)=>{
       let products = document.getElementById("productdiv");
       products.innerHTML = null;
@@ -91,3 +93,72 @@ let dropdown = document.querySelectorAll(".dropdown_main");
     window.location.href="./cart.html";
   }
 
+// ==========================Sorting=================
+
+
+
+
+
+let lowtohigh= async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/sortinascending");
+  let data = await res.json();
+  appendData(data);
+}
+let hightolow= async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/sortindescending");
+  let data = await res.json();
+  appendData(data);
+}
+
+// ======================Filtering===========================
+
+let allproducts = ()=>{
+  appendData(data);
+}
+
+let pants =async ()=>{
+  let res = await fetch(`https://markdeals.up.railway.app/productsbycategory/${"Pant"}`);
+  let data = await res.json();
+  appendData(data);
+}
+let shirts =async ()=>{
+  let res = await fetch(`https://markdeals.up.railway.app/productsbycategory/${"Shirt"}`);
+  let data = await res.json();
+  appendData(data);
+}
+let tshirts =async ()=>{
+  let res = await fetch(`https://markdeals.up.railway.app/productsbycategory/${"Tshirt"}`);
+  let data = await res.json();
+  appendData(data);
+
+}
+let laptop =async ()=>{
+  let res = await fetch(`https://markdeals.up.railway.app/productsbycategory/${"Laptop"}`);
+  let data = await res.json();
+  appendData(data);
+}
+let mobile =async ()=>{
+  let res = await fetch(`https://markdeals.up.railway.app/productsbycategory/${"Mobile"}`);
+  let data = await res.json();
+  appendData(data);
+}
+let grocery =async ()=>{
+  let res = await fetch(`https://markdeals.up.railway.app/productsbycategory/${"Grocery"}`);
+  let data = await res.json();
+  appendData(data);
+}
+let homekitchen =async ()=>{
+  let res = await fetch(`https://markdeals.up.railway.app/productsbycategory/${"Home-Kitchen"}`);
+  let data = await res.json();
+  appendData(data);
+}
+// ========================Search product by search bar========================
+
+let searchproduct = async()=>{
+  let pName = document.getElementById("search").value;
+  console.log(pName);
+  let res = await fetch(`https://markdeals.up.railway.app/productbyname/${pName}`);
+  let data = await res.json();
+  // appendData(data);
+  console.log(data);
+}
