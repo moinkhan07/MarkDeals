@@ -42,15 +42,15 @@
                         <input type="password" id="cvv" placeholder="XXX">
                      </div>
                 </div>
-                <button onclick="cartdetails()" class="paynowbtn">Pay Now</button>
+                <button onclick="cartdetails()" class="paynowbtn">Pay Now <p id="payAmt"></p></button>
             </div>
             <div class="tabs_content">
                 <div class="upi_section">
                     <p>Enter Your VPA (UPI Id)</p>
                     <input type="text" placeholder="UPI ID" id="upi_id">
                     <div id="amount_div">
-                        <p>Amount: </p>
-                        <p>₹5000</p>
+                        <p>Amount:  </p>
+                        <p id="upiPayAmt"></p>
                     </div>
                     <button onclick="upipayment()" class="paynowbtn">Pay Now</button>
                 </div>

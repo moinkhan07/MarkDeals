@@ -13,6 +13,10 @@ t.forEach((tab,index)=>{
         t[index].classList.add("is_active");
     });
 });
+let paymentAmountFromLs = JSON.parse(localStorage.getItem("checkoutAmt"));
+console.log(paymentAmountFromLs);
+document.getElementById("payAmt").innerText = "₹" +paymentAmountFromLs;
+document.getElementById("upiPayAmt").innerText = "₹" +paymentAmountFromLs;
 
 let barcode = async () =>{
     let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
