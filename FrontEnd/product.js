@@ -158,8 +158,7 @@ let searchproduct = async()=>{
   let pName = document.getElementById("search").value;
   console.log(pName);
   let res = await fetch(`https://markdeals.up.railway.app/productbyname/${pName}`);
-  console.log(res);
   let data = await res.json();
-  // appendData(data);
+  appendData(data);
   console.log(data);
 }
