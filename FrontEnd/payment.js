@@ -21,25 +21,30 @@ document.getElementById("upiPayAmt").innerText = "₹" +paymentAmountFromLs;
 let barcode = async () =>{
     let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
     let otp = document.getElementById("otp").value;
-    // let paymentData={
-    //     users : userDataFromLs,
-    //     paymentType : "Barcode-Scan",
-    // }
+    let paymentData={
+        users : userDataFromLs,
+        paymentType : "Barcode-Scan",
+    }
     if(otp.length > 0){
         if(otp == "789789"){
-        // let res = await fetch("https://markdeals.up.railway.app/savepayment", {
-        //     method: "POST",
-        //     body: JSON.stringify(paymentData),
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //   });
-        //   let data = await res.json();
-        //   console.log(data);
+        let res = await fetch("https://markdeals.up.railway.app/savepayment", {
+            method: "POST",
+            body: JSON.stringify(paymentData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          let data = await res.json();
+          console.log(data);
 
-          let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`);
-          let data2 = await res2.json();
-          console.log(data2);
+          let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+        //   let data2 = await res2.json();
+        //   console.log(data2);
 
         //   window.location.href = "./orderplaced.html";
         }else{
