@@ -73,9 +73,8 @@ let data;
       })
       
   }
-
+let  userDataFromLs = JSON.parse(localStorage.getItem("userData"));
   const addProductToCart = async (productData)=>{
-    let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
     console.log(productData);
     console.log(userDataFromLs);
     let res = await fetch(`https://markdeals.up.railway.app/addtocart/${productData.productId}`, {
@@ -162,3 +161,8 @@ let searchproduct = async()=>{
   appendData(data);
   console.log(data);
 }
+
+// =================================Profile alphabet =============================
+
+let userFirstNameFirstLetter = document.querySelector(".selected_");
+userFirstNameFirstLetter.innerText = userDataFromLs.firstName.charAt(0).toUpperCase();
