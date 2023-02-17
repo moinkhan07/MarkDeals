@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.service.annotation.DeleteExchange;
 
 import com.project.exception.CartException;
 import com.project.model.Cart;
@@ -38,7 +40,7 @@ public class CartController {
 		return new ResponseEntity<List<Product>>(listOfProductsInTheCartByUserId,HttpStatus.OK);
 	}
 	
-	@GetMapping("/deleteproduct/{cId}")
+	@DeleteMapping("/deleteproduct/{cId}")
 	public ResponseEntity<List<Product>> removeProductsFromTheCart(@PathVariable("cId") Integer cartId) throws CartException{
 		List<Product> result = cartService.deleteAllProductsFromUserCart(cartId);
 		return new ResponseEntity<List<Product>>(result,HttpStatus.OK);

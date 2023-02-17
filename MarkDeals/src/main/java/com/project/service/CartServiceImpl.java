@@ -49,8 +49,7 @@ public class CartServiceImpl implements CartService{
 
 	@Override
 	public List<Product> deleteAllProductsFromUserCart(Integer cartId) throws CartException {
-		List<Product> deletedProducts = cartRepository.deleteAllProductsFromCart(cartId);
-		return deletedProducts;
+		return cartRepository.deleteAllProductsFromCart(cartId);
 	}
 
 	
