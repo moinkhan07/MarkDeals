@@ -13,6 +13,6 @@ public interface CartService {
 	
 	public List<Product> viewAllProductByCartId(String userEmail) throws CartException;
 		
-	public String deleteAllProductsFromUserCart(Integer cartId) throws CartException;
+	public List<Product> deleteAllProductsFromUserCart(Integer cartId) throws CartException;
 
 }
