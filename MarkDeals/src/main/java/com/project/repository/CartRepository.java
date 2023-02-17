@@ -13,7 +13,7 @@ public interface CartRepository extends JpaRepository<Cart, Integer>{
 	
 	public Cart findByCartId(Integer cartId);
 	
-	@Query("Delete from cart_product where cart_cart_id = ?1")
+	@Query("Delete from cart_product where cart_cart_id=?1")
 	public List<Product> deleteAllProductsFromCart(Integer cartId);
 	
 	
