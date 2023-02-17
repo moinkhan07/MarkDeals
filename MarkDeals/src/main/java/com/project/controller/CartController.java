@@ -20,7 +20,7 @@ import com.project.model.Users;
 import com.project.service.CartService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class CartController {
 	
 	@Autowired
