@@ -33,7 +33,7 @@
   height: 60px;
   display: flex;
   align-items: center;
-  margin-left: 80px;
+  margin-left: 90px;
 }
 #search{
   width: 100%;
@@ -43,6 +43,24 @@
   border: none;
   padding-left: 20px;
   font-size: 17px;
+  position: relative;
+}
+#searchbtn{
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  left: 895px;
+  outline: none;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(203, 203, 203);
+}
+#searchbtn:hover{
+  background-color: rgb(151, 151, 151);
+
 }
 #cart{
   width: 5%;

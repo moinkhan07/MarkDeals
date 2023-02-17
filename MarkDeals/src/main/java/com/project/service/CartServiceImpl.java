@@ -47,6 +47,25 @@ public class CartServiceImpl implements CartService{
 		}
 	}
 
+	@Override
+	public String deleteAllProductsFromUserCart(Integer cartId) throws CartException {
+		Cart existingCart = cartRepository.findByCartId(cartId);
+		
+		if (existingCart == null) {
+			throw new CartException("No such cart found!");
+		}else {
+			List<Product> listOfProducts = existingCart.getProduct();
+			if (listOfProducts == null) {
+				return "No product found in the cart";
+			}else {
+			for (Product product : listOfProducts) {
+				listOfProducts.remove(product);
+			}
+				return "All products removed from the cart!";
+			}
+		}
+	}
+
 	
 
 }

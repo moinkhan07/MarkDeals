@@ -37,5 +37,11 @@ public class CartController {
 		List<Product> listOfProductsInTheCartByUserId = cartService.viewAllProductByCartId(userEmail);
 		return new ResponseEntity<List<Product>>(listOfProductsInTheCartByUserId,HttpStatus.OK);
 	}
+	
+	@GetMapping("/deleteproduct/{cId}")
+	public ResponseEntity<String> removeProductsFromTheCart(@PathVariable("cId") Integer cartId) throws CartException{
+		String result = cartService.deleteAllProductsFromUserCart(cartId);
+		return new ResponseEntity<String>(result,HttpStatus.OK);
+ 	}
 
 }
