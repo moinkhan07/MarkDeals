@@ -20,7 +20,7 @@ import com.project.service.ProductService;
 
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class ProductController {
 	
 	@Autowired

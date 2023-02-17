@@ -12,7 +12,7 @@ import com.project.model.Payment;
 import com.project.service.PaymentService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class PaymentController {
 	
 	@Autowired

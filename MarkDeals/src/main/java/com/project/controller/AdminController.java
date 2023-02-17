@@ -16,7 +16,7 @@ import com.project.model.AdminLoginDto;
 import com.project.service.AdminService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class AdminController {
 	
 	@Autowired
