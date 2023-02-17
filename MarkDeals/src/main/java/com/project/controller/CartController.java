@@ -39,10 +39,10 @@ public class CartController {
 		return new ResponseEntity<List<Product>>(listOfProductsInTheCartByUserId,HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/deleteproduct/{cId}")
-	public ResponseEntity<List<Product>> removeProductsFromTheCart(@PathVariable("cId") Integer cartId) throws CartException{
-		List<Product> result = cartService.deleteAllProductsFromUserCart(cartId);
-		return new ResponseEntity<List<Product>>(result,HttpStatus.OK);
+	@DeleteMapping("/deleteproduct/{cId}/{uId}")
+	public ResponseEntity<Cart> removeProductsFromTheCart(@PathVariable("cId") Integer cartId,@PathVariable("uId") Integer uId) throws CartException{
+		Cart result = cartService.deleteAllProductsFromUserCart(cartId,uId);
+		return new ResponseEntity<Cart>(result,HttpStatus.OK);
  	}
 
 }

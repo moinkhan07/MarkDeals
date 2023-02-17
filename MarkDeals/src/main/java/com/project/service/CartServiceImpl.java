@@ -48,18 +48,17 @@ public class CartServiceImpl implements CartService{
 	}
 
 	@Override
-	public List<Product> deleteAllProductsFromUserCart(Integer cartId) throws CartException {
+	public Cart deleteAllProductsFromUserCart(Integer cartId,Integer uId) throws CartException {
 		Optional<Cart> optCart = cartRepository.findById(cartId);
+		Optional<Users> existingUsers = userRepository.findById(uId);
 		if (optCart.isEmpty()) {
 			throw new CartException("No such cart is exist!");
 		}else {
 			Cart existingCart = optCart.get();
-			List<Product> listOProducts = existingCart.getProduct();
-			for (int i = 0; i < listOProducts.size(); i++) {
-				listOProducts.remove(i);
-			}
-			cartRepository.save(existingCart);
-			return listOProducts;
+			Users user = existingUsers.get();
+			cartRepository.delete(existingCart);
+			user.setCart(new Cart());
+			return existingCart;
 		}
 	}
 
