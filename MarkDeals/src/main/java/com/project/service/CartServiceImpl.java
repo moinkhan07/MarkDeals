@@ -1,5 +1,7 @@
 package com.project.service;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,15 +51,15 @@ public class CartServiceImpl implements CartService{
 
 	@Override
 	public Cart deleteAllProductsFromUserCart(Integer cartId) throws CartException {
-//		Optional<Cart> optCart = cartRepository.findById(cartId);
-//		if (optCart.isEmpty()) {
-//			throw new CartException("No such cart is exist!");
-//		}else {
-//			Cart existingCart = optCart.get();
-//			cartRepository.delete(existingCart);
-//			return existingCart;
-//		}
-		return cartRepository.deleteAllProductsFromCart(cartId);
+		Optional<Cart> optCart = cartRepository.findById(cartId);
+		if (optCart.isEmpty()) {
+			throw new CartException("No such cart is exist!");
+		}else {
+			Cart existingCart = optCart.get();
+			List<Product> listOfProducts = existingCart.getProduct();
+			listOfProducts.removeAll(listOfProducts);
+			return existingCart;
+		}
 	}
 
 	

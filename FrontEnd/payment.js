@@ -72,6 +72,19 @@ let cod = async ()=>{
           });
           let data = await res.json();
           console.log(data);
+
+
+          let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          let data2 = await res2.json();
+          console.log(data2);
+
+
+
           window.location.href = "./orderplaced.html";
     }else{
         alert("Please check the checkbox!");
@@ -100,6 +113,17 @@ const cartdetails = async ()=>{
           });
           let data = await res.json();
           console.log(data);
+
+          let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          let data2 = await res2.json();
+          console.log(data2);
+
+
           window.location.href = "./orderplaced.html";
         }else{
             alert("CVV is incorrect!");
@@ -127,6 +151,16 @@ const cartdetails = async ()=>{
           });
           let data = await res.json();
           console.log(data);
+
+          let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          let data2 = await res2.json();
+          console.log(data2);
+
           window.location.href = "./orderplaced.html";
         }else{
             alert("UPI ID is incorrect!");
