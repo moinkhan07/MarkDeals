@@ -24,8 +24,8 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public Product updateProduct(Product product) throws ProductException {
 		Optional<Product> existingProduct = productRepository.findById(product.getProductId());
-		if(existingProduct == null) {
-			throw new ProductException("Product does not exist with product name " + product.getProductId());
+		if(existingProduct.isEmpty()) {
+			throw new ProductException("Product does not exist with product id" + product.getProductId());
 		}
 		return productRepository.save(product);
 	}
