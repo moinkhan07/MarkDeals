@@ -46,7 +46,6 @@ let data;
       let res = await fetch("https://markdeals.up.railway.app/products");
       data = await res.json();
       appendData(data);
-      console.log(data);
     }
     getProduct();
 
@@ -75,8 +74,6 @@ let data;
   }
 let  userDataFromLs = JSON.parse(localStorage.getItem("userData"));
   const addProductToCart = async (productData)=>{
-    console.log(productData);
-    console.log(userDataFromLs);
     let res = await fetch(`https://markdeals.up.railway.app/addtocart/${productData.productId}`, {
         method: "POST",
         body: JSON.stringify(userDataFromLs),
@@ -86,7 +83,6 @@ let  userDataFromLs = JSON.parse(localStorage.getItem("userData"));
       });
       let data = await res.json();
       alert("Product added to cart");
-      console.log(data);
   }
 
   let cartPage=()=>{
@@ -153,14 +149,11 @@ let homekitchen =async ()=>{
   appendData(data);
 }
 // ========================Search product by search bar========================
-
 let searchproduct = async()=>{
   let pName = document.getElementById("search").value;
-  console.log(pName);
   let res = await fetch(`https://markdeals.up.railway.app/productbyname/${pName}`);
   let data = await res.json();
   appendData(data);
-  console.log(data);
 }
 
 // =================================Profile alphabet =============================

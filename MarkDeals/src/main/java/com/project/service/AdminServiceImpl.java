@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.exception.AdminException;
-import com.project.exception.UserException;
 import com.project.model.Admin;
-import com.project.model.AdminLoginDto;
-import com.project.model.Users;
 import com.project.repository.AdminRepository;
 
 @Service

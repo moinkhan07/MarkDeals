@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.exception.AdminException;
 import com.project.model.Admin;
-import com.project.model.AdminLoginDto;
 import com.project.service.AdminService;
 
 @RestController
