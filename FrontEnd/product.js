@@ -85,6 +85,7 @@ let  userDataFromLs = JSON.parse(localStorage.getItem("userData"));
         },
       });
       let data = await res.json();
+      alert("Product added to cart");
       console.log(data);
   }
 
