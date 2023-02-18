@@ -22,11 +22,13 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public Product updateProduct(Product product) throws ProductException {
-		Optional<Product> existingProduct = productRepository.findById(product.getProductId());
+	public Product updateProductPrice(Integer pId, Integer updatedPrice) throws ProductException {
+		Optional<Product> existingProduct = productRepository.findById(pId);
 		if(existingProduct.isEmpty()) {
-			throw new ProductException("Product does not exist with product id" + product.getProductId());
+			throw new ProductException("Product does not exist!");
 		}
+		Product product = existingProduct.get();
+		product.setPrice(updatedPrice);
 		return productRepository.save(product);
 	}
 

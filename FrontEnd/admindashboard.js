@@ -70,30 +70,38 @@ const addProduct = async () => {
   window.location.reload();
 };
 
-
-const updateProduct = async () => {
-  let update_product = {
-    productId:document.getElementById("pId").value,
-    imageUrl: document.getElementById("url").value,
-    name: document.getElementById("name").value,
-    price: document.getElementById("price").value,
-    category: document.getElementById("category").value,
-    rating: document.getElementById("rating").value,
-    quantity: document.getElementById("quantity").value,
-    description: document.getElementById("description").value,
-  };
-
-  let res = await fetch("https://markdeals.up.railway.app/products", {
-    method: "PUT",
-    body: JSON.stringify(update_product),
+const updateProductPrice = async() =>{
+  let productId =document.getElementById("pId").value;
+  let updateProductPriceObj = {
+   price : document.getElementById("price").value,
+  }
+  let res = await fetch(`https://markdeals.up.railway.app/products/${productId}`, {
+    method: "PATCH",
+    body: JSON.stringify(updateProductPriceObj),
     headers: {
       "Content-Type": "application/json",
     },
   });
   let data = await res.json();
   console.log(data);
-  // window.location.reload();
-};
+
+}
+
+// const updateProductQuantity = async() =>{
+//   let productId =document.getElementById("pId").value;
+//   let quantity = document.getElementById("quantity").value;
+
+//   let res = await fetch(`https://markdeals.up.railway.app/products/${productId}/${quantity}`, {
+//     method: "PATCH",
+//     body: JSON.stringify(update_product),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
+//   let data = await res.json();
+//   console.log(data);
+// }
+
 
 let getProduct = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/products");

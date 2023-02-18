@@ -277,7 +277,7 @@
     padding-bottom: 20px;
     margin-top: 40px;
 }
-#updateProduct_{
+#updateProductPrice{
     width: 50%;
     box-shadow: rgb(169, 174, 179) 3px 3px 6px 0px inset, rgba(140, 140, 140, 0.5) -3px -3px 6px 1px inset;
     border-radius: 10px;
@@ -286,21 +286,14 @@
     padding-bottom: 20px;
     margin-top: 40px;
 }
-#updateProduct_>input{
-    width: 90%;
-    height: 35px;
-    display: block;
-    margin: auto;
-    padding-left: 10px;
+#updateProductQuantity{
+    width: 50%;
+    box-shadow: rgb(169, 174, 179) 3px 3px 6px 0px inset, rgba(140, 140, 140, 0.5) -3px -3px 6px 1px inset;
     border-radius: 10px;
-    outline: none;
-    border: none;
-    margin-top: 5px;
-    background-color: transparent;
-    /* border-bottom: 2px solid rgb(255, 255, 255); */
-    border-bottom: 1px solid rgb(0, 0, 0);
-    /* color: white; */
-    font-size: 17px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
 }
 #addProduct_>input{
     width: 90%;
@@ -318,19 +311,37 @@
     /* color: white; */
     font-size: 17px;
 }
-#updateProduct_>button{
-    width: 140px;
-    height: 40px;
+#updateProductQuantity>input{
+    width: 90%;
+    height: 35px;
     display: block;
     margin: auto;
-    margin-top: 30px;
-    border: none;
-    outline: none;
+    padding-left: 10px;
     border-radius: 10px;
-    font-size: 18px;
-    cursor:pointer;
-    background-color: rgb(136,61,26);
-    color: white;
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    background-color: transparent;
+    /* border-bottom: 2px solid rgb(255, 255, 255); */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    /* color: white; */
+    font-size: 17px;
+}
+#updateProductPrice>input{
+    width: 90%;
+    height: 35px;
+    display: block;
+    margin: auto;
+    padding-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    background-color: transparent;
+    /* border-bottom: 2px solid rgb(255, 255, 255); */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    /* color: white; */
+    font-size: 17px;
 }
 #addProduct_>button{
     width: 140px;
@@ -346,7 +357,40 @@
     background-color: rgb(136,61,26);
     color: white;
 }
-#updateProduct_>button:hover{
+#updateProductQuantity>button{
+    width: 220px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor:pointer;
+    background-color: rgb(136,61,26);
+    color: white;
+}
+#updateProductPrice>button{
+    width: 220px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor:pointer;
+    background-color: rgb(136,61,26);
+    color: white;
+}
+#updateProductQuantity>button:hover{
+    background-color: white;
+    color: rgb(136,61,26);
+    border: 2px solid rgb(136,61,26);
+}
+#updateProductPrice>button:hover{
     background-color: white;
     color: rgb(136,61,26);
     border: 2px solid rgb(136,61,26);
