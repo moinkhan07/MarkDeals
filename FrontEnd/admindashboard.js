@@ -70,6 +70,31 @@ const addProduct = async () => {
   window.location.reload();
 };
 
+
+const updateProduct = async () => {
+  let update_product = {
+    productId:document.getElementById("pId").value,
+    imageUrl: document.getElementById("url").value,
+    name: document.getElementById("name").value,
+    price: document.getElementById("price").value,
+    category: document.getElementById("category").value,
+    rating: document.getElementById("rating").value,
+    quantity: document.getElementById("quantity").value,
+    description: document.getElementById("description").value,
+  };
+
+  let res = await fetch("https://markdeals.up.railway.app/products", {
+    method: "PATCH",
+    body: JSON.stringify(update_product),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await res.json();
+  console.log(data);
+  // window.location.reload();
+};
+
 let getProduct = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/products");
   let data = await res.json();
@@ -100,4 +125,34 @@ let appendData = (data)=>{
     products.append(tr);
   })
   
+}
+
+let getUsers = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/users");
+  let data = await res.json();
+  appendUsers(data);
+}
+getUsers();
+let appendUsers=(data)=>{
+  let users = document.getElementById("showUsers");
+  users.innerHTML = null;
+  data.forEach((el)=>{
+    let tr = document.createElement("tr");
+    let uid = document.createElement("td");
+    uid.innerText = el.userId;
+    let uimg = document.createElement("td");
+    let img = document.createElement("img");
+    img.src = "https://cdn-icons-png.flaticon.com/512/1077/1077114.png";
+    uimg.append(img);
+    let uname = document.createElement("td");
+    uname.innerText = el.firstName.charAt(0).toUpperCase() + el.firstName.slice(1)
+    let uemail = document.createElement("td");
+    uemail.innerText = el.userEmail;
+    let umobile = document.createElement("td");
+    umobile.innerText = el.userMobile;
+    let ucity = document.createElement("td");
+    ucity.innerText = el.address.city.charAt(0).toUpperCase() + el.address.city.slice(1);
+    tr.append(uid,uimg,uname,uemail,umobile,ucity);
+    users.append(tr);
+  })
 }

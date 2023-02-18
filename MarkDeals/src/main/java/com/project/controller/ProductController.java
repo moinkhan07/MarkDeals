@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -32,7 +33,7 @@ public class ProductController {
 		return new ResponseEntity<>(addedProduct,HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/products")
+	@PatchMapping("/products")
 	public ResponseEntity<Product> updateProduct(@RequestBody Product product) throws ProductException{
 		Product updatedProduct = productService.updateProduct(product);
 		return new ResponseEntity<>(updatedProduct,HttpStatus.OK);
