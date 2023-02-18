@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.project.exception.ProductException;
 import com.project.model.Product;
-import com.project.model.ProductDto;
-import com.project.repository.ProductDtoRepository;
 import com.project.repository.ProductRepository;
 
 @Service
@@ -17,9 +15,6 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Autowired
 	private ProductRepository productRepository;
-	
-	@Autowired
-	private ProductDtoRepository productDtoRepository;
 
 	@Override
 	public Product addProduct(Product product) throws ProductException {
@@ -27,12 +22,12 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public ProductDto updateProduct(ProductDto product) throws ProductException {
-		Optional<ProductDto> existingProduct = productDtoRepository.findById(product.getProductId());
-		if(existingProduct.isEmpty()) {
-			throw new ProductException("Product does not exist with product");
+	public Product updateProduct(Product product) throws ProductException {
+		Optional<Product> existingProduct = productRepository.findById(product.getProductId());
+		if(existingProduct == null) {
+			throw new ProductException("Product does not exist with product name " + product.getProductId());
 		}
-		return productDtoRepository.save(product);
+		return productRepository.save(product);
 	}
 
 	@Override

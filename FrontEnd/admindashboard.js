@@ -74,13 +74,8 @@ const addProduct = async () => {
 const updateProduct = async () => {
   let update_product = {
     productId:document.getElementById("pId").value,
-    imageUrl: document.getElementById("url").value,
-    name: document.getElementById("name").value,
     price: document.getElementById("price").value,
-    category: document.getElementById("category").value,
-    rating: document.getElementById("rating").value,
     quantity: document.getElementById("quantity").value,
-    description: document.getElementById("description").value,
   };
 
   let res = await fetch("https://markdeals.up.railway.app/products", {
