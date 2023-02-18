@@ -40,7 +40,7 @@ public class ProductController {
 	
 	@PatchMapping("/updateproductsquantity/{pId}")
 	public ResponseEntity<Product> updateProductQuantity(@RequestBody Integer updatedQuantity,@PathVariable("pId") Integer pId) throws ProductException{
-		Product updatedProduct = productService.updateProductPrice(pId,updatedQuantity);
+		Product updatedProduct = productService.updateProductQuantity(pId,updatedQuantity);
 		return new ResponseEntity<>(updatedProduct,HttpStatus.OK);
 	}
 	
