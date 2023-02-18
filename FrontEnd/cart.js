@@ -12,7 +12,6 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     });
 });
     // ===============================================
-
     let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
     let getCartData = async()=>{
       let res = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userEmail}`);
@@ -83,18 +82,6 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
         products.append(perProductDiv);
       })
       orderSummary(subtotal);
-  }
-
-  let deleteProduct= async(product)=>{
-    let res = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}/${product}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    let data = await res.json();
-    // alert("Product Removed!");
-    window.location.reload;
   }
 
   let orderSummary =(subtotalamount)=>{
@@ -168,6 +155,18 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
 
   }
   
+  let deleteProduct= async (el)=>{
+    let res = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}/${el.productId}`,{
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let details =await res.json();
+    alert("Product Removed!");
+    console.log(details);
+    // window.location.reload();
+  }
 let checkout = (checkoutAmount)=>{
   localStorage.setItem("checkoutAmt",checkoutAmount);
   if(checkoutAmount > "125"){
