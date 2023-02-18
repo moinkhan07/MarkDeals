@@ -4,14 +4,13 @@ import java.util.List;
 
 import com.project.exception.ProductException;
 import com.project.model.Product;
-import com.project.model.ProductDto;
 
 
 public interface ProductService {
 	
 	public Product addProduct(Product product) throws ProductException;
 	
-	public ProductDto updateProduct(ProductDto productDto) throws ProductException;
+	public Product updateProduct(Product product) throws ProductException;
 	
 	public Product deleteProduct(Integer pId) throws ProductException;
 	
