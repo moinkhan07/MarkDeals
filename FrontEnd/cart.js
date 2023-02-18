@@ -165,7 +165,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     let details =await res.json();
     alert("Product Removed!");
     console.log(details);
-    window.location.reload();
+    getCartData();
   }
 let checkout = (checkoutAmount)=>{
   localStorage.setItem("checkoutAmt",checkoutAmount);
