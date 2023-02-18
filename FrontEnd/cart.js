@@ -50,7 +50,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
         removeBtn.setAttribute("class","removebtn");
         removeBtn.innerText = "Remove";
         removeBtn.onclick=()=>{
-          deleteProduct(el.productId);
+          deleteProduct(el);
         }
         productDetailDiv.append(title,category,rating,removeBtn);
 
@@ -85,15 +85,15 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
       orderSummary(subtotal);
   }
 
-  let deleteProduct= async(productId)=>{
-    let res = await fetch(`https://markdeals.up.railway.app/deleteproduct/deleteproduct/${userDataFromLs.cartId}/${productId}`, {
+  let deleteProduct= async(product)=>{
+    let res = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}/${product}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
     });
     let data = await res.json();
-    alert("Product Removed!");
+    // alert("Product Removed!");
     window.location.reload;
   }
 
