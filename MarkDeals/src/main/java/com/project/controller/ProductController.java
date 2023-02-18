@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.exception.ProductException;
 import com.project.model.Product;
+import com.project.model.ProductDto;
 import com.project.service.ProductService;
 
 
@@ -34,8 +35,8 @@ public class ProductController {
 	}
 	
 	@PatchMapping("/products")
-	public ResponseEntity<Product> updateProduct(@RequestBody Product product) throws ProductException{
-		Product updatedProduct = productService.updateProduct(product);
+	public ResponseEntity<ProductDto> updateProduct(@RequestBody ProductDto product) throws ProductException{
+		ProductDto updatedProduct = productService.updateProduct(product);
 		return new ResponseEntity<>(updatedProduct,HttpStatus.OK);
 	}
 	
