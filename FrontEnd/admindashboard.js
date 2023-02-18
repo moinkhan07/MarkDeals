@@ -71,7 +71,7 @@ const addProduct = async () => {
 };
 
 const updateProductPrice = async() =>{
-  let productId =document.getElementById("pId").value;
+  let productId =document.getElementById("updatepId").value;
   let price =document.getElementById("updatedprice").value;
   let res = await fetch(`https://markdeals.up.railway.app/updateproductsprice/${productId}`, {
     method: "PATCH",
@@ -86,9 +86,9 @@ const updateProductPrice = async() =>{
 }
 
 const updateProductQuantity = async() =>{
-  let productId =document.getElementById("pId").value;
+  let productId =document.getElementById("updpId").value;
 
-  let quantity = document.getElementById("quantity").value;
+  let quantity = document.getElementById("updatedquantity").value;
 
   let res =await fetch(`https://markdeals.up.railway.app/updateproductsquantity/${productId}`, {
     method: "PATCH",

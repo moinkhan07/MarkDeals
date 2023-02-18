@@ -40,7 +40,7 @@ public class ProductServiceImpl implements ProductService{
 			throw new ProductException("Product does not exist!");
 		}
 		Product product = existingProduct.get();
-		product.setQuantity(updatedQuantity);
+		product.setQuantity(product.getQuantity() + updatedQuantity);
 		return productRepository.save(product);
 	}
 
