@@ -295,7 +295,32 @@
     padding-bottom: 20px;
     margin-top: 40px;
 }
+#deleteproductdiv{
+    width: 50%;
+    box-shadow: rgb(169, 174, 179) 3px 3px 6px 0px inset, rgba(140, 140, 140, 0.5) -3px -3px 6px 1px inset;
+    border-radius: 10px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+}
 #addProduct_>input{
+    width: 90%;
+    height: 35px;
+    display: block;
+    margin: auto;
+    padding-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    background-color: transparent;
+    /* border-bottom: 2px solid rgb(255, 255, 255); */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    /* color: white; */
+    font-size: 17px;
+}
+#deleteproductdiv>input{
     width: 90%;
     height: 35px;
     display: block;
@@ -343,6 +368,20 @@
     /* color: white; */
     font-size: 17px;
 }
+#deleteproductdiv>button{
+    width: 140px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor:pointer;
+    background-color: rgb(136,61,26);
+    color: white;
+}
 #addProduct_>button{
     width: 140px;
     height: 40px;
@@ -384,6 +423,11 @@
     cursor:pointer;
     background-color: rgb(136,61,26);
     color: white;
+}
+#deleteproductdiv>button:hover{
+    background-color: white;
+    color: rgb(136,61,26);
+    border: 2px solid rgb(136,61,26);
 }
 #updateProductQuantity>button:hover{
     background-color: white;

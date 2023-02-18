@@ -101,6 +101,17 @@ const updateProductQuantity = async() =>{
   console.log(data);
 }
 
+const deleteProduct= async()=>{
+    let del = document.getElementById("deleteProduct").value;
+    let res = await fetch(`https://markdeals.up.railway.app/products/${del}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await res.json();
+    alert("Product deleted!");
+}
 
 let getProduct = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/products");
