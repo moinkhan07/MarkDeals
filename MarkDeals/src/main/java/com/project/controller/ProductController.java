@@ -32,9 +32,15 @@ public class ProductController {
 		return new ResponseEntity<>(addedProduct,HttpStatus.CREATED);
 	}
 	
-	@PatchMapping("/products/{pId}")
-	public ResponseEntity<Product> updateProduct(@RequestBody Integer updatedPrice,@PathVariable("pId") Integer pId) throws ProductException{
+	@PatchMapping("/updateproductsprice/{pId}")
+	public ResponseEntity<Product> updateProductPrice(@RequestBody Integer updatedPrice,@PathVariable("pId") Integer pId) throws ProductException{
 		Product updatedProduct = productService.updateProductPrice(pId,updatedPrice);
+		return new ResponseEntity<>(updatedProduct,HttpStatus.OK);
+	}
+	
+	@PatchMapping("/updateproductsquantity/{pId}")
+	public ResponseEntity<Product> updateProductQuantity(@RequestBody Integer updatedQuantity,@PathVariable("pId") Integer pId) throws ProductException{
+		Product updatedProduct = productService.updateProductPrice(pId,updatedQuantity);
 		return new ResponseEntity<>(updatedProduct,HttpStatus.OK);
 	}
 	

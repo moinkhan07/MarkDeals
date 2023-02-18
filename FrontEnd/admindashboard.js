@@ -72,35 +72,34 @@ const addProduct = async () => {
 
 const updateProductPrice = async() =>{
   let productId =document.getElementById("pId").value;
-  let updateProductPriceObj = {
-   price : document.getElementById("price").value,
-  }
-  let res = await fetch(`https://markdeals.up.railway.app/products/${productId}`, {
+  let price =document.getElementById("updatedprice").value;
+  let res = await fetch(`https://markdeals.up.railway.app/updateproductsprice/${productId}`, {
     method: "PATCH",
-    body: JSON.stringify(updateProductPriceObj),
+    body: JSON.stringify(price),
     headers: {
       "Content-Type": "application/json",
     },
   });
   let data = await res.json();
   console.log(data);
-
+  window.location.reload();
 }
 
-// const updateProductQuantity = async() =>{
-//   let productId =document.getElementById("pId").value;
-//   let quantity = document.getElementById("quantity").value;
+const updateProductQuantity = async() =>{
+  let productId =document.getElementById("pId").value;
 
-//   let res = await fetch(`https://markdeals.up.railway.app/products/${productId}/${quantity}`, {
-//     method: "PATCH",
-//     body: JSON.stringify(update_product),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   });
-//   let data = await res.json();
-//   console.log(data);
-// }
+  let quantity = document.getElementById("quantity").value;
+
+  let res =await fetch(`https://markdeals.up.railway.app/updateproductsquantity/${productId}`, {
+    method: "PATCH",
+    body: JSON.stringify(quantity),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await res.json();
+  console.log(data);
+}
 
 
 let getProduct = async()=>{
