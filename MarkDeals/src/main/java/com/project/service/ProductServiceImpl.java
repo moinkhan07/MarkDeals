@@ -31,6 +31,18 @@ public class ProductServiceImpl implements ProductService{
 		product.setPrice(updatedPrice);
 		return productRepository.save(product);
 	}
+	
+
+	@Override
+	public Product updateProductQuantity(Integer pId, Integer updatedQuantity) throws ProductException {
+		Optional<Product> existingProduct = productRepository.findById(pId);
+		if(existingProduct.isEmpty()) {
+			throw new ProductException("Product does not exist!");
+		}
+		Product product = existingProduct.get();
+		product.setQuantity(updatedQuantity);
+		return productRepository.save(product);
+	}
 
 	@Override
 	public Product deleteProduct(Integer pId) throws ProductException {
@@ -96,5 +108,6 @@ public class ProductServiceImpl implements ProductService{
 		}
 		return productsByRating;
 	}
+
 
 }
