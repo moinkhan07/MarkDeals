@@ -14,5 +14,7 @@ public interface CartService {
 	public List<Product> viewAllProductByCartId(String userEmail) throws CartException;
 		
 	public Cart deleteAllProductsFromUserCart(Integer cartId) throws CartException;
+	
+	public Cart deleteProductFromCart(Integer cId,Integer pId) throws CartException;
 
 }

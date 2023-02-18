@@ -17,8 +17,6 @@ import com.project.model.Users;
 import com.project.model.UsersLogin;
 import com.project.service.UserService;
 
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 
 @RestController

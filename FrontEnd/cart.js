@@ -14,12 +14,11 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     // ===============================================
 
     let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
-    console.log(userDataFromLs.userId)
     let getCartData = async()=>{
       let res = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userEmail}`);
       let data = await res.json();
       appendData(data);
-      console.log(data);
+      isEmpty(data);
     }
     getCartData();
     let appendData = (data)=>{
@@ -50,6 +49,9 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
         let removeBtn = document.createElement("button");
         removeBtn.setAttribute("class","removebtn");
         removeBtn.innerText = "Remove";
+        removeBtn.onclick=()=>{
+          deleteProduct(el.productId);
+        }
         productDetailDiv.append(title,category,rating,removeBtn);
 
         let productPriceDiv = document.createElement("div");
@@ -81,6 +83,18 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
         products.append(perProductDiv);
       })
       orderSummary(subtotal);
+  }
+
+  let deleteProduct= async(productId)=>{
+    let res = await fetch(`https://markdeals.up.railway.app/deleteproduct/deleteproduct/${userDataFromLs.cartId}/${productId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await res.json();
+    alert("Product Removed!");
+    window.location.reload;
   }
 
   let orderSummary =(subtotalamount)=>{
@@ -156,5 +170,34 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
   
 let checkout = (checkoutAmount)=>{
   localStorage.setItem("checkoutAmt",checkoutAmount);
+  if(checkoutAmount > "125"){
     window.location.href = "./payment.html";
+  }else{
+    alert("Cart Is Empty!");
+  }
+}
+// ====================================Is empty cart===============================
+let isEmpty=(product)=>{
+  let mainDiv = document.getElementById("productviewdiv");
+  let div = document.createElement("div");
+  div.setAttribute("id","messagediv")
+  let message = document.createElement("h1");
+  message.innerText = "Empty Cart!"
+  div.append(message);
+  if(product.length == 0){
+    mainDiv.append(div);
+  }
+}
+
+
+
+
+// =================================Profile alphabet =============================
+
+let userFirstNameFirstLetter = document.querySelector(".selected_");
+userFirstNameFirstLetter.innerText = userDataFromLs.firstName.charAt(0).toUpperCase();
+
+// ================================Go to product page====================
+let gotoproductpage=()=>{
+  window.location.href="./product.html";
 }

@@ -1,7 +1,5 @@
 package com.project.service;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,6 +60,22 @@ public class CartServiceImpl implements CartService{
 			cartRepository.save(existingCart);
 			return existingCart;
 		}
+	}
+
+	@Override
+	public Cart deleteProductFromCart(Integer cId, Integer pId) throws CartException {
+		Optional<Cart> optCart = cartRepository.findById(cId);
+		if (optCart.isEmpty()) {
+			throw new CartException("No such cart is exist!");
+		}else {
+			Cart existingCart = optCart.get();
+			List<Product> listOfProducts = existingCart.getProduct();
+			listOfProducts.remove(pId);
+			existingCart.getProduct().addAll(listOfProducts);
+			cartRepository.save(existingCart);
+			return existingCart;
+		}
+	
 	}
 
 	

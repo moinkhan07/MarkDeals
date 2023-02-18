@@ -10,20 +10,22 @@
 <body>
     <nav id="navbar">
         <div id="logo">
-            <img src="./logo.png" alt="">
+            <img onclick="gotoproductpage()" src="./logo.png" alt="">
         </div>
         <div id="searchbar">
             <input type="text" placeholder="Search Product" id="search">
             <button id="searchbtn">Search</button>
         </div>
+        <div id="orderhistory">
+          <img src="./orderhistory.png" alt="">
+        </div>
         <div id="cart">
-            <img src="./cart.png" alt="">
+            <img src="./cart.png" alt="" onclick="cartPage()">
         </div>
         <div id="profile">
             <div class="dropdown_main_">
                 <div class="select_">
-                  <!-- <span class="selected_">M</span> -->
-                  <div class="selected_">M</div>
+                  <div class="selected_"></div>
                   <div class="caret_"></div>
                 </div>
                 <ul class="menu_2_">
@@ -36,7 +38,6 @@
        <h1>Shopping Cart</h1>
        <div id="cartmain">
         <div id="productviewdiv">
-           
         </div>
         <div id="totalamountdiv">
             
