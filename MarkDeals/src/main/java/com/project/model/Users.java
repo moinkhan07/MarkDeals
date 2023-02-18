@@ -2,12 +2,15 @@ package com.project.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -35,7 +38,7 @@ public class Users {
 	private String userEmail;
 	
 	@NotNull(message = "Password should not be null")
-//	@Size(min = 8,max = 20,message = "Password length should be between 8 to 20")
+	@Size(min = 8,max = 20,message = "Password length should be between 8 to 20")
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
 	
@@ -44,8 +47,9 @@ public class Users {
 	private String userMobile;
 	
 	@Embedded
+	@Valid
 	private Address address;
 	
-	
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Cart cart;
 }

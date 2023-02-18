@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.project.service.ProductService;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 public class ProductController {
 	
 	@Autowired
@@ -55,9 +57,9 @@ public class ProductController {
 	}
 	
 	@GetMapping("/productbyname/{pName}")
-	public ResponseEntity<Product> viewProductByProductName(@PathVariable("pName") String productName) throws ProductException{
-		Product productByName = productService.viewProductByProductName(productName);
-		return new ResponseEntity<>(productByName,HttpStatus.OK);
+	public ResponseEntity<List<Product>> viewProductByProductName(@PathVariable("pName") String productName) throws ProductException{
+		List<Product> productByName = productService.viewProductByProductName(productName);
+		return new ResponseEntity<List<Product>>(productByName, HttpStatus.OK);
 	}
 	
 	@GetMapping("/sortinascending")
@@ -77,14 +79,6 @@ public class ProductController {
 		List<Product> productsByRating = productService.viewAllProductsByRating(productRating);
 		return new ResponseEntity<>(productsByRating,HttpStatus.OK);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

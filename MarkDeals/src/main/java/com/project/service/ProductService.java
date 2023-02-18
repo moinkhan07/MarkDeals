@@ -18,7 +18,7 @@ public interface ProductService {
 	
 	public List<Product> viewAllProductsByCategory(String productCategory) throws ProductException;
 	
-	public Product viewProductByProductName(String productName) throws ProductException;
+	public List<Product> viewProductByProductName(String productName) throws ProductException;
 	
 	public List<Product> viewAllProductsByPriceInAscendingOrder() throws ProductException;
 	

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.project.exception.UserException;
 import com.project.model.Users;
+import com.project.model.UsersLogin;
 
 public interface UserService {
 	
@@ -12,5 +13,7 @@ public interface UserService {
 	public Users getUserDetailsByEmail(String email) throws UserException;
 	
 	public List<Users> getAllUserDetails() throws UserException;
+	
+	public Users userLogin(UsersLogin usersLogin) throws UserException;
 
 }

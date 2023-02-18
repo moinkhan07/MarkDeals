@@ -7,6 +7,6 @@ import com.project.model.Admin;
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, Integer>{
 	
-	public Admin findByAdminEmail(String adminEmail);
+	public Admin findByEmail(String email);
 
 }

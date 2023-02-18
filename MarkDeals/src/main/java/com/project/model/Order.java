@@ -38,7 +38,4 @@ public class Order {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Users users;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private Payment payment;
-	
 }

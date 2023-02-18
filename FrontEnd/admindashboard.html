@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkDeals - Admin Dashboard</title>
+    <link rel="stylesheet" href="./admindashboard.css">
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
+</head>
+<body>
+    <div id="dashboardmain">
+        <div id="sidebar">
+            <img src="./logo.png" alt="">
+            <hr id="logoline">
+            <div id="listofoptions">
+                <li class="tabs__toggle is-active">Dashboard</li>
+                <li class="tabs__toggle">Users</li>
+                <li class="tabs__toggle">Products</li>
+                <li class="tabs__toggle">Orders</li>
+            </div>
+        </div>
+        <div id="mainboard">
+            <div id="navbar">
+                <div id="searchbar">
+                    <input type="text" id="search" placeholder="Search Here" oninput="searching()">
+                </div>
+                <div id="profile">
+                    <div class="dropdown_main_">
+                        <div class="select_">
+                          <!-- <span class="selected_">M</span> -->
+                          <div class="selected_">M</div>
+                          <div class="caret_"></div>
+                        </div>
+                        <ul class="menu_2_">
+                          <li onclick="profile()" >Profile</li>
+                          <li id="logout" onclick="logout()">Logout</li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+            <div id="bottom">
+                
+                <div class="tabs__content is-active">
+                    <h2 class="tabs__title">Admin Dashboard</h2>
+                    <hr>
+                    <div id="admindash">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                    </div>
+                </div>
+                <div class="tabs__content">
+                    <h2 class="tabs__title">Users</h2>
+                    <hr>
+                </div>
+                <div class="tabs__content">
+                    <!-- <h2 class="tabs__title">Products</h2> -->
+                    <div class="operationofproducts">
+                        <li class="tabs_toggle is_active">View All Products</li>
+                        <li class="tabs_toggle">Add Product</li>
+                        <li class="tabs_toggle">Update Product</li>
+                        <li class="tabs_toggle">Delete Product</li>
+                    </div>
+                    <hr>
+                    <div class="tabs__body">
+                        <div class="tabs_content is_active table_section">
+                           <table>
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody id="showProduct">
+                               
+               
+                            </tbody>
+                           </table>
+
+
+
+
+                            
+                        </div>
+                        <div class="tabs_content">
+                            <div id="addProduct_">
+                                <input type="text" placeholder="Image Url" id="url">
+                                <input type="text" placeholder="Product Name" id="name">
+                                <input type="text" placeholder="Price" id="price">
+                                <select id="category">
+                                    <option>Category</option>
+                                    <option value="Pant">Pant</option>
+                                    <option value="Shirt">Shirt</option>
+                                    <option value="Tshirt">Tshirt</option>
+                                    <option value="Laptop">Laptop</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Grocery">Grocery</option>
+                                    <option value="Home-Kitchen">Home-Kitchen</option>
+                                </select>
+                                <input type="text" placeholder="Rating" id="rating">
+                                <input type="text" placeholder="Quantity" id="quantity">
+                                <input type="text" placeholder="Description" id="description">
+                                <button onclick="addProduct()">Add Product</button>
+                            </div>
+                        </div>
+                        <div class="tabs_content">
+                            <h2 class="tabs__title">Update Product</h2>
+                           
+                        </div>
+                        <div class="tabs_content">
+                            <h2 class="tabs__title">Delete Product</h2>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tabs__content">
+                    <div class="operationofproducts">
+                        <li class="tabs_toggle is_active">View All Orders</li>
+                        <li class="tabs_toggle">Update Order Status</li>
+                    </div>
+                    <hr>
+                    <div class="tabs__body">
+                        <div class="tabs_content is_active">
+                            <h2 class="tabs__title">View All Orders</h2>
+                            
+                        </div>
+                        <div class="tabs_content">
+                            <h2 class="tabs__title">Update Order Status</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./admindashboard.js"></script>
