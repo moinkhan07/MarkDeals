@@ -72,7 +72,7 @@ public class CartServiceImpl implements CartService{
 			List<Product> listOfProducts = existingCart.getProduct();
 			Optional<Product> optProduct = productRepository.findById(pId);
 			listOfProducts.remove(optProduct.get());
-			existingCart.getProduct().addAll(listOfProducts);
+//			existingCart.getProduct().addAll(listOfProducts);
 			cartRepository.save(existingCart);
 			return existingCart;
 		}
