@@ -34,17 +34,38 @@ let barcode = async () =>{
               "Content-Type": "application/json",
             },
           });
-          let data = await res.json();
-          console.log(data);
+          let data1 = await res.json();
+          console.log(data1);
 
-          let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
-            method: "DELETE",
+          let orderDetails ={
+            totalAmount:paymentAmountFromLs,
+            product : userDataFromLs.cart.product,
+            users :userDataFromLs,
+            address:userDataFromLs.address,
+          }
+
+          let res2 = await fetch("https://markdeals.up.railway.app/orders", {
+            method: "POST",
+            body: JSON.stringify(orderDetails),
             headers: {
               "Content-Type": "application/json",
             },
           });
           let data2 = await res2.json();
           console.log(data2);
+
+
+
+
+
+          let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          let data3 = await res3.json();
+          console.log(data3);
 
           window.location.href = "./orderplaced.html";
         }else{

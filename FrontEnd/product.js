@@ -160,3 +160,8 @@ let searchproduct = async()=>{
 
 let userFirstNameFirstLetter = document.querySelector(".selected_");
 userFirstNameFirstLetter.innerText = userDataFromLs.firstName.charAt(0).toUpperCase();
+
+// =======================================Order history page redirect=========================
+let orderHistory=()=>{
+  window.location.href= "orderhistory.html";
+}
