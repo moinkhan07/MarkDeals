@@ -41,7 +41,6 @@ let barcode = async () =>{
             totalAmount:paymentAmountFromLs,
             product : userDataFromLs.cart.product,
             users :userDataFromLs,
-            address:userDataFromLs.address,
           }
 
           let res2 = await fetch("https://markdeals.up.railway.app/orders", {
@@ -67,7 +66,7 @@ let barcode = async () =>{
           let data3 = await res3.json();
           console.log(data3);
 
-          window.location.href = "./orderplaced.html";
+          // window.location.href = "./orderplaced.html";
         }else{
             alert("OTP is incorrect!");
         }

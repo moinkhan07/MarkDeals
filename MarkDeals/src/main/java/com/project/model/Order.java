@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -31,7 +32,6 @@ public class Order {
 	private Integer orderId;
 	private String status = "Not yet dispatched";
 	private LocalDate placedDate = LocalDate.now();
-	private LocalDate DeliveryDate= LocalDate.now().plusDays(4);
 	private Double totalAmount;
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Product> product = new ArrayList<>();
@@ -39,9 +39,6 @@ public class Order {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Users users;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Address address;
-	
-//	@OneToOne
-//	private Payment payment;
+	@OneToOne
+	private Payment payment;
 }
