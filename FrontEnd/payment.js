@@ -41,6 +41,7 @@ let barcode = async () =>{
             totalAmount:paymentAmountFromLs,
             product : userDataFromLs.cart.product,
             users :userDataFromLs,
+            payment:data1,
           }
 
           let res2 = await fetch("https://markdeals.up.railway.app/orders", {
