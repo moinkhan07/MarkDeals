@@ -36,7 +36,7 @@ public class Order {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Product> product = new ArrayList<>();
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Users users;
 	
 	@OneToOne
