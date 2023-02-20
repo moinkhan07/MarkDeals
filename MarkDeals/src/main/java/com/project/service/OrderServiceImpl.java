@@ -27,14 +27,14 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public List<Order> getAllOrders(Integer userId) throws OrderException {
+	public Order getAllOrders(Integer userId) throws OrderException {
 		Optional<Users> optUser = userRepository.findById(userId);
 		if (optUser.isEmpty()) {
 			throw new OrderException("User does not exist");
 		}else {
 			Users existingUser = optUser.get();
-			List<Order> orders = existingUser.getOrders();
-			return orders;
+			Order order = existingUser.getOrders();
+			return order;
 		}
 	}
 	
