@@ -22,25 +22,25 @@ public class OrderServiceImpl implements OrderService{
 	private UserRepository userRepository;
 	
 	@Override
-	public Order addOrder(Order order) throws OrderException {
+	public Order addOrder(Order order,Integer uId) throws OrderException {
+		Optional<Users> optUser = userRepository.findById(uId);
+		Users users = optUser.get();
 		order.setStatus("Processing");
-		order.setPlacedDate(LocalDate.now()); 
-		order.getProduct();
-		order.getPayment();
-		order.getTotalAmount();
+		order.setPlacedDate(LocalDate.now());
+		users.getOrders().add(order);
 		return orderRepository.save(order);
 	}
 
-	@Override
-	public Order getAllOrders(String userEmail) throws OrderException {
-		Users existingUser = userRepository.findByUserEmail(userEmail);
-		if (existingUser != null) {
-			Optional<Order> order = orderRepository.findById(existingUser.getOrders().getOrderId());
-			Order existingOrder = order.get();
-			return existingOrder;
-		}
-		throw new OrderException("Invalid user!");
-	}
+//	@Override
+//	public Order getAllOrders(String userEmail) throws OrderException {
+//		Users existingUser = userRepository.findByUserEmail(userEmail);
+//		if (existingUser != null) {
+//			Optional<Order> order = orderRepository.findById(existingUser.getOrders());
+//			Order existingOrder = order.get();
+//			return existingOrder;
+//		}
+//		throw new OrderException("Invalid user!");
+//	}
 	
 	
 
