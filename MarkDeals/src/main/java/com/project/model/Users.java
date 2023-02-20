@@ -3,6 +3,7 @@ package com.project.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
@@ -58,6 +59,7 @@ public class Users {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cart cart;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//	@OneToMany(cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Order> orders = new ArrayList<>();
 }

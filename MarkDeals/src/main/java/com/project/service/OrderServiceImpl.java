@@ -29,7 +29,6 @@ public class OrderServiceImpl implements OrderService{
 		order.setStatus("Processing");
 		order.setPlacedDate(LocalDate.now());
 		users.getOrders().add(order);
-		userRepository.save(users);
 		return orderRepository.save(order);
 	}
 
