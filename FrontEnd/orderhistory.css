@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+}
+#navbar{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(136,61,26);
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    border-bottom: 1px solid white;
+    margin: auto;
+  }
+  #logo{
+    width: 5%;
+    height: 60px;
+  }
+  #logo>img{
+    width: 100%;
+    border: 2px dotted white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+  }
+  #searchbar{
+    width: 60%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 80px;
+  }
+  #search{
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 17px;
+    position: relative;
+  }
+  #searchbtn{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 800px;
+    outline: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(203, 203, 203);
+  }
+  #searchbtn:hover{
+    background-color: rgb(151, 151, 151);
+  
+  }
+  #orderhistory{
+    width: 5%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #orderhistory>img{
+    width: 70%;
+    cursor: pointer;
+  }
+  #orderhistory>img:hover{
+    width: 75%;
+  }
+  #cart{
+    width: 5%;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #cart>img{
+    width: 80%;
+    cursor: pointer;
+  }
+  #cart>img:hover{
+    width: 84%;
+  }
+  #profile{
+    width: 5%;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown_main_ {
+    position: relative;
+    margin: auto;
+  }
+  .dropdown_main_ * {
+    box-sizing: border-box;
+  }
+  .select_ {
+    color: black;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* padding: 15px 0; */
+    cursor: pointer;
+  }
+  .selected_{
+    color: rgb(136,61,26);
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50%; */
+    /* border: 1px solid white; */
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 25px;
+    background-color: white;
+    /* margin-left: 50px; */
+  }
+  .caret_ {
+    width: 0;
+    height: 0;
+    /* border-left: 6px solid transparent; */
+    /* border-right: 6px solid transparent; */
+    /* border-top: 7px solid rgb(0, 0, 0); */
+    /* transition: 0.3s; */
+  }
+  .caret_-rotate {
+    transform: rotate(180deg);
+  }
+  .menu_2_ {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    position: absolute;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    left: 0;
+    width: 200px;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+    margin-top: 5px;
+  }
+  .menu_2_ li {
+    width: 100%;
+    padding: 0.7em 0;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    color:rgb(136,61,26);
+  }
+  .menu_2_ li:hover {
+    background-color: rgb(230, 230, 230);
+  }
+  #logout{
+    background-color: rgb(136,61,26);
+    color: rgb(255, 255, 255);
+  }
+  .menu_2_-open {
+    display: block;
+    opacity: 1;
+  }
+/*===============================================Navbar end=======================================  */
+.title{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+table{
+    width: 80%;
+    table-layout: fixed;
+    margin: auto;
+}
+thead th{
+    background-color: rgb(136,61,26);
+    color: white;
+    font-size: 18px;
+    font-weight: lighter;
+    width: 140px;
+    height: 30px;
+    border-radius: 10px;
+    top: 70px;
+    position: sticky;
+}
+th,td{
+    text-align: center;
+    border-bottom: 1px solid rgb(151, 151, 151);
+    padding: 10px 0;
+    font-size: 18px;
+}
