@@ -13,7 +13,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
 });
 
 let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
-// console.log(userDataFromLs)
+console.log(userDataFromLs)
 let getOrders = async()=>{
     let res = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`);
     let data = await res.json();
