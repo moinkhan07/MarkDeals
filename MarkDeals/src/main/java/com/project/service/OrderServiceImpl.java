@@ -22,9 +22,12 @@ public class OrderServiceImpl implements OrderService{
 	private UserRepository userRepository;
 	
 	@Override
-	public Order addOrder(Order order) throws OrderException {
+	public Order addOrder(Order order,Integer uId) throws OrderException {
+		Optional<Users> optUser = userRepository.findById(uId);
+		Users users = optUser.get();
 		order.setStatus("Processing");
 		order.setPlacedDate(LocalDate.now());
+		users.setOrders(order);
 		return orderRepository.save(order);
 	}
 
