@@ -11,3 +11,13 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
       menu_2.classList.toggle("menu_2_-open");
     });
 });
+
+let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
+console.log(userDataFromLs)
+let getProduct = async()=>{
+    let res = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userId}`);
+    let data = await res.json();
+    // appendData(data);
+    console.log(data);
+  }
+  getProduct();

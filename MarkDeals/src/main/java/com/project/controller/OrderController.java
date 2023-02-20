@@ -1,7 +1,5 @@
 package com.project.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,9 +28,9 @@ public class OrderController {
 	}
 	
 	@GetMapping("/orders/{uId}")
-	public ResponseEntity<List<Order>> getAllOrders(@PathVariable("uId") Integer uId) throws OrderException{
-		List<Order> orders = orderService.getAllOrders(uId);
-		return new ResponseEntity<List<Order>>(orders,HttpStatus.OK);
+	public ResponseEntity<Order> getAllOrders(@PathVariable("uId") Integer uId) throws OrderException{
+		Order orders = orderService.getAllOrders(uId);
+		return new ResponseEntity<Order>(orders,HttpStatus.OK);
 	}
 
 }
