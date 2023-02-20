@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkDeals - Order History</title>
+    <link rel="stylesheet" href="./logo.png">
+    <link rel="stylesheet" href="./orderhistory.css">
+</head>
+<body>
+
+
+    <nav id="navbar">
+        <div id="logo">
+            <img src="./logo.png" alt="">
+        </div>
+        <div id="searchbar">
+            <input type="text" placeholder="Search Product" id="search">
+            <button onclick="searchproduct()" id="searchbtn">Search</button>
+        </div>
+        <div id="orderhistory">
+          <img src="./orderhistory.png" alt="" onclick="orderHistory()">
+        </div>
+        <div id="cart">
+            <img src="./cart.png" alt="" onclick="cartPage()">
+        </div>
+        <div id="profile">
+            <div class="dropdown_main_">
+                <div class="select_">
+                  <div class="selected_">M</div>
+                  <div class="caret_"></div>
+                </div>
+                <ul class="menu_2_">
+                  <li onclick="profile()" >Profile</li>
+                  <li id="logout" onclick="logout()">Logout</li>
+                </ul>
+              </div>
+        </div>
+       </nav>
+       <h1 class="title">Order History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Order Id</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="showOrders">
+         
+        </tbody>
+       </table>
+
+</body>
+</html>
+<script src="./orderhistory.js"></script>
