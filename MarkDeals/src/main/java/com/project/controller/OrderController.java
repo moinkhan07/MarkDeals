@@ -21,9 +21,9 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@PostMapping("/orders/{uId}")
-	public ResponseEntity<Order> addOrder(@RequestBody Order order,@PathVariable("uId") Integer uId)throws OrderException{
-		Order savedOrder = orderService.addOrder(order,uId);
+	@PostMapping("/orders")
+	public ResponseEntity<Order> addOrder(@RequestBody Order order)throws OrderException{
+		Order savedOrder = orderService.addOrder(order);
 		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
 	}
 	
