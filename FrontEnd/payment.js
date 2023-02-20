@@ -39,6 +39,7 @@ let barcode = async () =>{
 
           let orderDetails ={
             totalAmount:paymentAmountFromLs,
+            product:userDataFromLs.cart.product,
             payment:data1,
           }
 
