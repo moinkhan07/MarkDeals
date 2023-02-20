@@ -1,9 +1,13 @@
 package com.project.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +27,12 @@ public class OrderController {
 	public ResponseEntity<Order> addOrder(@RequestBody Order order)throws OrderException{
 		Order savedOrder = orderService.addOrder(order);
 		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/orders/{uId}")
+	public ResponseEntity<List<Order>> getAllOrders(@PathVariable("uId") Integer uId) throws OrderException{
+		List<Order> orders = orderService.getAllOrders(uId);
+		return new ResponseEntity<List<Order>>(orders,HttpStatus.OK);
 	}
 
 }
