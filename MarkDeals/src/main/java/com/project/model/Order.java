@@ -28,9 +28,13 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer orderId;
-	private String status = "Not yet dispatched";
-	private LocalDate placedDate = LocalDate.now();
+	
+	private String status;
+	
+	private LocalDate placedDate;
+	
 	private Double totalAmount;
+	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Product> product = new ArrayList<>();
 		

@@ -7,7 +7,7 @@ public interface OrderService {
 	
 	public Order addOrder(Order order) throws OrderException;
 	
-	public Order getAllOrders(Integer userId) throws OrderException;
+	public Order getAllOrders(String userEmail) throws OrderException;
 	
 
 }

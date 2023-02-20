@@ -1,6 +1,6 @@
 package com.project.service;
 
-import java.util.List;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,19 +23,20 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Override
 	public Order addOrder(Order order) throws OrderException {
+		order.setStatus("Processing");
+		order.setPlacedDate(LocalDate.now());
 		return orderRepository.save(order);
 	}
 
 	@Override
-	public Order getAllOrders(Integer userId) throws OrderException {
-		Optional<Users> optUser = userRepository.findById(userId);
-		if (optUser.isEmpty()) {
-			throw new OrderException("User does not exist");
-		}else {
-			Users existingUser = optUser.get();
-			Order order = existingUser.getOrders();
-			return order;
+	public Order getAllOrders(String userEmail) throws OrderException {
+		Users existingUser = userRepository.findByUserEmail(userEmail);
+		if (existingUser != null) {
+			Optional<Order> order = orderRepository.findById(existingUser.getOrders().getOrderId());
+			Order existingOrder = order.get();
+			return existingOrder;
 		}
+		throw new OrderException("Invalid user!");
 	}
 	
 	
