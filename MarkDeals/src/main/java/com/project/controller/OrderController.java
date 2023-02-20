@@ -27,9 +27,9 @@ public class OrderController {
 		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/orders/{uId}")
-	public ResponseEntity<Order> getAllOrders(@PathVariable("uId") Integer uId) throws OrderException{
-		Order orders = orderService.getAllOrders(uId);
+	@GetMapping("/orders/{uEmail}")
+	public ResponseEntity<Order> getAllOrders(@PathVariable("uEmail") String userEmail) throws OrderException{
+		Order orders = orderService.getAllOrders(userEmail);
 		return new ResponseEntity<Order>(orders,HttpStatus.OK);
 	}
 
