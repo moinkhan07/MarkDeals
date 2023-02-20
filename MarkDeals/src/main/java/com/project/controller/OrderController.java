@@ -1,5 +1,7 @@
 package com.project.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,10 +29,10 @@ public class OrderController {
 		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
 	}
 	
-//	@GetMapping("/orders/{uEmail}")
-//	public ResponseEntity<Order> getAllOrders(@PathVariable("uEmail") String userEmail) throws OrderException{
-//		Order orders = orderService.getAllOrders(userEmail);
-//		return new ResponseEntity<Order>(orders,HttpStatus.OK);
-//	}
+	@GetMapping("/orders/{uEmail}")
+	public ResponseEntity<List<Order>> getAllOrders(@PathVariable("uEmail") String userEmail) throws OrderException{
+		List<Order> orders = orderService.getAllOrders(userEmail);
+		return new ResponseEntity<>(orders,HttpStatus.OK);
+	}
 
 }
