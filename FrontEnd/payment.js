@@ -39,7 +39,6 @@ let barcode = async () =>{
 
           let orderDetails ={
             totalAmount:paymentAmountFromLs,
-            product:userDataFromLs.cart.product,
             payment:data1,
           }
 
@@ -66,7 +65,7 @@ let barcode = async () =>{
           let data3 = await res3.json();
           console.log(data3);
 
-          window.location.href = "./orderplaced.html";
+          // window.location.href = "./orderplaced.html";
         }else{
             alert("OTP is incorrect!");
         }
