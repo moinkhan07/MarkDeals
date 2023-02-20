@@ -43,7 +43,7 @@ let barcode = async () =>{
             payment:data1,
           }
 
-          let res2 = await fetch(`https://markdeals.up.railway.app/orders`, {
+          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userId}`, {
             method: "POST",
             body: JSON.stringify(orderDetails),
             headers: {

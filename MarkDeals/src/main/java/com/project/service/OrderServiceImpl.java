@@ -1,6 +1,7 @@
 package com.project.service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,16 +32,15 @@ public class OrderServiceImpl implements OrderService{
 		return orderRepository.save(order);
 	}
 
-//	@Override
-//	public Order getAllOrders(String userEmail) throws OrderException {
-//		Users existingUser = userRepository.findByUserEmail(userEmail);
-//		if (existingUser != null) {
-//			Optional<Order> order = orderRepository.findById(existingUser.getOrders());
-//			Order existingOrder = order.get();
-//			return existingOrder;
-//		}
-//		throw new OrderException("Invalid user!");
-//	}
+	@Override
+	public List<Order> getAllOrders(String userEmail) throws OrderException {
+		Users existingUser = userRepository.findByUserEmail(userEmail);
+		if (existingUser != null) {
+			List<Order> listOfOrders=  existingUser.getOrders();
+			return listOfOrders;
+		}
+		throw new OrderException("Invalid user!");
+	}
 	
 	
 
