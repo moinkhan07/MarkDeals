@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.exception.UserException;
 import com.project.model.Cart;
+import com.project.model.Order;
 import com.project.model.Users;
 import com.project.model.UsersLogin;
 import com.project.repository.UserRepository;
@@ -19,6 +20,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Users registerUser(Users user) throws UserException {
 		user.setCart(new Cart());
+		user.setOrders(new Order());
 		return userRepository.save(user);
 	}
 
