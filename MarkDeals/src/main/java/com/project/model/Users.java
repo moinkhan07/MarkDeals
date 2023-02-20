@@ -53,6 +53,6 @@ public class Users {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cart cart;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Order orders;
 }
