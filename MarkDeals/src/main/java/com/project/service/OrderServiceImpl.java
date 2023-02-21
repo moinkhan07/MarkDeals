@@ -1,14 +1,10 @@
 package com.project.service;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.exception.OrderException;
 import com.project.model.Order;
-import com.project.model.ProductDto;
-import com.project.model.Users;
 import com.project.repository.OrderRepository;
 import com.project.repository.UserRepository;
 
@@ -22,13 +18,8 @@ public class OrderServiceImpl implements OrderService{
 	private UserRepository userRepository;
 	
 	@Override
-	public Order addOrder(Users users) throws OrderException {
-		Optional<Order> order = orderRepository.findById(users.getOrder().getOrderId());
-		Order existingOrder = order.get();
-		existingOrder.getProduct().add((ProductDto) users.getCart().getProduct());
-		existingOrder.setPayment(users.getOrder().getPayment());
-		existingOrder.setTotalAmount(users.getOrder().getTotalAmount());
-		return orderRepository.save(existingOrder);
+	public Order addOrder(Order order) throws OrderException {
+		return orderRepository.save(order);
 	}
 
 //	@Override
