@@ -1,12 +1,11 @@
 package com.project.service;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.exception.OrderException;
 import com.project.model.Order;
+import com.project.model.Payment;
 import com.project.model.Users;
 import com.project.repository.OrderRepository;
 import com.project.repository.UserRepository;
@@ -21,11 +20,12 @@ public class OrderServiceImpl implements OrderService{
 	private UserRepository userRepository;
 	
 	@Override
-	public Order addOrder(Order order,Integer uId) throws OrderException {
-		Optional<Users> optional = userRepository.findById(uId);
-		Users users = optional.get();
-		users.setOrder(order);
-		userRepository.save(users);
+	public Order addOrder(Users users,Double amt,Payment payment) throws OrderException {
+		Order order = orderRepository.findByOrderId(users.getOrder().getOrderId());
+		order.setProduct(users.getCart().getProduct());
+		order.setStatus("Processing");
+		order.setTotalAmount(amt);
+		order.setPayment(payment);
 		return orderRepository.save(order);
 	}
 
