@@ -52,7 +52,7 @@ let barcode = async () =>{
           let data2 = await res2.json();
           console.log(data2);
 
-
+          
 
 
 
