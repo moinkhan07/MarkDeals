@@ -37,14 +37,14 @@ let barcode = async () =>{
           let data1 = await res.json();
           console.log(data1);
 
-          let orderDetails ={
-            totalAmount:paymentAmountFromLs,
-            payment:data1,
-          }
+          // let orderDetails ={
+          //   totalAmount:paymentAmountFromLs,
+          //   payment:data1,
+          // }
 
-          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userId}`, {
+          let res2 = await fetch("https://markdeals.up.railway.app/orders", {
             method: "POST",
-            body: JSON.stringify(orderDetails),
+            body: JSON.stringify(userDataFromLs),
             headers: {
               "Content-Type": "application/json",
             },
@@ -52,7 +52,7 @@ let barcode = async () =>{
           let data2 = await res2.json();
           console.log(data2);
 
-          
+
 
 
 

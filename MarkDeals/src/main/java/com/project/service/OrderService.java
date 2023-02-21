@@ -1,15 +1,14 @@
 package com.project.service;
 
-import java.util.List;
-
 import com.project.exception.OrderException;
 import com.project.model.Order;
+import com.project.model.Users;
 
 public interface OrderService {
 	
-	public Order addOrder(Order order,Integer uId) throws OrderException;
+	public Order addOrder(Users users) throws OrderException;
 	
-	public List<Order> getAllOrders(String userEmail) throws OrderException;
+//	public List<Order> getAllOrders(String userEmail) throws OrderException;
 	
 
 }
