@@ -39,7 +39,8 @@ let barcode = async () =>{
 
             let cartres = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userEmail}`);
             let cartdata = await cartres.json();
-            
+            console.log(cartdata);
+
           let orderDetails ={
             totalAmount:paymentAmountFromLs,
             status:"Processing",
