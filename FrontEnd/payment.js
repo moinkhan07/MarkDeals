@@ -48,9 +48,9 @@ let barcode = async () =>{
           //   product:cartdata,
           // }
 
-          let res2 = await fetch(`https://markdeals.up.railway.app//orders/${paymentAmountFromLs}/${data1}`, {
+          let res2 = await fetch(`https://markdeals.up.railway.app//orders/${paymentAmountFromLs}/${userDataFromLs.userEmail}`, {
             method: "POST",
-            body: JSON.stringify(userDataFromLs),
+            body: JSON.stringify(data1),
             headers: {
               "Content-Type": "application/json",
             },

@@ -20,7 +20,8 @@ public class OrderServiceImpl implements OrderService{
 	private UserRepository userRepository;
 	
 	@Override
-	public Order addOrder(Users users,Double amt,Payment payment) throws OrderException {
+	public Order addOrder(String userEmail,Double amt,Payment payment) throws OrderException {
+		Users users = userRepository.findByUserEmail(userEmail);
 		Order order = orderRepository.findByOrderId(users.getOrder().getOrderId());
 		order.setProduct(users.getCart().getProduct());
 		order.setStatus("Processing");
