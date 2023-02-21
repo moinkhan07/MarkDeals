@@ -59,7 +59,7 @@ public class Users {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cart cart;
 	
-//	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<Order> orders = new ArrayList<>();
 }
