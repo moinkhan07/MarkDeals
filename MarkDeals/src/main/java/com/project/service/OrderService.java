@@ -7,7 +7,7 @@ import com.project.model.Users;
 
 public interface OrderService {
 	
-	public Order addOrder(Users users,Double amt,Payment payment) throws OrderException;
+	public Order addOrder(String userEmail ,Double amt,Payment payment) throws OrderException;
 	
 //	public List<Order> getAllOrders(String userEmail) throws OrderException;
 	

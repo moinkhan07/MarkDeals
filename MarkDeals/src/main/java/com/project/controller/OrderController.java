@@ -22,9 +22,9 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@PostMapping("/orders/{amt}/{payType}")
-	public ResponseEntity<Order> addOrder(@RequestBody Users users,@PathVariable("amt") Double amt,@PathVariable("payType") Payment payment)throws OrderException{
-		Order savedOrder = orderService.addOrder(users,amt,payment);
+	@PostMapping("/orders/{amt}/{uEmail}")
+	public ResponseEntity<Order> addOrder(@RequestBody Payment payment,@PathVariable("amt") Double amt,@PathVariable("uEmail") String userEmail)throws OrderException{
+		Order savedOrder = orderService.addOrder(userEmail,amt,payment);
 		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
 	}
 //	
