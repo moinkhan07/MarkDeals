@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.exception.OrderException;
 import com.project.model.Order;
-import com.project.model.Users;
 import com.project.service.OrderService;
 
 @RestController
@@ -21,8 +20,8 @@ public class OrderController {
 	private OrderService orderService;
 	
 	@PostMapping("/orders")
-	public ResponseEntity<Order> addOrder(@RequestBody Users users)throws OrderException{
-		Order savedOrder = orderService.addOrder(users);
+	public ResponseEntity<Order> addOrder(@RequestBody Order order)throws OrderException{
+		Order savedOrder = orderService.addOrder(order);
 		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
 	}
 //	

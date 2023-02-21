@@ -30,9 +30,11 @@ public class Order {
 	
 	private Double totalAmount;
 	
+	private String status;
+	
 	@OneToOne
 	private Payment payment;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	List<ProductDto> product = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	private List<Product> product = new ArrayList<>();
 }

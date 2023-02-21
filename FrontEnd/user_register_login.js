@@ -22,6 +22,9 @@ const registeruser = async () => {
       },
     });
     let data = await res.json();
+    if(data.userEmail == data.userEmail && data.userMobile == data.userMobile){
+      alert("User registered!")
+    }
     console.log(data);
   };
   
