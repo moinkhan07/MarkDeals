@@ -28,12 +28,12 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer orderId;
 	
-//	private Double totalAmount;
-//	
-//	private String status;
-//	
-//	@OneToOne
-//	private Payment payment;
+	private Double totalAmount;
+	
+	private String status;
+	
+	@OneToOne
+	private Payment payment;
 	
 	@OneToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
 	private List<Product> product = new ArrayList<>();

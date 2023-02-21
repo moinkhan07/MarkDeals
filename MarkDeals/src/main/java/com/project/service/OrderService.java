@@ -5,7 +5,7 @@ import com.project.model.Order;
 
 public interface OrderService {
 	
-	public Order addOrder(Order order) throws OrderException;
+	public Order addOrder(Order order,Integer uId) throws OrderException;
 	
 //	public List<Order> getAllOrders(String userEmail) throws OrderException;
 	

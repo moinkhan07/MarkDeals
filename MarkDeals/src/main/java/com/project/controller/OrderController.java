@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +20,9 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@PostMapping("/orders")
-	public ResponseEntity<Order> addOrder(@RequestBody Order order)throws OrderException{
-		Order savedOrder = orderService.addOrder(order);
+	@PostMapping("/orders/{uId}")
+	public ResponseEntity<Order> addOrder(@RequestBody Order order,@PathVariable("uId") Integer uId)throws OrderException{
+		Order savedOrder = orderService.addOrder(order,uId);
 		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
 	}
 //	
