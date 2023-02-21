@@ -1,6 +1,5 @@
 package com.project.model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,15 +28,11 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer orderId;
 	
-	private String status;
-	
-	private LocalDate placedDate;
-	
 	private Double totalAmount;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Product> product = new ArrayList<>();
-		
 	@OneToOne
 	private Payment payment;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	List<ProductDto> product = new ArrayList<>();
 }
