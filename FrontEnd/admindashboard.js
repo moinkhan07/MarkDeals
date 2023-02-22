@@ -66,7 +66,6 @@ const addProduct = async () => {
     },
   });
   let data = await res.json();
-  console.log(data);
   window.location.reload();
 };
 
@@ -81,7 +80,6 @@ const updateProductPrice = async() =>{
     },
   });
   let data = await res.json();
-  console.log(data);
   window.location.reload();
 }
 
@@ -98,7 +96,6 @@ const updateProductQuantity = async() =>{
     },
   });
   let data = await res.json();
-  console.log(data);
 }
 
 const deleteProduct= async()=>{
@@ -117,7 +114,6 @@ let getProduct = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/products");
   let data = await res.json();
   appendData(data);
-  // console.log(data);
 }
 getProduct();
 let appendData = (data)=>{

@@ -14,7 +14,6 @@ t.forEach((tab,index)=>{
     });
 });
 let paymentAmountFromLs = JSON.parse(localStorage.getItem("checkoutAmt"));
-console.log(paymentAmountFromLs);
 document.getElementById("payAmt").innerText = "₹" +paymentAmountFromLs;
 document.getElementById("upiPayAmt").innerText = "₹" +paymentAmountFromLs;
 
@@ -35,29 +34,6 @@ let barcode = async () =>{
             },
           });
           let data1 = await res.json();
-          console.log(data1);
-
-          
-          let cartres = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userEmail}`);
-          let cartdata = await cartres.json();
-          console.log(cartdata);
-
-          let orderDetails ={
-            product:cartdata,
-            payment:data1,
-            totalAmount:paymentAmountFromLs,
-          }
-
-          let res2 = await fetch(`https://markdeals.up.railway.app/order/${userDataFromLs.userEmail}`, {
-            method: "POST",
-            body: JSON.stringify(orderDetails),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          let data2 = await res2.json();
-          console.log(data2);
-
 
           let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",
@@ -66,9 +42,8 @@ let barcode = async () =>{
             },
           });
           let data3 = await res3.json();
-          console.log(data3);
 
-          // window.location.href = "./orderplaced.html";
+          window.location.href = "./orderplaced.html";
         }else{
             alert("OTP is incorrect!");
         }
@@ -93,7 +68,6 @@ let cod = async ()=>{
             },
           });
           let data = await res.json();
-          console.log(data);
 
 
           let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
@@ -103,9 +77,6 @@ let cod = async ()=>{
             },
           });
           let data2 = await res2.json();
-          console.log(data2);
-
-
 
           window.location.href = "./orderplaced.html";
     }else{
@@ -123,7 +94,6 @@ const cartdetails = async ()=>{
         users : userDataFromLs,
         paymentType : "Card",
     }
-    // console.log(userDataFromLs);
     if(cardNumber.length == 16 && month != null && year != null && cvv != null){
         if(cvv == "786"){
         let res = await fetch("https://markdeals.up.railway.app/savepayment", {
@@ -134,7 +104,6 @@ const cartdetails = async ()=>{
             },
           });
           let data = await res.json();
-          console.log(data);
 
           let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",
@@ -143,7 +112,6 @@ const cartdetails = async ()=>{
             },
           });
           let data2 = await res2.json();
-          console.log(data2);
 
 
           window.location.href = "./orderplaced.html";
@@ -172,7 +140,6 @@ const cartdetails = async ()=>{
             },
           });
           let data = await res.json();
-          console.log(data);
 
           let res2 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",
@@ -181,7 +148,6 @@ const cartdetails = async ()=>{
             },
           });
           let data2 = await res2.json();
-          console.log(data2);
 
           window.location.href = "./orderplaced.html";
         }else{
