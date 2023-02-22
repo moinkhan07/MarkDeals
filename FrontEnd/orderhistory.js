@@ -11,3 +11,20 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
       menu_2.classList.toggle("menu_2_-open");
     });
 });
+let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
+// ===================================Logout=============================
+let logout = ()=>{
+  window.location.href = "./user_register_login.html";
+}
+// =================================Profile alphabet =============================
+
+let userFirstNameFirstLetter = document.querySelector(".selected_");
+userFirstNameFirstLetter.innerText = userDataFromLs.firstName.charAt(0).toUpperCase();
+
+// ================================Go to product page====================
+let gotoproductpage=()=>{
+  window.location.href="./product.html";
+}
+let cartPage=()=>{
+  window.location.href="./cart.html";
+}
