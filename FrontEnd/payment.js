@@ -43,9 +43,7 @@ let barcode = async () =>{
           console.log(cartdata);
 
           let orderDetails ={
-            product:{
-              cartdata
-            },
+            product:cartdata,
             payment:data1,
             totalAmount:paymentAmountFromLs,
           }
