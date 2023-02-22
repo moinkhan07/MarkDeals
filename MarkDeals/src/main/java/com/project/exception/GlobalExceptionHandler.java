@@ -40,13 +40,6 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<MyErrorDetails>(myErr,HttpStatus.BAD_REQUEST);
 	}
 	
-	@ExceptionHandler(OrderException.class)  
-	public ResponseEntity<MyErrorDetails> orderExceptionHandler(OrderException orderException,WebRequest req){
-        
-		MyErrorDetails myErr = new MyErrorDetails(LocalDateTime.now(), orderException.getMessage(), req.getDescription(false));
-		
-		return new ResponseEntity<MyErrorDetails>(myErr,HttpStatus.BAD_REQUEST);
-	}
 	
 	@ExceptionHandler(CartException.class)  
 	public ResponseEntity<MyErrorDetails> cartExceptionHandler(CartException cartException,WebRequest req){
