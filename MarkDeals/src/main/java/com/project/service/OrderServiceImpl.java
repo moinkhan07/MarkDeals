@@ -24,7 +24,7 @@ public class OrderServiceImpl implements OrderService{
 	public Order addOrder(Order order, String uEmail) throws OrderException {
 		Users existingUser = userRepository.findByUserEmail(uEmail);
 		order.setLocalDate(LocalDate.now());
-		order.setProduct(existingUser.getCart().getProduct());
+		order.getProduct();
 		order.setStatus("Processing");
 		order.getPayment();
 		order.getTotalAmount();
