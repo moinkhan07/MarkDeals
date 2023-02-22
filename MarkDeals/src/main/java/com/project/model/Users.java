@@ -1,5 +1,8 @@
 package com.project.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
@@ -54,6 +57,6 @@ public class Users {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cart cart;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private Order order;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Order> orders = new ArrayList<>();
 }

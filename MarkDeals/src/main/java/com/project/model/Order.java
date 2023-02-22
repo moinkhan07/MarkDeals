@@ -1,5 +1,6 @@
 package com.project.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,8 @@ public class Order {
 	private Integer orderId;
 	
 	private Double totalAmount;
+	
+	private LocalDate localDate;
 	
 	private String status;
 	

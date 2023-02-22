@@ -22,11 +22,11 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@PostMapping("/orders/{amt}/{uEmail}")
-	public ResponseEntity<Order> addOrder(@RequestBody Payment payment,@PathVariable("amt") Double amt,@PathVariable("uEmail") String userEmail)throws OrderException{
-		Order savedOrder = orderService.addOrder(userEmail,amt,payment);
-		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
-	}
+//	@PostMapping("/orders/{amt}/{uEmail}")
+//	public ResponseEntity<Order> addOrder(@RequestBody Payment payment,@PathVariable("amt") Double amt,@PathVariable("uEmail") String userEmail)throws OrderException{
+//		Order savedOrder = orderService.addOrder(userEmail,amt,payment);
+//		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
+//	}
 //	
 //	@GetMapping("/orders/{uEmail}")
 //	public ResponseEntity<List<Order>> getAllOrders(@PathVariable("uEmail") String userEmail) throws OrderException{
