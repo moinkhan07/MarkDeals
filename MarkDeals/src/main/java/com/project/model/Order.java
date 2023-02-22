@@ -38,6 +38,6 @@ public class Order {
 	@OneToOne
 	private Payment payment;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
 	private List<Product> product = new ArrayList<>();
 }
