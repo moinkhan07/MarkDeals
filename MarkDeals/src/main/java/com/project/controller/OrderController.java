@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.exception.OrderException;
 import com.project.model.Order;
-import com.project.model.Payment;
-import com.project.model.Users;
 import com.project.service.OrderService;
 
 @RestController
@@ -21,17 +19,11 @@ public class OrderController {
 	
 	@Autowired
 	private OrderService orderService;
-	
-//	@PostMapping("/orders/{amt}/{uEmail}")
-//	public ResponseEntity<Order> addOrder(@RequestBody Payment payment,@PathVariable("amt") Double amt,@PathVariable("uEmail") String userEmail)throws OrderException{
-//		Order savedOrder = orderService.addOrder(userEmail,amt,payment);
-//		return new ResponseEntity<Order>(savedOrder,HttpStatus.CREATED);
-//	}
-//	
-//	@GetMapping("/orders/{uEmail}")
-//	public ResponseEntity<List<Order>> getAllOrders(@PathVariable("uEmail") String userEmail) throws OrderException{
-//		List<Order> orders = orderService.getAllOrders(userEmail);
-//		return new ResponseEntity<>(orders,HttpStatus.OK);
-//	}
+
+	@PostMapping("order/{uEmail}")
+	public ResponseEntity<Order> addOrder(@RequestBody Order order, @PathVariable("uEmail") String uEmail) throws OrderException{
+		Order addedOrder  = orderService.addOrder(order, uEmail);
+		return new ResponseEntity<Order>(addedOrder,HttpStatus.CREATED);
+	}
 
 }
