@@ -165,3 +165,8 @@ userFirstNameFirstLetter.innerText = userDataFromLs.firstName.charAt(0).toUpperC
 let orderHistory=()=>{
   window.location.href= "orderhistory.html";
 }
+
+// ===================================Logout=============================
+let logout = ()=>{
+  window.location.href = "./user_register_login.html";
+}
