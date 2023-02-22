@@ -37,29 +37,20 @@ let barcode = async () =>{
           let data1 = await res.json();
           console.log(data1);
 
-            // let cartres = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userEmail}`);
-            // let cartdata = await cartres.json();
-            // console.log(cartdata);
+          let orderDetails ={
+            payment:data1,
+            totalAmount:paymentAmountFromLs,
+          }
 
-          // let orderDetails ={
-          //   totalAmount:paymentAmountFromLs,
-          //   status:"Processing",
-          //   payment:data1,
-          //   product:cartdata,
-          // }
-
-          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${paymentAmountFromLs}/${userDataFromLs.userEmail}`, {
+          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`, {
             method: "POST",
-            body: JSON.stringify(data1),
+            body: JSON.stringify(orderDetails),
             headers: {
               "Content-Type": "application/json",
             },
           });
           let data2 = await res2.json();
           console.log(data2);
-
-
-
 
 
           let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
