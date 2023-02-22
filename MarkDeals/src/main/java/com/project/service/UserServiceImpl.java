@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Users registerUser(Users user) throws UserException {
 		user.setCart(new Cart());
-		user.setOrder(new Order());
 		return userRepository.save(user);
 	}
 
