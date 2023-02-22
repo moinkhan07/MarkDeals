@@ -25,7 +25,6 @@ const registeruser = async () => {
     if(data.userEmail == data.userEmail && data.userMobile == data.userMobile){
       alert("User registered!")
     }
-    console.log(data);
   };
   
 const loginuser = async ()=>{
@@ -41,7 +40,6 @@ const loginuser = async ()=>{
       },
     });
     let data = await res.json();
-    console.log(data);
   if(data.message !== "Wrong Credential"){
     alert("Successfully login!");
     localStorage.setItem("userData", JSON.stringify(data));
