@@ -27,13 +27,13 @@ public class OrderServiceImpl implements OrderService{
 		Users existingUser = userRepository.findByUserEmail(userEmail);
 		List<Product> listOfProducts =  existingUser.getCart().getProduct();		
 		for (Product prod : listOfProducts) {
+			orders.getProducts().add(prod);
 			finalPrice += prod.getPrice();
 		}
 		orders.setOrderstatus("Processing");
 		orders.setPlacedDate(LocalDate.now());
 		orders.setTotalAmount(finalPrice);
 		orders.setUsers(existingUser);
-		orders.setProducts(listOfProducts);
 		existingUser.getOrders().add(orders);
 		return orderRepository.save(orders);
 	}
