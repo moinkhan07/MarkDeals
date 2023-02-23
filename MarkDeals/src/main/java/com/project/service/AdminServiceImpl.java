@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.exception.AdminException;
 import com.project.model.Admin;
+import com.project.model.AdminLoginDto;
 import com.project.repository.AdminRepository;
 
 @Service
@@ -24,10 +25,10 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public Admin loginAdmin(String email,String password) throws AdminException {
-		Admin existingAdmin = adminRepository.findByEmail(email);
+	public Admin loginAdmin(AdminLoginDto adminLoginDto) throws AdminException {
+		Admin existingAdmin = adminRepository.findByEmail(adminLoginDto.getEmail());
         
-		if (existingAdmin.getPassword().equals(password)) {
+		if (existingAdmin.getPassword().equals(adminLoginDto.getPassword())) {
 			return existingAdmin;
 		}
 		throw new AdminException("Wrong Credential"); 

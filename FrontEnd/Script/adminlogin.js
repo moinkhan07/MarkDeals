@@ -5,10 +5,10 @@ const adminlogin = async ()=>{
     let res = await fetch(`https://markdeals.up.railway.app/admins/${email}/${pass}`);
     let data = await res.json();
 
-    if(data.message !== "Wrong Credential"){
+    if(data.message == "Wrong Credential"){
+      alert("Wrong Credential!");
+    }else{
       alert("Admin Successfully login!");
       window.location.href="./admindashboard.html";
-    }else{
-      alert("Wrong Credential!");
     }
 }

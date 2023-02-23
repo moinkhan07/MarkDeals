@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.exception.AdminException;
 import com.project.model.Admin;
+import com.project.model.AdminLoginDto;
 import com.project.service.AdminService;
 
 @RestController
@@ -27,9 +28,9 @@ public class AdminController {
 		return new ResponseEntity<String>(result,HttpStatus.CREATED);
 	}
 
-	@GetMapping("/admins/{email}/{pass}")
-	public ResponseEntity<Admin> loginAdmin(@PathVariable("email") String email,@PathVariable("pass") String pass) throws AdminException{
-		Admin result = adminService.loginAdmin(email,pass);
+	@PostMapping("/admins")
+	public ResponseEntity<Admin> loginAdmin(@RequestBody AdminLoginDto adminLoginDto) throws AdminException{
+		Admin result = adminService.loginAdmin(adminLoginDto);
 		return new ResponseEntity<>(result,HttpStatus.OK);
  	}
 	
