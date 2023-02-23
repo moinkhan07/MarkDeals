@@ -47,69 +47,6 @@ t.forEach((tab,index)=>{
     });
 });
 
-const addProduct = async () => {
-  let add_item_data = {
-    imageUrl: document.getElementById("url").value,
-    name: document.getElementById("name").value,
-    price: document.getElementById("price").value,
-    category: document.getElementById("category").value,
-    rating: document.getElementById("rating").value,
-    quantity: document.getElementById("quantity").value,
-    description: document.getElementById("description").value,
-  };
-
-  let res = await fetch("https://markdeals.up.railway.app/products", {
-    method: "POST",
-    body: JSON.stringify(add_item_data),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let data = await res.json();
-  window.location.reload();
-};
-
-const updateProductPrice = async() =>{
-  let productId =document.getElementById("updatepId").value;
-  let price =document.getElementById("updatedprice").value;
-  let res = await fetch(`https://markdeals.up.railway.app/updateproductsprice/${productId}`, {
-    method: "PATCH",
-    body: JSON.stringify(price),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let data = await res.json();
-  window.location.reload();
-}
-
-const updateProductQuantity = async() =>{
-  let productId =document.getElementById("updpId").value;
-
-  let quantity = document.getElementById("updatedquantity").value;
-
-  let res =await fetch(`https://markdeals.up.railway.app/updateproductsquantity/${productId}`, {
-    method: "PATCH",
-    body: JSON.stringify(quantity),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let data = await res.json();
-}
-
-const deleteProduct= async()=>{
-    let del = document.getElementById("deleteProduct").value;
-    let res = await fetch(`https://markdeals.up.railway.app/products/${del}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    let data = await res.json();
-    alert("Product deleted!");
-}
-
 let getProduct = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/products");
   let data = await res.json();
@@ -169,4 +106,67 @@ let appendUsers=(data)=>{
     tr.append(uid,uimg,uname,uemail,umobile,ucity);
     users.append(tr);
   })
+}
+const addProduct = async () => {
+  let add_item_data = {
+    imageUrl: document.getElementById("url").value,
+    name: document.getElementById("name").value,
+    price: document.getElementById("price").value,
+    category: document.getElementById("category").value,
+    rating: document.getElementById("rating").value,
+    quantity: document.getElementById("quantity").value,
+    description: document.getElementById("description").value,
+  };
+
+  let res = await fetch("https://markdeals.up.railway.app/products", {
+    method: "POST",
+    body: JSON.stringify(add_item_data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await res.json();
+  getProduct(data);
+};
+
+const updateProductPrice = async() =>{
+  let productId =document.getElementById("updatepId").value;
+  let price =document.getElementById("updatedprice").value;
+  let res = await fetch(`https://markdeals.up.railway.app/updateproductsprice/${productId}`, {
+    method: "PATCH",
+    body: JSON.stringify(price),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await res.json();
+  getProduct(data);
+}
+
+const updateProductQuantity = async() =>{
+  let productId =document.getElementById("updpId").value;
+
+  let quantity = document.getElementById("updatedquantity").value;
+
+  let res =await fetch(`https://markdeals.up.railway.app/updateproductsquantity/${productId}`, {
+    method: "PATCH",
+    body: JSON.stringify(quantity),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await res.json();
+  getProduct(data);
+}
+
+const deleteProduct= async()=>{
+    let del = document.getElementById("deleteProduct").value;
+    let res = await fetch(`https://markdeals.up.railway.app/products/${del}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await res.json();
+    getProduct(data);
 }
