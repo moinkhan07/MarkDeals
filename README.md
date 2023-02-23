@@ -83,4 +83,4 @@
 ## Contributor : 
 - Moin Khan 
 
-# Thank You
+<h1 style="text-align:center;">Thank you for taking the time to read 😊</h1>
