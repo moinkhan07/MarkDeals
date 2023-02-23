@@ -15,7 +15,7 @@ import lombok.Data;
 public class Admin {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer adminId;
 	
 	private String adminName;
