@@ -1,4 +1,4 @@
-# MarkDeals - An E-commerce Website
+# MarkDeals - An E-commerce Application
 
 <img src = "./FrontEnd/Assets/logo.png">
 
