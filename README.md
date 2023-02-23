@@ -4,29 +4,29 @@
 <img src = "./FrontEnd/Assets/erdiagram.jpg">
 
 # There are mainly 2 users : 
-## Admin 
-## User
+## 1.Admin 
+## 2.User
 
 # Admin Side : 
 ## Admin Login : 
+- Username: admin@gmail.com
+- Password: 12345678
 <img src = "./FrontEnd/Assets/adminlogin.png">
-- Username : admin@gmail.com
-- Password : 12345678
 
-## Admin Dashboard :
-<img src = "./FrontEnd/Assets/admindash.png">
+### Admin Dashboard :
 - It is pending...
+<img src = "./FrontEnd/Assets/admindash.png">
 
-## Admin User Section :
-<img src = "./FrontEnd/Assets/adminuser">
+### Admin User Section :
 - View All Register Users
+<img src = "./FrontEnd/Assets/adminuser">
 
-## Admin Product Section : 
-<img src="./FrontEnd/Assets/adminproduct.png">
+### Admin Product Section : 
 - View All Products
 - Add product
 - Update Product Price & Quantity
 - Delete Product
+<img src="./FrontEnd/Assets/adminproduct.png">
 
-## Admin Order Section is on pending...
+### Admin Order Section is on pending...
 
