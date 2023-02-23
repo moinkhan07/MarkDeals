@@ -8,25 +8,26 @@
 ## 2.User
 
 # Admin Side : 
-## Admin Login : 
+### Admin Login 
 - Username: admin@gmail.com
 - Password: 12345678
 <img src = "./FrontEnd/Assets/adminlogin.png">
 
-### Admin Dashboard :
+### Admin Dashboard
 - It is pending...
 <img src = "./FrontEnd/Assets/admindash.png">
 
-### Admin User Section :
+### Admin User Section
 - View All Register Users
 <img src = "./FrontEnd/Assets/adminuser.png">
 
-### Admin Product Section : 
+### Admin Product Section
 - View All Products
 - Add product
 - Update Product Price & Quantity
 - Delete Product
 <img src="./FrontEnd/Assets/adminproduct.png">
 
-### Admin Order Section is on pending...
+### Admin Order Section
+- It is pending...
 
