@@ -19,7 +19,7 @@
 
 ### Admin User Section :
 - View All Register Users
-<img src = "./FrontEnd/Assets/adminuser">
+<img src = "./FrontEnd/Assets/adminuser.png">
 
 ### Admin Product Section : 
 - View All Products
