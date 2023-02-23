@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,4 +40,7 @@ public class Product {
 	
 	@NotNull(message = "Product description should not be null")
 	private String description;
+	
+	@ManyToOne
+	private Orders orders;
 }

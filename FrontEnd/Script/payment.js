@@ -35,6 +35,11 @@ let barcode = async () =>{
           });
           let data1 = await res.json();
 
+
+
+
+          
+
           let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",
             headers: {
