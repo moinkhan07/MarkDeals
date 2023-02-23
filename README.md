@@ -1,19 +1,22 @@
 # MarkDeals
+
 <img src = "./FrontEnd/Assets/logo.png">
 
 - The website has been built using Spring Boot, a popular Java-based framework, for its backend. For the frontend, the website uses HTML, CSS, and JavaScript, which are common languages used for building user interfaces on the web. The use of these technologies suggests that Markdeals is a modern and well-designed ecommerce platform that is capable of providing an optimal user experience for its customers.
 
+
 <img src = "./FrontEnd/Assets/erdiagram.jpg">
 
+
 ## There are mainly 2 users : 
-### 1.Admin 
-### 2.User
+### 1. Admin 
+### 2. User
 
 ## Index Page :
 <img src="./FrontEnd/Assets/indexpage.png">
 
 ## Admin Side : 
-### Login Form
+### Login
 - Username: admin@gmail.com
 - Password: 12345678
 <img src = "./FrontEnd/Assets/adminlogin.png">
@@ -37,7 +40,7 @@
 - It is pending...
 
 ## User Side : 
-### register & Login
+### Register & Login
 <img src = "./FrontEnd/Assets/userLogin.png">
 
 ### Product Page
