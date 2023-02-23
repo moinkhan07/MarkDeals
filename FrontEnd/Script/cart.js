@@ -146,7 +146,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     }
     let securetext = document.createElement("p");
     let securelogo = document.createElement("img");
-    securelogo.src = "./lock.png";
+    securelogo.src = "./Assets/lock.png";
     securetext.innerHTML = "Secure Checkout";
     securetext.setAttribute("id","secure");
     securetext.append(securelogo);
