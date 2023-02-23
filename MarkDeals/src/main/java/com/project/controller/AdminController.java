@@ -28,7 +28,7 @@ public class AdminController {
 		return new ResponseEntity<String>(result,HttpStatus.CREATED);
 	}
 
-	@PostMapping("/admins")
+	@PostMapping("/adminlogin")
 	public ResponseEntity<Admin> loginAdmin(@RequestBody AdminLoginDto adminLoginDto) throws AdminException{
 		Admin result = adminService.loginAdmin(adminLoginDto);
 		return new ResponseEntity<>(result,HttpStatus.OK);
