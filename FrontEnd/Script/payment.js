@@ -35,9 +35,17 @@ let barcode = async () =>{
           });
           let data1 = await res.json();
 
+          let orderobj = {}
 
-
-
+          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`, {
+            method: "POST",
+            body: JSON.stringify(orderobj),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          let data2 = await res2.json();
+          console.log(data2);
           
 
           let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
@@ -48,7 +56,7 @@ let barcode = async () =>{
           });
           let data3 = await res3.json();
 
-          window.location.href = "./orderplaced.html";
+          // window.location.href = "./orderplaced.html";
         }else{
             alert("OTP is incorrect!");
         }
