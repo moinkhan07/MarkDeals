@@ -28,11 +28,14 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public Orders saveOrder(Orders orders,String userEmail) {
 		Double finalPrice = 0.0;
+		
 		Users existingUser = userRepository.findByUserEmail(userEmail);
 		List<Product> listOfProducts =  existingUser.getCart().getProduct();	
 		for (Product prod : listOfProducts) {
+			Double discountedAmt = 0.0;
 			orders.getProducts().add(prod);
-			finalPrice += prod.getPrice();
+			discountedAmt = discountedAmt + ((prod.getPrice() * 10) / 100);
+			finalPrice += finalPrice - discountedAmt;
 		}
 		orders.setOrderstatus("Processing");
 		orders.setPlacedDate(LocalDate.now());
