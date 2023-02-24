@@ -26,22 +26,22 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Autowired
 	private ProductRepository productRepository;
-
+	
 	@Override
 	public Orders saveOrder(Orders orders,String userEmail) {
 		Double finalPrice = 0.0;
 		Users existingUser = userRepository.findByUserEmail(userEmail);
 		List<Product> listOfProducts =  existingUser.getCart().getProduct();	
-		List<Product> savedProducts = new ArrayList<>();
 		for (Product prod : listOfProducts) {
-			savedProducts.add(productRepository.save(prod));
+			prod.setOrders(orders);;
+			orders.getProducts().add(prod);
+		    productRepository.save(prod);
 			finalPrice += prod.getPrice();
 		}
 		orders.setOrderstatus("Processing");
 		orders.setPlacedDate(LocalDate.now());
 		orders.setTotalAmount(finalPrice);
 		orders.setUsers(existingUser);
-		orders.setProducts(savedProducts);
 		existingUser.getOrders().add(orders);
 		return orderRepository.save(orders);
 	}
