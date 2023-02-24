@@ -30,7 +30,7 @@ let cartPage=()=>{
 }
 
 let getOrders = async()=>{
-  let res = await fetch("https://markdeals.up.railway.app/orders");
+  let res = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`);
   let data = await res.json();
   // appendData(data);
   console.log(data);
