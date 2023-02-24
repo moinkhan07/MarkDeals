@@ -36,6 +36,7 @@ public class OrderServiceImpl implements OrderService{
 		orders.setTotalAmount(finalPrice);
 		orders.setUsers(existingUser);
 		existingUser.getOrders().add(orders);
+		userRepository.save(existingUser);
 		return orderRepository.save(orders);
 	}
 

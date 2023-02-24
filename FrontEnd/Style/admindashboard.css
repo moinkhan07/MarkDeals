@@ -277,7 +277,7 @@
     padding-bottom: 20px;
     margin-top: 40px;
 }
-#updateProductPrice{
+#updateProductPrice,#updateProductQuantity,#deleteproductdiv,#updateOrderStatus{
     width: 50%;
     box-shadow: rgb(169, 174, 179) 3px 3px 6px 0px inset, rgba(140, 140, 140, 0.5) -3px -3px 6px 1px inset;
     border-radius: 10px;
@@ -286,25 +286,7 @@
     padding-bottom: 20px;
     margin-top: 40px;
 }
-#updateProductQuantity{
-    width: 50%;
-    box-shadow: rgb(169, 174, 179) 3px 3px 6px 0px inset, rgba(140, 140, 140, 0.5) -3px -3px 6px 1px inset;
-    border-radius: 10px;
-    margin: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 40px;
-}
-#deleteproductdiv{
-    width: 50%;
-    box-shadow: rgb(169, 174, 179) 3px 3px 6px 0px inset, rgba(140, 140, 140, 0.5) -3px -3px 6px 1px inset;
-    border-radius: 10px;
-    margin: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 40px;
-}
-#addProduct_>input{
+#addProduct_>input,#deleteproductdiv>input{
     width: 90%;
     height: 35px;
     display: block;
@@ -320,7 +302,7 @@
     /* color: white; */
     font-size: 17px;
 }
-#deleteproductdiv>input{
+#deleteproductdiv>input,#updateOrderStatus>input{
     width: 90%;
     height: 35px;
     display: block;
@@ -368,7 +350,7 @@
     /* color: white; */
     font-size: 17px;
 }
-#deleteproductdiv>button{
+#deleteproductdiv>button,#updateOrderStatus>button,#addProduct_>button{
     width: 140px;
     height: 40px;
     display: block;
@@ -382,21 +364,10 @@
     background-color: rgb(136,61,26);
     color: white;
 }
-#addProduct_>button{
-    width: 140px;
-    height: 40px;
-    display: block;
-    margin: auto;
-    margin-top: 30px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor:pointer;
-    background-color: rgb(136,61,26);
-    color: white;
+#updateOrderStatus>button{
+    width: 190px;
 }
-#updateProductQuantity>button{
+#updateProductQuantity>button,#updateProductPrice>button{
     width: 220px;
     height: 40px;
     display: block;
@@ -410,41 +381,12 @@
     background-color: rgb(136,61,26);
     color: white;
 }
-#updateProductPrice>button{
-    width: 220px;
-    height: 40px;
-    display: block;
-    margin: auto;
-    margin-top: 30px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor:pointer;
-    background-color: rgb(136,61,26);
-    color: white;
-}
-#deleteproductdiv>button:hover{
+#deleteproductdiv>button:hover,#updateProductQuantity>button:hover,#updateProductPrice>button:hover,#addProduct_>button:hover,#updateOrderStatus>button:hover{
     background-color: white;
     color: rgb(136,61,26);
     border: 2px solid rgb(136,61,26);
 }
-#updateProductQuantity>button:hover{
-    background-color: white;
-    color: rgb(136,61,26);
-    border: 2px solid rgb(136,61,26);
-}
-#updateProductPrice>button:hover{
-    background-color: white;
-    color: rgb(136,61,26);
-    border: 2px solid rgb(136,61,26);
-}
-#addProduct_>button:hover{
-  background-color: white;
-  color: rgb(136,61,26);
-  border: 2px solid rgb(136,61,26);
-}
-#category{
+#category,#status{
     display: block;
     width: 90%;
     height: 35px;

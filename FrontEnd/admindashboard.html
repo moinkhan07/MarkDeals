@@ -148,7 +148,7 @@
                             <div id="deleteproductdiv">
                             <input type="text" placeholder="Product Id" id="deleteProduct">
                             <button onclick="deleteProduct()">Delete Product</button>
-                        </div>
+                            </div>
                         </div>
                     </div>
 
@@ -160,12 +160,33 @@
                     </div>
                     <hr>
                     <div class="tabs__body">
-                        <div class="tabs_content is_active">
-                            <h2 class="tabs__title">View All Orders</h2>
+                        <div class="tabs_content is_active table_section">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Placed Date</th>
+                                        <th>Status</th>
+                                        <th>Total Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="showOrders">
+                                   
+                                </tbody>
+                               </table>
                             
                         </div>
                         <div class="tabs_content">
-                            <h2 class="tabs__title">Update Order Status</h2>
+                            <div id="updateOrderStatus">
+                                <input type="text" placeholder="Order Id" id="orderId">
+                                <select id="status">
+                                    <option>Update Status</option>
+                                    <option value="Processed">Processed</option>
+                                    <option value="Out for delivery">Out for delivery</option>
+                                    <option value="Delivered">Delivered</option>
+                                </select>
+                                <button onclick="updateOrderStatus()">Update Order Status</button>
+                                </div>
                         </div>
                     </div>
                 </div>
