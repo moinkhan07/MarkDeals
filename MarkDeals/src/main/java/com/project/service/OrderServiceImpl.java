@@ -2,6 +2,7 @@ package com.project.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,20 @@ public class OrderServiceImpl implements OrderService{
 		Users existingUsers = userRepository.findByUserEmail(userEmail);
 		List<Orders> listOfOrders = existingUsers.getOrders();
 		return listOfOrders;
+	}
+
+	@Override
+	public List<Orders> viewAllOrders() {
+		return orderRepository.findAll();
+	}
+
+	@Override
+	public Orders updateOrderStatus(Integer orderId,String updateStatus) {
+		Optional<Orders> optOrders = orderRepository.findById(orderId);
+		Orders existingOrder = optOrders.get();
+		existingOrder.setOrderstatus(updateStatus);
+		orderRepository.save(existingOrder);
+		return existingOrder;
 	}
 
 }
