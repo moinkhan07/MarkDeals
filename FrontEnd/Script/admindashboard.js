@@ -110,11 +110,46 @@ let appendUsers=(data)=>{
 
 let getOrders = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/orders");
-  data = await res.json();
-  // appendData(data);
-  console.log(data);
+  let data = await res.json();
+  appendOrder(data);
 }
 getOrders();
+
+let appendOrder = (data)=>{
+  let orders = document.getElementById("showOrders");
+  orders.innerHTML = null;
+  data.forEach((el)=>{
+    let tr = document.createElement("tr");
+    let oId = document.createElement("td");
+    oId.innerText = el.orderId;
+    let oDate = document.createElement("td");
+    oDate.innerText = el.placedDate;
+    let oStatus = document.createElement("td");
+    oStatus.innerText = el.orderstatus;
+    let oAmount = document.createElement("td");
+    oAmount.innerText = el.totalAmount;
+    tr.append(oId,oDate,oStatus,oAmount);
+    orders.append(tr);
+  })
+}
+
+const updateOrderStatus= async ()=>{
+  let status = document.getElementById("status").value;
+  let orderId = document.getElementById("orderId").value;
+  let update={};
+  let res = await fetch(`https://markdeals.up.railway.app/orders/${orderId}/${status}`, {
+    method: "PATCH",
+    body: JSON.stringify(update),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await res.json();
+  if(data.orderstatus == status){
+    alert("Order status updated!")
+  }
+  getOrders(data);
+}
 
 
 const addProduct = async () => {
