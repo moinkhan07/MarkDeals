@@ -203,5 +203,5 @@ let orderHistory=()=>{
   window.location.href= "orderhistory.html";
 }
 let logout = ()=>{
-  window.location.href = "./user_register_login.html";
+  window.location.href = "./index.html";
 }

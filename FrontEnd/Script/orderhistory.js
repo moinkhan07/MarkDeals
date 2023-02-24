@@ -14,7 +14,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
 let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
 // ===================================Logout=============================
 let logout = ()=>{
-  window.location.href = "./user_register_login.html";
+  window.location.href = "./index.html";
 }
 // =================================Profile alphabet =============================
 
@@ -58,7 +58,7 @@ let appendOrder = (data)=>{
     let oStatus = document.createElement("td");
     oStatus.innerText = el.orderstatus;
     let oAmount = document.createElement("td");
-    oAmount.innerText = el.totalAmount;
+    oAmount.innerText = "₹" + el.totalAmount;
     let oDetails = document.createElement("td");
     oDetails.innerText = "Details";
     tr.append(oId,oDate,oStatus,oAmount,oDetails);

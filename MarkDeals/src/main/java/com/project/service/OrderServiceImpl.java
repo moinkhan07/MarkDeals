@@ -36,10 +36,10 @@ public class OrderServiceImpl implements OrderService{
 		}
 		orders.setOrderstatus("Processing");
 		orders.setPlacedDate(LocalDate.now());
+		finalPrice = finalPrice + 120 + (finalPrice * 1 / 100);
 		orders.setTotalAmount(finalPrice);
 		orders.setUsers(existingUser);
 		existingUser.getOrders().add(orders);
-		userRepository.save(existingUser);
 		return orderRepository.save(orders);
 	}
 
