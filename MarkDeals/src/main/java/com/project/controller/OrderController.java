@@ -28,7 +28,7 @@ public class OrderController {
 		return new ResponseEntity<Orders>(savedOrder,HttpStatus.OK);
 	}
 	
-	@GetMapping("/orders")
+	@GetMapping("/orders/{uEmail}")
 	public ResponseEntity<List<Orders>> getAllOrderOfAUser(@PathVariable("uEmail") String uEmail){
 		List<Orders> listOfOrders = orderService.viewAllOrdersByUserEmail(uEmail);
 		return new ResponseEntity<List<Orders>>(listOfOrders,HttpStatus.OK);
