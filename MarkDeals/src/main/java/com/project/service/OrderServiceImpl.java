@@ -36,7 +36,6 @@ public class OrderServiceImpl implements OrderService{
 		orders.setTotalAmount(finalPrice);
 		orders.setUsers(existingUser);
 		existingUser.getOrders().add(orders);
-		userRepository.save(existingUser);
 		return orderRepository.save(orders);
 	}
 
@@ -59,6 +58,14 @@ public class OrderServiceImpl implements OrderService{
 		existingOrder.setOrderstatus(updateStatus);
 		orderRepository.save(existingOrder);
 		return existingOrder;
+	}
+
+	@Override
+	public List<Product> getAllProductFromOrder(Integer orderId) {
+		Optional<Orders> optOrders = orderRepository.findById(orderId);
+		Orders existingOrder = optOrders.get();
+		List<Product> listOfProducts = existingOrder.getProducts();
+		return listOfProducts;
 	}
 
 }

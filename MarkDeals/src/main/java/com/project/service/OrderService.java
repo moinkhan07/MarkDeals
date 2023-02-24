@@ -3,6 +3,7 @@ package com.project.service;
 import java.util.List;
 
 import com.project.model.Orders;
+import com.project.model.Product;
 
 public interface OrderService {
 	
@@ -13,4 +14,6 @@ public interface OrderService {
 	public List<Orders> viewAllOrders();
 	
 	public Orders updateOrderStatus(Integer orderId,String updateStatus);
+	
+	public List<Product> getAllProductFromOrder(Integer orderId);
 }

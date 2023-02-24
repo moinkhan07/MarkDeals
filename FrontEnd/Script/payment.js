@@ -103,7 +103,7 @@ let cod = async ()=>{
           });
           let data3 = await res3.json();
 
-          // window.location.href = "./orderplaced.html";
+          window.location.href = "./orderplaced.html";
     }else{
         alert("Please check the checkbox!");
     }
