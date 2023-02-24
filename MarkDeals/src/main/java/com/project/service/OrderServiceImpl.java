@@ -24,8 +24,6 @@ public class OrderServiceImpl implements OrderService{
 	@Autowired
 	private UserRepository userRepository;
 	
-	@Autowired
-	private ProductRepository productRepository;
 	
 	@Override
 	public Orders saveOrder(Orders orders,String userEmail) {
@@ -33,9 +31,7 @@ public class OrderServiceImpl implements OrderService{
 		Users existingUser = userRepository.findByUserEmail(userEmail);
 		List<Product> listOfProducts =  existingUser.getCart().getProduct();	
 		for (Product prod : listOfProducts) {
-			prod.setOrders(orders);;
 			orders.getProducts().add(prod);
-		    productRepository.save(prod);
 			finalPrice += prod.getPrice();
 		}
 		orders.setOrderstatus("Processing");
@@ -43,6 +39,7 @@ public class OrderServiceImpl implements OrderService{
 		orders.setTotalAmount(finalPrice);
 		orders.setUsers(existingUser);
 		existingUser.getOrders().add(orders);
+		userRepository.save(existingUser);
 		return orderRepository.save(orders);
 	}
 
