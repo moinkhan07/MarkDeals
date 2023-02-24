@@ -2,6 +2,7 @@ package com.project.controller;
 
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.model.Orders;
+import com.project.model.Product;
 import com.project.service.OrderService;
 
 @RestController
@@ -47,7 +49,11 @@ public class OrderController {
 		return new ResponseEntity<Orders>(updatedOrders,HttpStatus.OK);
 	}
 	
-	
+	@GetMapping("/ordersproducts/{orderId}")
+	public ResponseEntity<List<Product>> getAllProductOfAOrder(@PathVariable("orderId") Integer orderId){
+		List<Product> listOfProducts = orderService.getAllProductFromOrder(orderId);
+		return new ResponseEntity<List<Product>>(listOfProducts,HttpStatus.OK);
+	}
 	
 	
 
