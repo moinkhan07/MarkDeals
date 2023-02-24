@@ -168,5 +168,5 @@ let orderHistory=()=>{
 
 // ===================================Logout=============================
 let logout = ()=>{
-  window.location.href = "./user_register_login.html";
+  window.location.href = "./index.html";
 }
