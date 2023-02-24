@@ -28,3 +28,11 @@ let gotoproductpage=()=>{
 let cartPage=()=>{
   window.location.href="./cart.html";
 }
+
+let getOrders = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders");
+  let data = await res.json();
+  // appendData(data);
+  console.log(data);
+}
+getOrders();

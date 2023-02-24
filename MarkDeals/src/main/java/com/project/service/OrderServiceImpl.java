@@ -38,4 +38,11 @@ public class OrderServiceImpl implements OrderService{
 		return orderRepository.save(orders);
 	}
 
+	@Override
+	public List<Orders> viewAllOrdersByUserEmail(String userEmail) {
+		Users existingUsers = userRepository.findByUserEmail(userEmail);
+		List<Orders> listOfOrders = existingUsers.getOrders();
+		return listOfOrders;
+	}
+
 }
