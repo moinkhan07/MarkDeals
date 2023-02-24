@@ -27,7 +27,7 @@ public class Orders {
 	
 	private Double totalAmount;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "orders")
 	private List<Product> products = new ArrayList<>();
 
 	@ManyToOne(cascade = CascadeType.ALL)
