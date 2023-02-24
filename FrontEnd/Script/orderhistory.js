@@ -38,13 +38,13 @@ let getOrders = async()=>{
 }
 getOrders();
 
-let getOrdersProducts= async()=>{
-  let res = await fetch(`https://markdeals.up.railway.app/ordersproducts/${11}`);
-  let data = await res.json();
-  console.log(data);
-}
+// let getOrdersProducts= async()=>{
+//   let res = await fetch(`https://markdeals.up.railway.app/ordersproducts/${12}`);
+//   let data = await res.json();
+//   console.log(data);
+// }
 
-getOrdersProducts();
+// getOrdersProducts();
 
 let appendOrder = (data)=>{
   let orders = document.getElementById("showOrders");
