@@ -107,6 +107,16 @@ let appendUsers=(data)=>{
     users.append(tr);
   })
 }
+
+let getOrders = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders");
+  data = await res.json();
+  // appendData(data);
+  console.log(data);
+}
+getOrders();
+
+
 const addProduct = async () => {
   let add_item_data = {
     imageUrl: document.getElementById("url").value,

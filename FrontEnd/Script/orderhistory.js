@@ -32,7 +32,27 @@ let cartPage=()=>{
 let getOrders = async()=>{
   let res = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`);
   let data = await res.json();
-  // appendData(data);
+  appendOrder(data);
   console.log(data);
 }
 getOrders();
+
+let appendOrder = (data)=>{
+  let orders = document.getElementById("showOrders");
+  orders.innerHTML = null;
+  data.forEach((el)=>{
+    let tr = document.createElement("tr");
+    let oId = document.createElement("td");
+    oId.innerText = el.orderId;
+    let oDate = document.createElement("td");
+    oDate.innerText = el.placedDate;
+    let oStatus = document.createElement("td");
+    oStatus.innerText = el.orderstatus;
+    let oAmount = document.createElement("td");
+    oAmount.innerText = el.totalAmount;
+    let oDetails = document.createElement("td");
+    oDetails.innerText = "Details";
+    tr.append(oId,oDate,oStatus,oAmount,oDetails);
+    orders.append(tr);
+  })
+}
