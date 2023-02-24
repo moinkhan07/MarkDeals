@@ -32,14 +32,13 @@ public class OrderServiceImpl implements OrderService{
 		Users existingUser = userRepository.findByUserEmail(userEmail);
 		List<Product> listOfProducts =  existingUser.getCart().getProduct();	
 		for (Product prod : listOfProducts) {
-			Double discountedAmt = 0.0;
 			orders.getProducts().add(prod);
-			discountedAmt = discountedAmt + ((prod.getPrice() * 10) / 100);
-			finalPrice += finalPrice - discountedAmt;
+			Double discountedAmt = prod.getPrice() / 10.0;
+			finalPrice += (prod.getPrice() - discountedAmt);
 		}
 		orders.setOrderstatus("Processing");
 		orders.setPlacedDate(LocalDate.now());
-		finalPrice = finalPrice + 120 + (finalPrice * 1 / 100);
+		finalPrice = finalPrice + 120.0 + (finalPrice * 1.0 / 100.0);
 		orders.setTotalAmount(finalPrice);
 		orders.setUsers(existingUser);
 		existingUser.getOrders().add(orders);
