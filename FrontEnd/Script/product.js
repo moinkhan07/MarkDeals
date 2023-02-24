@@ -42,6 +42,7 @@ let dropdown = document.querySelectorAll(".dropdown_main");
 
     // ===============================================
 let data;
+let flag = false;
     let getProduct = async()=>{
       let res = await fetch("https://markdeals.up.railway.app/products");
       data = await res.json();
@@ -82,7 +83,12 @@ let  userDataFromLs = JSON.parse(localStorage.getItem("userData"));
         },
       });
       let data = await res.json();
+      if(flag == false){
       alert("Product added to cart");
+      flag = true;
+      }else{
+        alert("Product is already in the cart!")
+      }
   }
 
   let cartPage=()=>{

@@ -263,7 +263,7 @@
   top: 10;
   position:fixed;
   border-right: 1px solid white;
-  padding-top: 40px;
+  /* padding-top: 40px; */
 }
 #productdiv{
   width: 100%;

@@ -215,3 +215,10 @@ const deleteProduct= async()=>{
     let data = await res.json();
     getProduct(data);
 }
+// ==================================Total sales today===========
+let totalSalesToday = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
+  let data = await res.json();
+  console.log(data);
+}
+totalSalesToday();

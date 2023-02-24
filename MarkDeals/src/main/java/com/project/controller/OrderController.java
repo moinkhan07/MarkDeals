@@ -55,6 +55,10 @@ public class OrderController {
 		return new ResponseEntity<List<Product>>(listOfProducts,HttpStatus.OK);
 	}
 	
-	
+	@GetMapping("/orders/totalsalestoday")
+	public ResponseEntity<Double> totalSalesToday(){
+		Double totalSales = orderService.totalSalesToday();
+		return new ResponseEntity<Double>(totalSales,HttpStatus.OK);
+	}
 
 }

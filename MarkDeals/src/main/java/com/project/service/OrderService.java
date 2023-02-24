@@ -16,4 +16,6 @@ public interface OrderService {
 	public Orders updateOrderStatus(Integer orderId,String updateStatus);
 	
 	public List<Product> getAllProductFromOrder(Integer orderId);
+	
+	public Double totalSalesToday();
 }
