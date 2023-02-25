@@ -79,7 +79,7 @@ public class OrderServiceImpl implements OrderService{
 		List<Orders> listOfOrders = orderRepository.findAll();
 		Double todaySales = 0.0;
 		for (Orders orders : listOfOrders) {
-			if (orders.getPlacedDate() == LocalDate.now()) {
+			if (orders.getPlacedDate().equals(LocalDate.now())) {
 				todaySales += orders.getTotalAmount();
 			}
 		}
