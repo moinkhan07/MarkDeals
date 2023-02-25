@@ -53,4 +53,14 @@ public class UserServiceImpl implements UserService{
 		
 	}
 
+	@Override
+	public Integer totalUsers() {
+		List<Users> listOfUsers = userRepository.findAll();
+		Integer totalUsersCounter = 0;
+		for (Users users : listOfUsers) {
+			totalUsersCounter++;
+		}
+		return totalUsersCounter;
+	}
+
 }

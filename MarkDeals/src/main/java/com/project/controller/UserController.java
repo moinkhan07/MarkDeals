@@ -64,5 +64,14 @@ public class UserController {
 		
 	}
 	
+	
+	@GetMapping("/totalusers")
+	public ResponseEntity<Integer> totalUsers(){
+		Integer totalUsers = userService.totalUsers();
+		return new ResponseEntity<Integer>(totalUsers,HttpStatus.OK);
+	}
+	
+	
+
 
 }

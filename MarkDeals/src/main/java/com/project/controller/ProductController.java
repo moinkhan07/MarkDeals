@@ -86,6 +86,11 @@ public class ProductController {
 		return new ResponseEntity<>(productsByRating,HttpStatus.OK);
 	}
 	
+	@GetMapping("/totalproducts")
+	public ResponseEntity<Integer> totalNumberOfProducts(){
+		Integer totalProducts = productService.totalNumberOfProducts();
+		return new ResponseEntity<Integer>(totalProducts,HttpStatus.OK);
+	}
 	
 	
 }
