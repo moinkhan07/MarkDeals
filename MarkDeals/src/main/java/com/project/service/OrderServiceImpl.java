@@ -101,7 +101,7 @@ public class OrderServiceImpl implements OrderService{
 		List<Orders> listOfOrders = orderRepository.findAll();
 		Integer totalProcessingOrder = 0;
 		for (Orders orders : listOfOrders) {
-			if (orders.getOrderstatus() == "Processing") {
+			if (orders.getOrderstatus().equals("Processing")) {
 				totalProcessingOrder++;
 			}
 		}
@@ -113,7 +113,7 @@ public class OrderServiceImpl implements OrderService{
 		List<Orders> listOfOrders = orderRepository.findAll();
 		Integer totalProcessedOrder = 0;
 		for (Orders orders : listOfOrders) {
-			if (orders.getOrderstatus() == "Processed") {
+			if (orders.getOrderstatus().equals("Processed")) {
 				totalProcessedOrder++;
 			}
 		}
@@ -123,25 +123,25 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public Integer totalOutForDeliveryOrders() {
 		List<Orders> listOfOrders = orderRepository.findAll();
-		Integer totalProcessingOrder = 0;
+		Integer totalOFDOrder = 0;
 		for (Orders orders : listOfOrders) {
-			if (orders.getOrderstatus() == "Out for delivery") {
-				totalProcessingOrder++;
+			if (orders.getOrderstatus().equals("Out for delivery")) {
+				totalOFDOrder++;
 			}
 		}
-		return totalProcessingOrder;
+		return totalOFDOrder;
 	}
 
 	@Override
 	public Integer totalDeliveredOrders() {
 		List<Orders> listOfOrders = orderRepository.findAll();
-		Integer totalProcessingOrder = 0;
+		Integer totalDeliveredOrder = 0;
 		for (Orders orders : listOfOrders) {
-			if (orders.getOrderstatus() == "Delivered") {
-				totalProcessingOrder++;
+			if (orders.getOrderstatus().equals("Delivered")) {
+				totalDeliveredOrder++;
 			}
 		}
-		return totalProcessingOrder;
+		return totalDeliveredOrder;
 	}
 
 }

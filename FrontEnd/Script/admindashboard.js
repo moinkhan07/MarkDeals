@@ -229,40 +229,43 @@ let totalOrders = document.getElementById("totalorders");
 let totalOrdersCount = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/orders/totalorders");
   let data = await res.json();
-  todaySales.append(data);
+  totalOrders.append(data);
 }
 totalOrdersCount();
 
 
-// let todaySales = document.getElementById("todaySales");
-// let totalSalesToday = async()=>{
-//   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
-//   let data = await res.json();
-//   todaySales.append("₹"+data);
-// }
-// totalSalesToday();
+let processingorder = document.getElementById("processingorder");
+let totalProcessingOrder = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders/totalprocessingorders");
+  let data = await res.json();
+  processingorder.append(data);
+  console.log(data)
+}
+totalProcessingOrder();
 
-// let todaySales = document.getElementById("todaySales");
-// let totalSalesToday = async()=>{
-//   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
-//   let data = await res.json();
-//   todaySales.append("₹"+data);
-// }
-// totalSalesToday();
 
-// let todaySales = document.getElementById("todaySales");
-// let totalSalesToday = async()=>{
-//   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
-//   let data = await res.json();
-//   todaySales.append("₹"+data);
-// }
-// totalSalesToday();
 
-// let todaySales = document.getElementById("todaySales");
-// let totalSalesToday = async()=>{
-//   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
-//   let data = await res.json();
-//   todaySales.append("₹"+data);
-// }
-// totalSalesToday();
+let processedorders = document.getElementById("processedorders");
+let totalProcessedOrders = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders/totalprocessedorders");
+  let data = await res.json();
+  processedorders.append(data);
+}
+totalProcessedOrders();
+
+let ofd = document.getElementById("ofd");
+let totalOFD = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders/totaloutfordeliveryorders");
+  let data = await res.json();
+  ofd.append(data);
+}
+totalOFD;
+
+let delivered = document.getElementById("delivered");
+let totalDelivered = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders/totaldeliveredorders");
+  let data = await res.json();
+  delivered.append(data);
+}
+totalDelivered();
 
