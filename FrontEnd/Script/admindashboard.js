@@ -216,9 +216,53 @@ const deleteProduct= async()=>{
     getProduct(data);
 }
 // ==================================Total sales today===========
+let todaySales = document.getElementById("todaySales");
 let totalSalesToday = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
   let data = await res.json();
-  console.log(data);
+  todaySales.append("₹"+data);
 }
 totalSalesToday();
+
+
+let totalOrders = document.getElementById("totalorders");
+let totalOrdersCount = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders/totalorders");
+  let data = await res.json();
+  todaySales.append(data);
+}
+totalOrdersCount();
+
+
+// let todaySales = document.getElementById("todaySales");
+// let totalSalesToday = async()=>{
+//   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
+//   let data = await res.json();
+//   todaySales.append("₹"+data);
+// }
+// totalSalesToday();
+
+// let todaySales = document.getElementById("todaySales");
+// let totalSalesToday = async()=>{
+//   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
+//   let data = await res.json();
+//   todaySales.append("₹"+data);
+// }
+// totalSalesToday();
+
+// let todaySales = document.getElementById("todaySales");
+// let totalSalesToday = async()=>{
+//   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
+//   let data = await res.json();
+//   todaySales.append("₹"+data);
+// }
+// totalSalesToday();
+
+// let todaySales = document.getElementById("todaySales");
+// let totalSalesToday = async()=>{
+//   let res = await fetch("https://markdeals.up.railway.app/orders/totalsalestoday");
+//   let data = await res.json();
+//   todaySales.append("₹"+data);
+// }
+// totalSalesToday();
+

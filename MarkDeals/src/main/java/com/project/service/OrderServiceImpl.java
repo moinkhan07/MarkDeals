@@ -86,4 +86,62 @@ public class OrderServiceImpl implements OrderService{
 		return todaySales;
 	}
 
+	@Override
+	public Integer totalOrders() {
+		List<Orders> listOfOrders = orderRepository.findAll();
+		Integer totalOrders = 0;
+		for (Orders orders : listOfOrders) {
+			totalOrders++;
+		}
+		return totalOrders;
+	}
+
+	@Override
+	public Integer totalProcessingOrders() {
+		List<Orders> listOfOrders = orderRepository.findAll();
+		Integer totalProcessingOrder = 0;
+		for (Orders orders : listOfOrders) {
+			if (orders.getOrderstatus() == "Processing") {
+				totalProcessingOrder++;
+			}
+		}
+		return totalProcessingOrder;
+	}
+	
+	@Override
+	public Integer totalProcessedOrders() {
+		List<Orders> listOfOrders = orderRepository.findAll();
+		Integer totalProcessedOrder = 0;
+		for (Orders orders : listOfOrders) {
+			if (orders.getOrderstatus() == "Processed") {
+				totalProcessedOrder++;
+			}
+		}
+		return totalProcessedOrder;
+	}
+
+	@Override
+	public Integer totalOutForDeliveryOrders() {
+		List<Orders> listOfOrders = orderRepository.findAll();
+		Integer totalProcessingOrder = 0;
+		for (Orders orders : listOfOrders) {
+			if (orders.getOrderstatus() == "Out for delivery") {
+				totalProcessingOrder++;
+			}
+		}
+		return totalProcessingOrder;
+	}
+
+	@Override
+	public Integer totalDeliveredOrders() {
+		List<Orders> listOfOrders = orderRepository.findAll();
+		Integer totalProcessingOrder = 0;
+		for (Orders orders : listOfOrders) {
+			if (orders.getOrderstatus() == "Delivered") {
+				totalProcessingOrder++;
+			}
+		}
+		return totalProcessingOrder;
+	}
+
 }

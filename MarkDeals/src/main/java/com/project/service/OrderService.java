@@ -18,4 +18,16 @@ public interface OrderService {
 	public List<Product> getAllProductFromOrder(Integer orderId);
 	
 	public Double totalSalesToday();
+	
+	public Integer totalOrders();
+	
+	public Integer totalProcessingOrders();
+	
+	public Integer totalProcessedOrders();
+	
+	public Integer totalOutForDeliveryOrders();
+	
+	public Integer totalDeliveredOrders();
+	
+	
 }
