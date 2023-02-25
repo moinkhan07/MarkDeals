@@ -28,5 +28,7 @@ public interface ProductService {
 	
 	public List<Product> viewAllProductsByRating(String productRating) throws ProductException; 
 	
+	public Integer totalNumberOfProducts();
+	
 
 }

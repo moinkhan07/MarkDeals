@@ -109,5 +109,15 @@ public class ProductServiceImpl implements ProductService{
 		return productsByRating;
 	}
 
+	@Override
+	public Integer totalNumberOfProducts() {
+		List<Product> listOfProducts = productRepository.findAll();
+		Integer totalProductsCounter = 0;
+		for (Product product : listOfProducts) {
+			totalProductsCounter++;
+		}
+		return totalProductsCounter;
+	}
+
 
 }

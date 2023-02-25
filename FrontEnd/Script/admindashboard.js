@@ -239,7 +239,6 @@ let totalProcessingOrder = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/orders/totalprocessingorders");
   let data = await res.json();
   processingorder.append(data);
-  console.log(data)
 }
 totalProcessingOrder();
 
@@ -253,14 +252,13 @@ let totalProcessedOrders = async()=>{
 }
 totalProcessedOrders();
 
-let ofd = document.getElementById("ofd");
-let totalOFD = async()=>{
+let outfordelivery = document.getElementById("outfordelivery");
+let totalOutForDelivery=async()=>{
   let res = await fetch("https://markdeals.up.railway.app/orders/totaloutfordeliveryorders");
   let data = await res.json();
-  ofd.append(data);
+  outfordelivery.append(data);
 }
-totalOFD;
-
+totalOutForDelivery();
 let delivered = document.getElementById("delivered");
 let totalDelivered = async()=>{
   let res = await fetch("https://markdeals.up.railway.app/orders/totaldeliveredorders");
