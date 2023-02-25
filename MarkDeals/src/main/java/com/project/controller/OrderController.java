@@ -60,5 +60,34 @@ public class OrderController {
 		Double totalSales = orderService.totalSalesToday();
 		return new ResponseEntity<Double>(totalSales,HttpStatus.OK);
 	}
+	
+	@GetMapping("/orders/totalorders")
+	public ResponseEntity<Integer> totalOrders(){
+		Integer totalOrders = orderService.totalOrders();
+		return new ResponseEntity<Integer>(totalOrders,HttpStatus.OK);
+	}
 
+	@GetMapping("/orders/totalprocessingorders")
+	public ResponseEntity<Integer> totalProcessingOrders(){
+		Integer totalProcessingOrders = orderService.totalProcessingOrders();
+		return new ResponseEntity<Integer>(totalProcessingOrders,HttpStatus.OK);
+	}
+	
+	@GetMapping("/orders/totalprocessedorders")
+	public ResponseEntity<Integer> totalProcessedOrders(){
+		Integer totalProcessedOrders = orderService.totalProcessedOrders();
+		return new ResponseEntity<Integer>(totalProcessedOrders,HttpStatus.OK);
+	}
+	
+	@GetMapping("/orders/totaloutfordeliveryorders")
+	public ResponseEntity<Integer> totalOutForDeliveryOrders(){
+		Integer totalOFDOrders = orderService.totalOutForDeliveryOrders();
+		return new ResponseEntity<Integer>(totalOFDOrders,HttpStatus.OK);
+	}
+	
+	@GetMapping("/orders/totaldeliveredorders")
+	public ResponseEntity<Integer> totalDeliveredOrders(){
+		Integer totalDeliveredOrders = orderService.totalDeliveredOrders();
+		return new ResponseEntity<Integer>(totalDeliveredOrders,HttpStatus.OK);
+	}
 }

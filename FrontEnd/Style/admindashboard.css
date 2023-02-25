@@ -119,11 +119,11 @@
     font-size: 30px;
 }
 #admindash{
-    width: 70%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(5,1fr);
     grid-template-rows: auto;
-    gap: 20px;
+    gap: 10px;
     margin: auto;
 }
 #admindash>div{
@@ -145,7 +145,7 @@
 }
 .upper>p{
     padding-bottom: 18px;
-    font-size: 22px;
+    font-size: 20px;
 }
 .upper>p.upperbot{
     font-size: 33px;
