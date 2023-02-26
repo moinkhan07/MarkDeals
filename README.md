@@ -2,7 +2,9 @@
 
 <img src = "./FrontEnd/Assets/logo.png">
 
-- The website has been built using Spring Boot, a popular Java-based framework, for its backend. For the frontend, the website uses HTML, CSS, and JavaScript, which are common languages used for building user interfaces on the web. The use of these technologies suggests that Markdeals is a modern and well-designed ecommerce platform that is capable of providing an optimal user experience for its customers.
+- The website has been built using Spring Boot, a popular Java-based framework, for its backend.
+- For the frontend, the website uses HTML, CSS, and JavaScript, which are common languages used for building user interfaces on the web.
+- The use of these technologies suggests that Markdeals is a modern and well-designed ecommerce platform that is capable of providing an optimal user experience for     its customers.
 
 
 <img src = "./FrontEnd/Assets/erdiagram.jpg">
@@ -22,7 +24,15 @@
 <img src = "./FrontEnd/Assets/adminlogin.png">
 
 ### Dashboard
-- It is pending...
+- View Sales Daily
+- View Total Users Registered
+- View Total Products
+- View Total Orders
+- View Total Processing Orders
+- View Total Processsed Orders
+- View Total Out For Delivery Orders
+- View Total Delivered Orders
+- View Total Cancelled Orders
 <img src = "./FrontEnd/Assets/admindash.png">
 
 ### User Section
@@ -37,7 +47,9 @@
 <img src="./FrontEnd/Assets/adminproduct.png">
 
 ### Order Section
-- It is pending...
+- View All Orders 
+- Update Order Status
+<img src="./FrontEnd/Assets/orderadmin.png">
 
 ## User Side : 
 ### Register & Login
