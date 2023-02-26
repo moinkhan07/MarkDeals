@@ -63,10 +63,20 @@ let appendOrder = (data)=>{
   })
 }
 
-let cancelOrderFunction =async (el)=>{
-  let res = await fetch(`https://markdeals.up.railway.app/orders/${el.orderId}`);
+let cancelOrderFunction = async (el)=>{
+  let obj = {};
+  console.log(el)
+  let res = await fetch(`https://markdeals.up.railway.app/orders/${el.orderId}`, {
+    method: "PATCH",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   let data = await res.json();
-  if(data=="Order cancelled"){
+  console.log(data)
+  if(data == "Order cancelled"){
     alert("Order Cancelled Successfully!");
+    getOrders();
   }
 }

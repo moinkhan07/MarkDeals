@@ -91,8 +91,14 @@ public class OrderController {
 		return new ResponseEntity<Integer>(totalDeliveredOrders,HttpStatus.OK);
 	}
 	
+	@GetMapping("/orders/totalcancelledorders")
+	public ResponseEntity<Integer> totalCancelledOrder(){
+		Integer totalCancelledOrder = orderService.totalCancelledOrder();
+		return new ResponseEntity<Integer>(totalCancelledOrder,HttpStatus.OK);
+	}
 	
-	@PatchMapping("/orders/{orderId}")
+	
+	@PatchMapping("/orders/{oId}")
 	public ResponseEntity<String> cancelledOrder(@PathVariable("oId") Integer orderId){
 		String cancelledOrder = orderService.cancelOrder(orderId);
 		return new ResponseEntity<String>(cancelledOrder,HttpStatus.OK);
