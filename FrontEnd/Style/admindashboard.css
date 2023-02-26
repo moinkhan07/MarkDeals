@@ -119,19 +119,18 @@
     font-size: 30px;
 }
 #admindash{
-    width: 100%;
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto;
-    gap: 10px;
+    gap: 10px 15px;
     margin: auto;
+    margin-top: 40px;
 }
 #admindash>div{
-    width: 180px;
-    height: 120px;
+    width: 240px;
+    height: 135px;
     margin: auto;
-    margin-top: 60px;
-    /* color: rgb(136,61,26); */
 }
 #admindash>div>.upper{
     width: 100%;
@@ -145,10 +144,11 @@
 }
 .upper>p{
     padding-bottom: 18px;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: bold;
 }
 .upper>p.upperbot{
-    font-size: 33px;
+    font-size: 35px;
     font-weight: bolder;
     color: rgb(136, 61, 26);
 }

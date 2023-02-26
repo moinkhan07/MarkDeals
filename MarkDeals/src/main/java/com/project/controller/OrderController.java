@@ -90,4 +90,16 @@ public class OrderController {
 		Integer totalDeliveredOrders = orderService.totalDeliveredOrders();
 		return new ResponseEntity<Integer>(totalDeliveredOrders,HttpStatus.OK);
 	}
+	
+	
+	@PatchMapping("/orders/{orderId}")
+	public ResponseEntity<String> cancelledOrder(@PathVariable("oId") Integer orderId){
+		String cancelledOrder = orderService.cancelOrder(orderId);
+		return new ResponseEntity<String>(cancelledOrder,HttpStatus.OK);
+	}
+	
+	
+	
+	
+	
 }

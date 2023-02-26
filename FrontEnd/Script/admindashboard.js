@@ -283,3 +283,8 @@ let totalProductsCount =async()=>{
   getProduct(data);
 }
 totalProductsCount();
+
+// ===================================Logout=============================
+let logout = ()=>{
+  window.location.href = "./index.html";
+}

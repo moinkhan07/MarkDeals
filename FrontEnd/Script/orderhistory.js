@@ -54,9 +54,19 @@ let appendOrder = (data)=>{
     let cancelOrder = document.createElement("button");
     cancelOrder.setAttribute("class","cancelorder");
     cancelOrder.innerText = "Cancel";
+    cancelOrder.onclick=()=>{
+      cancelOrderFunction(el);
+    }
     oDetails.append(cancelOrder);
     tr.append(oId,oDate,oStatus,oAmount,oDetails);
     orders.append(tr);
   })
 }
 
+let cancelOrderFunction =async (el)=>{
+  let res = await fetch(`https://markdeals.up.railway.app/orders/${el.orderId}`);
+  let data = await res.json();
+  if(data=="Order cancelled"){
+    alert("Order Cancelled Successfully!");
+  }
+}
