@@ -19,6 +19,17 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Users registerUser(Users user) throws UserException {
 		user.setCart(new Cart());
+		String password = user.getPassword();
+	    Integer key = 13;
+		String encryptPassword = "";
+
+		char[] charArray = password.toCharArray();
+	
+		for (char c : charArray) {
+			c += key;
+			encryptPassword += c;
+		}
+		user.setPassword(encryptPassword);
 		return userRepository.save(user);
 	}
 
@@ -46,7 +57,17 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Users userLogin(UsersLogin usersLogin) throws UserException {
 		Users existingUsers = userRepository.findByUserEmail(usersLogin.getUserEmail());
-		if (existingUsers.getPassword().equals(usersLogin.getPassword())) {
+		String password = usersLogin.getPassword();
+	    Integer key = 13;
+		String becryptPassword = "";
+
+		char[] charArray = password.toCharArray();
+	
+		for (char c : charArray) {
+			c += key;
+			becryptPassword += c;
+		}
+		if (existingUsers.getPassword().equals(becryptPassword)) {
 			return existingUsers;
 		}
 		throw new UserException("Wrong Credential");
