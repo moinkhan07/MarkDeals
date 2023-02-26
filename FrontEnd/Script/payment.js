@@ -45,7 +45,6 @@ let barcode = async () =>{
             },
           });
           let data2 = await res2.json();
-          console.log(data2);
           
 
           let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
@@ -92,7 +91,6 @@ let cod = async ()=>{
             },
           });
           let data2 = await res2.json();
-          console.log(data2);
           
 
           let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
@@ -140,7 +138,6 @@ const cartdetails = async ()=>{
             },
           });
           let data2 = await res2.json();
-          console.log(data2);
           
 
           let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
@@ -189,8 +186,6 @@ const cartdetails = async ()=>{
             },
           });
           let data2 = await res2.json();
-          console.log(data2);
-          
 
           let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",

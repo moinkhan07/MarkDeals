@@ -65,7 +65,6 @@ let appendOrder = (data)=>{
 
 let cancelOrderFunction = async (el)=>{
   let obj = {};
-  console.log(el)
   let res = await fetch(`https://markdeals.up.railway.app/orders/${el.orderId}`, {
     method: "PATCH",
     body: JSON.stringify(obj),
@@ -73,10 +72,9 @@ let cancelOrderFunction = async (el)=>{
       "Content-Type": "application/json",
     },
   });
-  let data = await res.json();
-  console.log(data)
-  if(data == "Order cancelled"){
+    let data = await res.json();
+    if(data.orderStatus == "Cancelled"){
     alert("Order Cancelled Successfully!");
     getOrders();
-  }
+    }
 }

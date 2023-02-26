@@ -35,6 +35,6 @@ public interface OrderService {
 	
 	public Integer totalCancelledOrder();
 	
-	public String cancelOrder(Integer orderId);
+	public Orders cancelOrder(Integer orderId);
 	
 }

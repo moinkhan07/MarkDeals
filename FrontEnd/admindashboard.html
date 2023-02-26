@@ -23,7 +23,7 @@
         <div id="mainboard">
             <div id="navbar">
                 <div id="searchbar">
-                    <input type="text" id="search" placeholder="Search Here" oninput="searching()">
+                    <input type="text" id="search" placeholder="Search Here">
                 </div>
                 <div id="profile">
                     <div class="dropdown_main_">
@@ -32,7 +32,7 @@
                           <div class="caret_"></div>
                         </div>
                         <ul class="menu_2_">
-                          <li onclick="profile()" >Profile</li>
+                          <li>Profile</li>
                           <li id="logout" onclick="logout()">Logout</li>
                         </ul>
                       </div>
@@ -50,12 +50,6 @@
                                 <p class="upperbot" id="todaySales"></p>
                             </div>
                         </div>
-                        <!-- <div>
-                            <div class="upper">
-                                <p>Weekly Sales</p>
-                                <p class="upperbot">Pending</p>
-                            </div>
-                        </div> -->
                         <div>
                             <div class="upper">
                                 <p>Total Users</p>
@@ -101,7 +95,7 @@
                         <div>
                             <div class="upper">
                                 <p>Cancelled Order</p>
-                                <p class="upperbot">0</p>
+                                <p class="upperbot" id="cancelledorder"></p>
                             </div>
                         </div>
                     </div>

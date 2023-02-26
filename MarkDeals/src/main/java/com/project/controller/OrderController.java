@@ -99,9 +99,9 @@ public class OrderController {
 	
 	
 	@PatchMapping("/orders/{oId}")
-	public ResponseEntity<String> cancelledOrder(@PathVariable("oId") Integer orderId){
-		String cancelledOrder = orderService.cancelOrder(orderId);
-		return new ResponseEntity<String>(cancelledOrder,HttpStatus.OK);
+	public ResponseEntity<Orders> cancelledOrder(@PathVariable("oId") Integer orderId){
+		Orders cancelledOrder = orderService.cancelOrder(orderId);
+		return new ResponseEntity<Orders>(cancelledOrder,HttpStatus.OK);
 	}
 	
 	
