@@ -267,3 +267,19 @@ let totalDelivered = async()=>{
 }
 totalDelivered();
 
+let totalusers = document.getElementById("totalusers");
+let totalUsersCount=async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/totalusers");
+  let data = await res.json();
+  totalusers.append(data);
+}
+totalUsersCount();
+
+let totalproducts = document.getElementById("totalproducts");
+let totalProductsCount =async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/totalproducts");
+  let data = await res.json();
+  totalproducts.append(data);
+  getProduct(data);
+}
+totalProductsCount();
