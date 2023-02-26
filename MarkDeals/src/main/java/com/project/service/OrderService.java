@@ -19,6 +19,10 @@ public interface OrderService {
 	
 	public Double totalSalesToday();
 	
+	public Double totalWeeklySales();
+	
+	public Double totalMonthlySales();
+	
 	public Integer totalOrders();
 	
 	public Integer totalProcessingOrders();

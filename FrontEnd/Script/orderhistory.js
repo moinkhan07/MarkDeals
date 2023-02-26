@@ -34,17 +34,8 @@ let getOrders = async()=>{
   let res = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`);
   let data = await res.json();
   appendOrder(data);
-  console.log(data);
 }
 getOrders();
-
-// let getOrdersProducts= async()=>{
-//   let res = await fetch(`https://markdeals.up.railway.app/ordersproducts/${12}`);
-//   let data = await res.json();
-//   console.log(data);
-// }
-
-// getOrdersProducts();
 
 let appendOrder = (data)=>{
   let orders = document.getElementById("showOrders");
@@ -60,7 +51,10 @@ let appendOrder = (data)=>{
     let oAmount = document.createElement("td");
     oAmount.innerText = "₹" + el.totalAmount;
     let oDetails = document.createElement("td");
-    oDetails.innerText = "Details";
+    let cancelOrder = document.createElement("button");
+    cancelOrder.setAttribute("class","cancelorder");
+    cancelOrder.innerText = "Cancel";
+    oDetails.append(cancelOrder);
     tr.append(oId,oDate,oStatus,oAmount,oDetails);
     orders.append(tr);
   })

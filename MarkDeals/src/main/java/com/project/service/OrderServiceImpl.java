@@ -85,6 +85,18 @@ public class OrderServiceImpl implements OrderService{
 		}
 		return todaySales;
 	}
+	
+	@Override
+	public Double totalWeeklySales() {
+		List<Orders> listOfOrders = orderRepository.findAll();
+		return null;
+	}
+
+	@Override
+	public Double totalMonthlySales() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public Integer totalOrders() {
@@ -143,5 +155,6 @@ public class OrderServiceImpl implements OrderService{
 		}
 		return totalDeliveredOrder;
 	}
+
 
 }
