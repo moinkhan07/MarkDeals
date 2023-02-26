@@ -79,6 +79,11 @@
 ### Success Page
 <img src = "./FrontEnd/Assets/successpage.png">
 
+### Order History
+- View All Orders History
+- Cancel Order
+<img src="./FrontEnd/Assets/orderhistory.png">
+
 ## Tech Stack : 
 - Java
 - Spring Boot
