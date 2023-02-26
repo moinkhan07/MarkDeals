@@ -165,5 +165,17 @@ public class OrderServiceImpl implements OrderService{
 		return "Order cancelled";
 	}
 
+	@Override
+	public Integer totalCancelledOrder() {
+		List<Orders> listOfOrders = orderRepository.findAll();
+		Integer totalCancelledOrder = 0;
+		for (Orders orders : listOfOrders) {
+			if (orders.getOrderstatus().equals("Cancelled")) {
+				totalCancelledOrder++;
+			}
+		}
+		return totalCancelledOrder;
+	}
+
 
 }
