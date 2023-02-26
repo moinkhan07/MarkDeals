@@ -157,12 +157,12 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public String cancelOrder(Integer orderId) {
+	public Orders cancelOrder(Integer orderId) {
 		Optional<Orders> optOrder = orderRepository.findById(orderId);
 		Orders existingOrder = optOrder.get();
 		existingOrder.setOrderstatus("Cancelled");
 		orderRepository.save(existingOrder);
-		return "Order cancelled";
+		return existingOrder;
 	}
 
 	@Override

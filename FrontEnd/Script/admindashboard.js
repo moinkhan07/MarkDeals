@@ -284,6 +284,14 @@ let totalProductsCount =async()=>{
 }
 totalProductsCount();
 
+let cancelledorder = document.getElementById("cancelledorder");
+let totalCancelledOrder = async()=>{
+  let res = await fetch("https://markdeals.up.railway.app/orders/totalcancelledorders");
+  let data = await res.json();
+  cancelledorder.append(data);
+}
+totalCancelledOrder();
+
 // ===================================Logout=============================
 let logout = ()=>{
   window.location.href = "./index.html";
