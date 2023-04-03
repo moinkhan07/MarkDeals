@@ -72,11 +72,11 @@
     justify-content: center;
   }
   #orderhistory>img{
-    width: 70%;
+    width: 85%;
     cursor: pointer;
   }
   #orderhistory>img:hover{
-    width: 75%;
+    width: 90%;
   }
   #cart{
     width: 5%;
