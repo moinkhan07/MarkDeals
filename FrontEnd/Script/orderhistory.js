@@ -56,6 +56,7 @@ let appendOrder = (data)=>{
     cancelOrder.innerText = "Cancel";
     cancelOrder.onclick=()=>{
       cancelOrderFunction(el);
+      cancelOrder.innerText="Cancelled"
     }
     oDetails.append(cancelOrder);
     tr.append(oId,oDate,oStatus,oAmount,oDetails);
