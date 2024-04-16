@@ -4,7 +4,7 @@ const adminlogin = async ()=>{
       password:document.getElementById("loginpass").value,
     }
 
-    let res = await fetch("https://markdeals.up.railway.app/adminlogin", {
+    let res = await fetch("http://localhost:8888/adminlogin", {
       method: "POST",
       body: JSON.stringify(adminlogindata),
       headers: {

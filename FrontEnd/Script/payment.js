@@ -1,3 +1,4 @@
+const url = "http://localhost:8888/";
 let t = document.querySelectorAll(".tabs_toggle"),
 c = document.querySelectorAll(".tabs_content");
 
@@ -26,7 +27,7 @@ let barcode = async () =>{
     }
     if(otp.length > 0){
         if(otp == "789789"){
-        let res = await fetch("https://markdeals.up.railway.app/savepayment", {
+        let res = await fetch(`${url}savepayment`, {
             method: "POST",
             body: JSON.stringify(paymentData),
             headers: {
@@ -37,7 +38,7 @@ let barcode = async () =>{
 
           let orderobj = {}
 
-          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`, {
+          let res2 = await fetch(`${url}orders/${userDataFromLs.userEmail}`, {
             method: "POST",
             body: JSON.stringify(orderobj),
             headers: {
@@ -47,7 +48,7 @@ let barcode = async () =>{
           let data2 = await res2.json();
           
 
-          let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+          let res3 = await fetch(`${url}deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -72,7 +73,7 @@ let cod = async ()=>{
         paymentType : "COD",
     }
     if(checkbox){
-        let res = await fetch("https://markdeals.up.railway.app/savepayment", {
+        let res = await fetch(`${url}savepayment`, {
             method: "POST",
             body: JSON.stringify(paymentData),
             headers: {
@@ -83,7 +84,7 @@ let cod = async ()=>{
 
           let orderobj = {}
 
-          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`, {
+          let res2 = await fetch(`${url}orders/${userDataFromLs.userEmail}`, {
             method: "POST",
             body: JSON.stringify(orderobj),
             headers: {
@@ -93,7 +94,7 @@ let cod = async ()=>{
           let data2 = await res2.json();
           
 
-          let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+          let res3 = await fetch(`${url}deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -119,7 +120,7 @@ const cartdetails = async ()=>{
     }
     if(cardNumber.length == 16 && month != null && year != null && cvv != null){
         if(cvv == "786"){
-        let res = await fetch("https://markdeals.up.railway.app/savepayment", {
+        let res = await fetch(`${url}savepayment`, {
             method: "POST",
             body: JSON.stringify(paymentData),
             headers: {
@@ -130,7 +131,7 @@ const cartdetails = async ()=>{
 
           let orderobj = {}
 
-          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`, {
+          let res2 = await fetch(`${url}orders/${userDataFromLs.userEmail}`, {
             method: "POST",
             body: JSON.stringify(orderobj),
             headers: {
@@ -140,7 +141,7 @@ const cartdetails = async ()=>{
           let data2 = await res2.json();
           
 
-          let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+          let res3 = await fetch(`${url}deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -167,7 +168,7 @@ const cartdetails = async ()=>{
     }
     if(upiId.length > 0){
         if(upiId == "1234567890@ibl"){
-        let res = await fetch("https://markdeals.up.railway.app/savepayment", {
+        let res = await fetch(`${url}savepayment`, {
             method: "POST",
             body: JSON.stringify(paymentData),
             headers: {
@@ -178,7 +179,7 @@ const cartdetails = async ()=>{
 
           let orderobj = {}
 
-          let res2 = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`, {
+          let res2 = await fetch(`${url}orders/${userDataFromLs.userEmail}`, {
             method: "POST",
             body: JSON.stringify(orderobj),
             headers: {
@@ -187,7 +188,7 @@ const cartdetails = async ()=>{
           });
           let data2 = await res2.json();
 
-          let res3 = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}`, {
+          let res3 = await fetch(`${url}deleteproduct/${userDataFromLs.cart.cartId}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",

@@ -1,3 +1,5 @@
+const url = "http://localhost:8888/";
+
 let dropdown_2 = document.querySelectorAll(".dropdown_main_");
   dropdown_2.forEach((drop) => {
     let select_2 = drop.querySelector(".select_");
@@ -14,7 +16,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
     // ===============================================
     let userDataFromLs = JSON.parse(localStorage.getItem("userData"));
     let getCartData = async()=>{
-      let res = await fetch(`https://markdeals.up.railway.app/cartproducts/${userDataFromLs.userEmail}`);
+      let res = await fetch(`${url}cartproducts/${userDataFromLs.userEmail}`);
       let data = await res.json();
       appendData(data);
       isEmpty(data);
@@ -156,7 +158,7 @@ let dropdown_2 = document.querySelectorAll(".dropdown_main_");
   }
   
   let deleteProduct= async (el)=>{
-    let res = await fetch(`https://markdeals.up.railway.app/deleteproduct/${userDataFromLs.cart.cartId}/${el.productId}`,{
+    let res = await fetch(`${url}deleteproduct/${userDataFromLs.cart.cartId}/${el.productId}`,{
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

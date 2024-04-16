@@ -1,3 +1,4 @@
+const url = "http://localhost:8888/";
 let dropdown_2 = document.querySelectorAll(".dropdown_main_");
   dropdown_2.forEach((drop) => {
     let select_2 = drop.querySelector(".select_");
@@ -31,7 +32,7 @@ let cartPage=()=>{
 
 
 let getOrders = async()=>{
-  let res = await fetch(`https://markdeals.up.railway.app/orders/${userDataFromLs.userEmail}`);
+  let res = await fetch(`${url}orders/${userDataFromLs.userEmail}`);
   let data = await res.json();
   appendOrder(data);
 }
@@ -66,7 +67,7 @@ let appendOrder = (data)=>{
 
 let cancelOrderFunction = async (el)=>{
   let obj = {};
-  let res = await fetch(`https://markdeals.up.railway.app/orders/${el.orderId}`, {
+  let res = await fetch(`${url}orders/${el.orderId}`, {
     method: "PATCH",
     body: JSON.stringify(obj),
     headers: {
